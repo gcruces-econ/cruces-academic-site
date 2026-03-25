@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guillermo A. Cruces | IDEAS/RePEc Research Archive</title>
+    <title>Guillermo A. Cruces | Research and Publications</title>
     <meta
       name="description"
-      content="Academic homepage prototype for Guillermo A. Cruces with current-site links, all IDEAS/RePEc articles, all IDEAS/RePEc working papers, and Google Sites-ready content blocks."
+      content="Academic homepage for Guillermo A. Cruces with research papers, working papers, contact information, and publication links."
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,8 +22,6 @@
       <header class="site-header">
         <a class="brand" href="#top">GC</a>
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#links">Links</a>
           <a href="#research">Research</a>
           <a href="#work">Working Papers</a>
           <a href="#policy">Policy</a>
@@ -34,24 +32,13 @@
       <main id="top">
         <section class="hero section">
           <div class="hero-copy">
-            <p class="eyebrow">Current Site + IDEAS/RePEc</p>
+            <p class="eyebrow">Research and Publications</p>
             <h1>Guillermo A. Cruces</h1>
             <p class="hero-summary">
               Professor of Economics at Universidad de San Andres and the University
               of Nottingham, with research spanning public economics, labor markets,
               taxation, social protection, poverty, and inequality.
             </p>
-            <div class="hero-actions">
-              <a
-                class="button button-primary"
-                href="https://www.dropbox.com/s/u88tuj8n3hh9asl/CV_CRUCES_2023_EN_Web.pdf?dl=0"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View Current CV
-              </a>
-              <a class="button button-secondary" href="mailto:gcruces@cedlas.org">Contact</a>
-            </div>
             <ul class="research-areas" aria-label="Research areas">
               <li>Public Economics</li>
               <li>Taxation and Behavior</li>
@@ -69,100 +56,24 @@
               />
             </figure>
             <div class="panel-block">
-              <p class="panel-label">Current Site Sync</p>
+              <p class="panel-label">Guillermo Cruces</p>
               <p class="panel-summary">
-                Photo, CV link, and external profile links are taken from
-                gcruces.cedlas.org. Published articles and working papers below open
-                on IDEAS/RePEc records.
+                Current CV, contact information, and external profiles in one place.
+                The publication lists below open each paper record directly.
               </p>
             </div>
             <div class="panel-block">
-              <p class="panel-label">Quick Links</p>
-              <div class="mini-link-list">
-                <a
-                  class="mini-link"
-                  href="https://scholar.google.com/citations?user=CylXqSUAAAAJ&hl=en"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Google Scholar
-                </a>
-                <a
-                  class="mini-link"
-                  href="https://ideas.repec.org/e/pcr20.html"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  IDEAS/RePEc
-                </a>
-                <a
-                  class="mini-link"
-                  href="https://www.nottingham.ac.uk/economics/people/guillermo.cruces"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Nottingham
-                </a>
-              </div>
+              <p class="panel-label">Links and contact</p>
+              <div id="hero-links" class="mini-link-list"></div>
             </div>
           </aside>
-        </section>
-
-        <section id="about" class="section intro-grid">
-          <article class="intro-card">
-            <p class="section-kicker">Profile</p>
-            <h2>Applied microeconomics with a strong policy edge</h2>
-            <p>
-              Guillermo Cruces works on taxation, labor informality, redistribution,
-              social assistance, education, and public beliefs. His recent work
-              combines field experiments, administrative data, and policy evaluation
-              across Latin America and beyond.
-            </p>
-            <p>
-              This prototype now combines the current site links from
-              gcruces.cedlas.org with a full publication and working paper archive
-              that opens on IDEAS/RePEc.
-            </p>
-          </article>
-
-          <article class="intro-card">
-            <p class="section-kicker">Highlights</p>
-            <div class="stats-grid">
-              <div>
-                <strong id="research-total">0</strong>
-                <span>Total IDEAS/RePEc items currently surfaced on this page</span>
-              </div>
-              <div>
-                <strong id="article-total">0</strong>
-                <span>Published articles linked directly to IDEAS/RePEc records</span>
-              </div>
-              <div>
-                <strong id="working-total">0</strong>
-                <span>Working papers pulled from the same author page</span>
-              </div>
-              <div>
-                <strong>Method</strong>
-                <span>Designed as simple sections for an easier Google Sites migration</span>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section id="links" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-kicker">Elsewhere on the web</p>
-              <h2>Links taken from the current site</h2>
-            </div>
-          </div>
-          <div id="profile-grid" class="resource-grid"></div>
         </section>
 
         <section id="research" class="section">
           <div class="section-heading">
             <div>
               <p class="section-kicker">Research output</p>
-              <h2>All papers linked from IDEAS/RePEc</h2>
+              <h2>Published papers</h2>
             </div>
             <p class="section-note" id="paper-count"></p>
           </div>
@@ -181,13 +92,13 @@
           <div id="paper-grid" class="paper-grid" aria-live="polite"></div>
         </section>
 
-        <section id="work" class="section split-section">
-          <div>
+        <section id="work" class="section work-section">
+          <div class="work-block">
             <p class="section-kicker">Working papers</p>
-            <h2>Complete working paper list from IDEAS/RePEc</h2>
+            <h2>Working paper archive</h2>
             <div id="working-list" class="stack-list"></div>
           </div>
-          <div>
+          <div class="work-block">
             <p class="section-kicker">Ongoing projects</p>
             <h2>Active lines of work</h2>
             <div id="ongoing-list" class="stack-list"></div>
@@ -216,7 +127,7 @@
       </main>
 
       <footer class="site-footer">
-        <p>Prototype for Guillermo Cruces's Google Site using current-site links and IDEAS/RePEc records.</p>
+        <p>Guillermo A. Cruces | Research, working papers, and contact information.</p>
       </footer>
     </div>
 

@@ -3,9 +3,15 @@ window.siteData = {
   "profileLinks": [
     {
       "title": "Current CV",
-      "description": "PDF linked from Guillermo Cruces's current site.",
+      "description": "Current curriculum vitae.",
       "url": "https://www.dropbox.com/s/u88tuj8n3hh9asl/CV_CRUCES_2023_EN_Web.pdf?dl=0",
       "linkLabel": "Open PDF"
+    },
+    {
+      "title": "Email",
+      "description": "Primary contact email.",
+      "url": "mailto:gcruces@cedlas.org",
+      "linkLabel": "Write email"
     },
     {
       "title": "Google Scholar",
@@ -14,10 +20,10 @@ window.siteData = {
       "linkLabel": "Open profile"
     },
     {
-      "title": "IDEAS/RePEc",
-      "description": "Author page used as the source for published and working paper links.",
+      "title": "Publications page",
+      "description": "Full publication archive and paper records.",
       "url": "https://ideas.repec.org/e/pcr20.html",
-      "linkLabel": "Open author page"
+      "linkLabel": "Open page"
     },
     {
       "title": "SSRN",
@@ -33,13 +39,13 @@ window.siteData = {
     },
     {
       "title": "Nottingham School of Economics",
-      "description": "Department page linked from Guillermo Cruces's current site.",
+      "description": "Department page.",
       "url": "https://www.nottingham.ac.uk/economics/",
       "linkLabel": "Open site"
     },
     {
       "title": "IZA",
-      "description": "IZA profile linked from the current site.",
+      "description": "IZA profile.",
       "url": "http://www.iza.org/en/webcontent/personnel/photos/index_html?key=2723",
       "linkLabel": "Open profile"
     }
@@ -52,7 +58,8 @@ window.siteData = {
       "year": "2026",
       "url": "https://ideas.repec.org/a/eee/labeco/v99y2026ics0927537125001514.html",
       "description": "Elsevier, vol. 99(C).",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "Housing conditions, residential location, and employment are key determinants of individual welfare, particularly for vulnerable populations facing credit constraints and information frictions. We examine how housing assistance affects employment outcomes using a randomized controlled trial in France that provided vulnerable youth (aged 18–25) with both job search assistance and housing support, including rent guarantees. The program successfully improved housing conditions: beneficiaries experienced better accommodation stability, reduced precarious situations, and increased satisfaction with their housing. However, despite substantial social worker support, the program did not improve employment rates, contract types, or earnings. Strikingly, beneficiaries moved to neighborhoods with objectively worse employment opportunities and lower socioeconomic indicators, yet reported higher satisfaction with their residential areas. This apparent paradox reveals that beneficiaries appear to prioritize housing affordability and conditions over employment access. Our results suggest that successful interventions may need to explicitly balance housing improvements with maintaining access to employment opportunities."
     },
     {
       "title": "Large firms and the intensive margin of labor informality evidence from an enforcement intervention in Peru",
@@ -61,7 +68,8 @@ window.siteData = {
       "year": "2026",
       "url": "https://ideas.repec.org/a/eee/deveco/v180y2026ics0304387825002305.html",
       "description": "Elsevier, vol. 180(C).",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "In developing countries, informal labor is not only employed by illegal or unregistered firms but also by legal firms that hire workers informally, known as the intensive margin of labor informality. Reducing this type of work may have ambiguous effects on formal employment, depending on factors such as firm size and productivity. In collaboration with Peru's labor inspection authority, we conducted a randomized mailing experiment targeting large firms with a high propensity for employing workers informally. The authority sent letters with either deterrence messages detailing fines for non-compliance or social norms messages highlighting the positive impacts of formality. We analyzed the impact of this intervention on formal employment levels over the following two years using monthly administrative data. The treated firms (particularly those in the deterrence treatment arm) and larger firms increased their formal employment levels. However, these increases followed a seasonal pattern coinciding with the high labor demand during the tourist season, suggesting that prior to the intervention, firms were employing temporary workers informally. The higher perceived cost of non-compliance led them to formalize some of these workers. The informal hiring of seasonal workers by these firms appears to have been motivated by basic tax evasion, and the absence of a negative effect on firm-level formal employment indicates that the firms were exploiting rents from low enforcement of regulations."
     },
     {
       "title": "Backlash against expert recommendations: Reactions to COVID-19 advice in Latin America",
@@ -70,7 +78,8 @@ window.siteData = {
       "year": "2024",
       "url": "https://ideas.repec.org/a/eee/jeborg/v228y2024ics0167268124003664.html",
       "description": "Elsevier, vol. 228(C).",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "Public adherence with health recommendations is vital for effective crisis response. During the COVID-19 pandemic, governments faced considerable challenges in persuading the public to adopt new recommendations. Using large-scale survey experiments across 12 Latin American countries, we investigate how respondents’ agreement with health recommendations is affected by their attribution to experts from different sectors. Our results uncover a robust backlash against experts for pandemic-specific recommendations, but not for more general health advice. The backlash does not depend on the type of expert (academic, public or private sector). Our experimental setup allows us to concurrently assess the significance of different factors behind these results. Anti-intellectualism plays a role, since individuals with low initial trust in experts exhibit more negative reactions to expert attribution, although the backlash is also present for those with higher levels of trust, indicating that other factors likely play a role. We fail to find evidence that individual perceptions or personality traits such as social pressure, altruism or reactance contribute to the backlash. Beyond individual characteristics, we find that the backlash is stronger in countries that exhibited a more stringent government response to the pandemic."
     },
     {
       "title": "Dishonesty and Public Employment",
@@ -79,7 +88,8 @@ window.siteData = {
       "year": "2023",
       "url": "https://ideas.repec.org/a/aea/aerins/v5y2023i4p511-26.html",
       "description": "American Economic Association, vol. 5(4), pages 511-526, December.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "We exploit a natural experiment to study the causal link between dishonest behavior and public employment. When military conscription was mandatory in Argentina, eligibility was determined by both a lottery and a medical examination. To avoid conscription, individuals at risk of being drafted had strong incentives to cheat in their medical examination. These incentives varied with the lottery number. Exploiting this exogenous variation, we first present evidence of cheating in medical examinations. We then show that individuals with a higher probability of having cheated in health checks exhibit a higher propensity to occupy nonmeritocratic public sector jobs later in life."
     },
     {
       "title": "Tax Audits as Scarecrows: Evidence from a Large-Scale Field Experiment",
@@ -88,7 +98,8 @@ window.siteData = {
       "year": "2023",
       "url": "https://ideas.repec.org/a/aea/aejpol/v15y2023i1p110-53.html",
       "description": "American Economic Association, vol. 15(1), pages 110-153, February.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "The canonical model of Allingham and Sandmo (1972) predicts that firms evade taxes by optimally trading off between the costs and benefits of evasion. However, there is no direct evidence that firms react to audits in this way. We conducted a large-scale field experiment in collaboration with a tax authority to address this question. We sent letters to 20,440 small- and medium-sized firms that collectively paid more than US$200 million in taxes per year. We find that providing information about audits significantly affected tax compliance but in a manner that was inconsistent with Allingham and Sandmo (1972)."
     },
     {
       "title": "Simulations of Policy Responses During the COVID-19 Crisis in Argentina: Effects on Socioeconomic Indicators",
@@ -97,7 +108,7 @@ window.siteData = {
       "year": "2022",
       "url": "https://ideas.repec.org/a/ijm/journl/v15y2022i3p38-60.html",
       "description": "International Microsimulation Association, vol. 15(3), pages 38-60.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper"
     },
     {
       "title": "The anatomy of behavioral responses to social assistance when informal employment is high",
@@ -106,7 +117,8 @@ window.siteData = {
       "year": "2021",
       "url": "https://ideas.repec.org/a/eee/pubeco/v193y2021ics0047272720301778.html",
       "description": "Elsevier, vol. 193(C).",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "The disincentive effects of social assistance programs on registered (or formal) employment are a first-order policy concern in developing and middle-income countries. We study the impact of a conditional cash transfer (CCT) program in Uruguay on the employment of adult members in beneficiary households in a context of high informality. Our research design relies on the sharp discontinuity introduced by program eligibility rules around a poverty score threshold combined with longitudinal administrative data. We find reductions of about 6 percentage points (a 13% drop) in formal labor force participation among all beneficiaries and of 8.7 percentage points (a 19% drop) for single mothers. The implied elasticity of participation in the formal sector with respect to the net-of-tax rate is about 0.78 for the full sample and about 1.3 for single mothers. The reduction in labor supply is stronger among individuals who have a medium propensity to be formally employed, with a smaller reduction in the case of infra-marginal individuals. We also present suggestive evidence that the reduction in formal employment increases inactivity and informal work in equal proportions. Finally, despite pervasive informality in the context of the Family Allowance assistance program (AFAM), the program’s marginal value of public funds of 0.61 implies an efficiency cost within the range of cash transfer programs targeted to families in the United States."
     },
     {
       "title": "How vocational education made women better off but left men behind",
@@ -115,7 +127,8 @@ window.siteData = {
       "year": "2020",
       "url": "https://ideas.repec.org/a/eee/labeco/v65y2020ics0927537120300294.html",
       "description": "Elsevier, vol. 65(C).",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper examines the interaction between vocational and soft skills training on labor market outcomes and expectations of youth in the Dominican Republic. Applicants to a training program were randomly assigned to one of three modalities: a full treatment consisting of vocational and soft skills training plus an internship, a partial treatment consisting of soft skills training plus an internship, or a control group with no training or internship. We find strong and lasting effects of the program on personal skills acquisition and expectations, but results are markedly different for men and women. Shortly after completing the program, all participants reported increased expectations for improved employment and livelihoods. This result is reversed for male participants after three and a half years, potentially explained by the program's negative short-run labor market effects for that group. On the other hand, female participants experience improved labor market outcomes in the short run and exhibit substantially higher levels of personal skills after three and a half years; the women in the study became more optimistic and reported higher self-esteem. Men experienced no such benefits. Our results suggest that job-training programs of this type can be transformative – for women, life skills mattered and made a difference. But they can also have a downside if, as was the case for men in this study, training creates expectations that are not met. Although, overall, impacts are similar for the full treatment and the partial treatment, the positive impacts on soft skills for women, and the adverse impacts on labor outcomes and expectations for men are stronger for the full treatment."
     },
     {
       "title": "Educational upgrading and returns to skills in Latin America: evidence from a supply–demand framework",
@@ -124,7 +137,8 @@ window.siteData = {
       "year": "2019",
       "url": "https://ideas.repec.org/a/spr/laecrv/v28y2019i1d10.1186_s40503-019-0080-6.html",
       "description": "Springer;Centro de Investigaciòn y Docencia Económica (CIDE), vol. 28(1), pages 1-20, December.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper documents the evolution of wage differentials and the supply of workers by educational level for sixteen Latin American countries over the period 1991–2013. We find a pattern of rather constant rise in the relative supply of skilled and semi-skilled workers over the period. Whereas the returns to secondary education fell over time, in contrast, the returns to tertiary education display a remarkable changing pattern common to almost all economies: significant increase in the 1990s, strong fall in the 2000s, and a deceleration of that fall in the 2010s. We conclude that supply-side factors seem to have limited explanatory power relative to demand-side factors in accounting for changes in the wage gap between workers with tertiary education and the rest."
     },
     {
       "title": "Misperceptions about Tax Audits",
@@ -133,7 +147,8 @@ window.siteData = {
       "year": "2018",
       "url": "https://ideas.repec.org/a/aea/apandp/v108y2018p83-87.html",
       "description": "American Economic Association, vol. 108, pages 83-87, May.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "For some entities, the utility-maximizing evasion rate depends substantially on tax audit features, such as audit probabilities and penalty rates. Bergolo et al. (2017) document large misperceptions about these features. In this paper, we expand the analysis of survey data to explore potential sources of these misperceptions. Of all the channels that we explore, recent contact with audits best explains differences in misperceptions."
     },
     {
       "title": "Trade liberalization and informality in Argentina: exploring the adjustment mechanisms",
@@ -142,7 +157,8 @@ window.siteData = {
       "year": "2018",
       "url": "https://ideas.repec.org/a/spr/laecrv/v27y2018i1d10.1186_s40503-018-0061-1.html",
       "description": "Springer;Centro de Investigaciòn y Docencia Económica (CIDE), vol. 27(1), pages 1-29, December.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper studies the link between trade reforms and labor informality in Argentina using a long time series spanning the 1980–2001 period. We explore cross-section mechanisms, that operate at the industry level, and time-series mechanisms, that operate at a general equilibrium level. We argue that firms can substitute formal with informal workers to smooth a negative trade shock. In this setting, industries exposed to larger tariffs cuts could experience increases in informality. In general equilibrium, there can be additional aggregate impacts in both manufacturing and non-traded sectors through workers reallocation among sectors, wage adjustments, and firm entry and exit. Using the cross-section variation of the data and an instrumental variable strategy we explore empirically the cross-section mechanisms. We find that reductions in industry tariffs increase labor informality, and the effect is differentially stronger in industries with a larger share of small-size firms. Using the time-series variation of the data, we are able to identify some of the general equilibrium effects. We find that the fall in the average national tariff decreased aggregate informality in the manufacturing sector but increased it in the non-traded sector."
     },
     {
       "title": "A short episodic history of income distribution in Argentina",
@@ -151,7 +167,8 @@ window.siteData = {
       "year": "2018",
       "url": "https://ideas.repec.org/a/spr/laecrv/v27y2018i1d10.1007_s40503-017-0048-3.html",
       "description": "Springer;Centro de Investigaciòn y Docencia Económica (CIDE), vol. 27(1), pages 1-45, December.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "In this paper, we use tax and household survey data to assess the history of income distribution in Argentina since the beginning of the 20th century. Until the 1970s, the country experienced a fall in inequality in spite of lower income growth. Since then, inequality has generally increased possibly as a result of large-scale shocks such as macroeconomic crises and reform attempts, resulting in a convergence towards traditionally more unequal neighboring countries."
     },
     {
       "title": "Partisan Interactions: Evidence from a Field Experiment in the United States",
@@ -160,7 +177,8 @@ window.siteData = {
       "year": "2017",
       "url": "https://ideas.repec.org/a/ucp/jpolec/doi10.1086-692711.html",
       "description": "University of Chicago Press, vol. 125(4), pages 1208-1243.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "We conducted a field experiment to study social influences on partisan political participation. We sent letters to 92,000 contributors during the 2012 presidential election campaign. We randomized features of the letters and measured the effects of these variations on the recipients' subsequent contributions. We find that making an individual's contributions more visible to her neighbors increases the contributions of supporters of the local majority party and decreases those of supporters of the minority party. Individuals contribute more when they perceive higher average contributions from own-party supporters in their area and contribute less if there is a higher share of own-party contributors."
     },
     {
       "title": "Inflation Expectations, Learning, and Supermarket Prices: Evidence from Survey Experiments",
@@ -169,7 +187,8 @@ window.siteData = {
       "year": "2017",
       "url": "https://ideas.repec.org/a/aea/aejmac/v9y2017i3p1-35.html",
       "description": "American Economic Association, vol. 9(3), pages 1-35, July.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "Information frictions play a central role in the formation of household inflation expectations, but there is no consensus about their origins. We address this question with novel evidence from survey experiments. We document two main findings. First, individuals in low inflation contexts have significantly weaker priors about the inflation rate. This finding suggests that rational inattention may be an important source of information frictions. Second, cognitive limitations also appear to be a source of information frictions: even when information about inflation statistics is available, individuals still place a significant weight on inaccurate sources of information, such as their memories of the price changes of the supermarket products they purchase. We discuss the implications of these findings for macroeconomic models and policymaking."
     },
     {
       "title": "Community monitoring interventions to curb corruption and increase access and quality in service delivery: a systematic review",
@@ -178,7 +197,8 @@ window.siteData = {
       "year": "2017",
       "url": "https://ideas.repec.org/a/taf/jdevef/v9y2017i4p462-499.html",
       "description": "Taylor & Francis Journals, vol. 9(4), pages 462-499, October.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "There is a belief that allowing communities monitoring power over providers could be beneficial for improving service delivery and reducing corruption in service delivery. In community monitoring interventions (CMIs), the community is given the opportunity to observe and assess providers’ performance and provide feedback to providers and politicians. This systematic review and meta-analysis appraises and synthesises evidence on the effects of CMIs on access and quality of service delivery and corruption outcomes in low and middle-income countries. The results indicate evidence of beneficial effects of CMIs on service delivery quality and on helping to curb corruption. The potential benefits of CMIs on access to and quality of services are likely to be higher when interventions are designed so that contact between both actors are promoted, and tools for citizens to monitor agents’ performance are provided. However, more rigorous research is needed to address this hypothesis."
     },
     {
       "title": "Learning from Potentially Biased Statistics",
@@ -187,7 +207,7 @@ window.siteData = {
       "year": "2016",
       "url": "https://ideas.repec.org/a/bin/bpeajo/v47y2016i2016-01p59-108.html",
       "description": "Economic Studies Program, The Brookings Institution, vol. 47(1 (Spring), pages 59-108.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper"
     },
     {
       "title": "Long-Run Effects Of Youth Training Programs: Experimental Evidence From Argentina",
@@ -196,7 +216,8 @@ window.siteData = {
       "year": "2016",
       "url": "https://ideas.repec.org/a/bla/ecinqu/v54y2016i4p1839-1859.html",
       "description": "Western Economic Association International, vol. 54(4), pages 1839-1859, October.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "We study the effect of a job training program for low income youth in Cordoba, Argentina. The program included life-skills and vocational training, as well as internships with private sector employers. Participants were allocated by means of a public lottery. We rely on administrative data on formal employment, employment spells and earnings, to establish the effects of the program in the short term (18 months), but also â€“ exceptionally for programs of this type in Latin America and in developing countries in general â€“ in the medium term (33 months) and in the long term (48 months). The results indicate sizable gains of about 8 percentage points in formal employment in the short term (about 32% higher than the control group), although these effects dissipate in the medium and in the long term. Contrary to previous results for similar programs in the region, the effects are substantially larger for men, although they also seem to fade in the long run. Program participants also exhibit earnings about 40% higher than those in the control group, and an analysis of bounds indicates that these gains result from both higher employment levels and higher wages. The detailed administrative records also allow us to shed some light on the possible mechanisms underlying these effects. A dynamic analysis of employment transitions indicates that the program operated through an increase in the persistence of employment rather than from more frequent entries into employment. The earnings effect and the higher persistence of employment suggest that the program was successful in increasing the human capital of participants, although the transient nature of these results may also reflect better matches from a program-induced increase in informal contacts or formal intermediation. (This abstract was borrowed from another version of this item.)"
     },
     {
       "title": "Estimating poverty transitions using repeated cross-sections: a three-country validation exercise",
@@ -205,7 +226,8 @@ window.siteData = {
       "year": "2015",
       "url": "https://ideas.repec.org/a/kap/jecinq/v13y2015i2p161-179.html",
       "description": "Springer;Society for the Study of Economic Inequality, vol. 13(2), pages 161-179, June.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper validates a recently proposed method to estimate intra-generational poverty transitions through repeated cross-sectional surveys. The technique allows the creation of a “synthetic panel” – done by predicting future or past household income or consumption using a set of simple modeling and error structure assumptions – and thus permits the estimation of lower and upper bounds of the joint distribution of poverty and non-poverty transitions. We validate the approach in three different settings where good panel data exist (Chile, Nicaragua, and Peru). In doing so, we also carry out a number of refinements to the validation procedure and expand the set of tests undertaken. The results are broadly encouraging in estimating the joint probabilities of poverty and non-poverty transitions between two periods in all three contexts. The approach is also robust to a broad set of additional “stress” and sensitivity tests, especially in cases where richer model specifications can be estimated. Finally, we test whether the scope of synthetic panels can be expanded in three new directions, namely comparing between income and consumption welfare measures; the robustness to longer intervals (the approach does especially well in predicting long-term poverty transition patterns); and the robustness to two transition lines instead of one. Overall, the results lend support to the application of this approach to settings where panel data are absent. Copyright Springer Science+Business Media New York 2015"
     },
     {
       "title": "Clases medias y vulnerabilidad a la pobreza. Reflexiones desde América Latina",
@@ -214,7 +236,8 @@ window.siteData = {
       "year": "2014",
       "url": "https://ideas.repec.org/a/elt/journl/v81y2014i322p281-307.html",
       "description": "Fondo de Cultura Económica, vol. 0(322), pages .281-307, abril-jun.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "Based on the definition of middle class as that population who face low probability of falling into poverty, we present some trends for Latin America. The percentage of middle class has increased significantly, from 21.9 percent in 2000 to 34.3 percent in 2012. Since 2009, the size of the middle class is greater than that of the poor. Nevertheless, being part of the middle class in the region is still a privileged position. In fact, the poor and the vulnerable concentrate approximately two thirds of the region’s population. In this sense, Latin America is most definitely not, at least not yet, a middle class society.// A partir de una definición de clase media que incluye a personas con baja probabilidad de caer en pobreza, este artículo presenta algunas tendencias para América Latina. El porcentaje de personas en clase media ha aumentado de 21.9% en 2000 a 34.3% en 2012, y desde el 2009 el tamaño de la clase media es mayor que el porcentaje de personas en pobreza. No obstante, formar parte de la clase media en América Latina sigue siendo una posición privilegiada. Los grupos en pobreza y vulnerabilidad concentran aún alrededor de dos terceras partes de la población total de la región. En este sentido, la región no se puede considerar una sociedad de clase media, al menos no por el momento."
     },
     {
       "title": "Work and tax evasion incentive effects of social insurance programs",
@@ -223,7 +246,8 @@ window.siteData = {
       "year": "2014",
       "url": "https://ideas.repec.org/a/eee/pubeco/v117y2014icp211-228.html",
       "description": "Elsevier, vol. 117(C), pages 211-228.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This article studies how social insurance programs shape individual's incentives to take up registered employment and to report earnings to the tax authorities. The analysis is based on a social insurance reform in Uruguay that extended healthcare coverage to the dependent children of registered private-sector workers. The identification strategy relies on a comparison between individuals with and without dependent children before and after the reform. The reform increased benefit-eligible registered employment by 1.6 percentage points (about 5% above the pre-reform level), mainly due to an increase in labor force participation rather than to movement from unregistered to registered employment. The shift was greater for parents with younger children and for cohabiting adults whose partners' jobs did not provide the couples' children with access to the benefit. Finally, the reform increased the incidence of underreporting of salaried earnings by about 4 percentage points (25% higher than the pre-reform level), mostly for workers employed at small firms. The increase in fiscal revenue from higher levels of registered employment was several orders of magnitude greater than the loss of revenue due to an increase in underreporting."
     },
     {
       "title": "Biased perceptions of income distribution and preferences for redistribution: Evidence from a survey experiment",
@@ -232,7 +256,8 @@ window.siteData = {
       "year": "2013",
       "url": "https://ideas.repec.org/a/eee/pubeco/v98y2013icp100-112.html",
       "description": "Elsevier, vol. 98(C), pages 100-112.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "Individual perceptions of income distribution play a vital role in political economy and public finance models, yet there is little evidence regarding their origins or accuracy. This study examines how individuals form these perceptions and explores their potential impact on preferences for redistribution. A tailored household survey provides original evidence on systematic biases in individuals' evaluations of their own relative position in the income distribution. The study discusses one of the mechanisms that may generate such biases, based on the extrapolation of information from endogenous reference groups, and presents some suggestive evidence that this mechanism has significant explanatory power. The impact of these biased perceptions on attitudes toward redistributive policies is studied by means of an experimental design that was incorporated into the survey, which provided consistent information on the own-ranking within the income distribution to a randomly selected group of respondents. The evidence suggests that those who had overestimated their relative position and thought that they were relatively richer than they were tend to demand higher levels of redistribution when informed of their true ranking."
     },
     {
       "title": "Welfare programs and labor supply in developing countries: experimental evidence from Latin America",
@@ -241,7 +266,8 @@ window.siteData = {
       "year": "2013",
       "url": "https://ideas.repec.org/a/spr/jopoec/v26y2013i4p1255-1284.html",
       "description": "Springer;European Society for Population Economics, vol. 26(4), pages 1255-1284, October.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This study looks at the effect of welfare programs on work incentives and the adult labor supply in developing countries. The analysis builds on the experimental evaluations of three programs implemented in rural areas: Mexico’s Programa Nacional de Educación, Salud y Alimentación (PROGRESA), Nicaragua’s Red de Protección Social, and Honduras’ Programa de Asignación Familiar. Comparable results for the three countries indicate that the effects that the programs have had on the labor supply of participating adults have been mostly negative but are nonetheless small and not statistically significant. However, the evidence does point to the presence of other effects on labor markets. In the case of PROGRESA, there is a small positive effect on the number of hours worked by female beneficiaries and a sizeable increase in wages among male beneficiaries and a resulting increase in household labor income. Moreover, PROGRESA seems to have reduced female labor-force participation in ineligible households. These results imply that large-scale interventions may have broader equilibrium effects. Copyright Springer-Verlag Berlin Heidelberg 2013"
     },
     {
       "title": "Informality and Contributory and Non-Contributory Programmes. Recent Reforms of the Social-Protection System in Uruguay",
@@ -250,7 +276,7 @@ window.siteData = {
       "year": "2013",
       "url": "https://ideas.repec.org/a/bla/devpol/v31y2013i5p531-551.html",
       "description": "Overseas Development Institute, vol. 31(5), pages 531-551, September.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper"
     },
     {
       "title": "Income and Beyond: Multidimensional Poverty in Six Latin American Countries",
@@ -259,7 +285,8 @@ window.siteData = {
       "year": "2013",
       "url": "https://ideas.repec.org/a/spr/soinre/v112y2013i2p291-314.html",
       "description": "Springer, vol. 112(2), pages 291-314, June.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper studies multidimensional poverty for Argentina, Brazil, Chile, El Salvador, Mexico and Uruguay for the period 1992–2006. The approach overcomes the limitations of the two traditional methods of poverty analysis in Latin America (income-based and unmet basic needs) by combining income with five other dimensions: school attendance for children, education of the household head, sanitation, water and shelter. The results allow a fuller understanding of the evolution of poverty in the selected countries. Over the study period, El Salvador, Brazil, Mexico and Chile experienced significant reductions in multidimensional poverty. In contrast, in urban Uruguay there was a small reduction in multidimensional poverty, while in urban Argentina the estimates did not change significantly. El Salvador, Brazil and Mexico, and rural areas of Chile display significantly higher and more simultaneous deprivations than urban areas of Argentina, Chile and Uruguay. In all countries, deprivation in access to proper sanitation and education of the household head are the highest contributors to overall multidimensional poverty. Copyright Springer Science+Business Media Dordrecht 2013"
     },
     {
       "title": "Assessing the Predictive Power of Vulnerability Measures:Evidence from Panel Data for Argentina and Chile",
@@ -268,7 +295,8 @@ window.siteData = {
       "year": "2012",
       "url": "https://ideas.repec.org/a/jid/journl/y2012v21i1p28-64.html",
       "description": "Ad libros publications inc., vol. 21(1), pages 28-64, March.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This article carries out a validation exercise of vulnerability measures as predictors of poverty at the aggregate and micro levels based on short and long term panel data for Argentina and Chile. It then compares their performance to that of deprivation indicators. The main findings indicate that while vulnerability measures are good predictors of poverty in the aggregate, the same does not occur at household level. These results imply that while useful, vulnerability estimates require incorporating shocks to attenuate biased estimates if they are to be used for targeting purposes."
     },
     {
       "title": "Economic Crises, Maternal and Infant Mortality, Low Birth Weight and Enrollment Rates: Evidence from Argentina’s Downturns",
@@ -277,7 +305,8 @@ window.siteData = {
       "year": "2012",
       "url": "https://ideas.repec.org/a/eee/wdevel/v40y2012i2p303-314.html",
       "description": "Elsevier, vol. 40(2), pages 303-314.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This study investigates the impact of recent crises in Argentina (including the severe downturn of 2001–02) on health and education outcomes. The identification strategy relies on both the inter-temporal and the cross-provincial co-variation between changes in regional GDP and outcomes by province. These results indicate significant and substantial effects of aggregate fluctuations on maternal and infant mortality and low birth weight, with countercyclical though not significant patterns for enrollment rates. Finally, provincial public expenditures on health and education are correlated with the incidence of low birth weight and school enrollment for teenagers, with worsening results associated with GDP declines."
     },
     {
       "title": "Recent Trends In Income Inequality In Latin America",
@@ -286,7 +315,8 @@ window.siteData = {
       "year": "2011",
       "url": "https://ideas.repec.org/a/col/000425/008446.html",
       "description": "The Latin American and Caribbean Economic Association - LACEA, vol. 0(Spring 20), pages 147-201.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper documents patterns and recent developments on income inequality in Latin America (LA). New comparative international evidence confirms that LA is a region of high inequality, although maybe not the highest in the world. Income inequality has fallen in the 2000s, suggesting a turning point from the substantial increases of the 1980s and 1990s. The fall in inequality is significant and widespread, but it does not seem to be based on strong fundamentals."
     },
     {
       "title": "Las asignaciones universales por hijo en Argentina: Impacto, discusión y alternativas",
@@ -295,7 +325,8 @@ window.siteData = {
       "year": "2010",
       "url": "https://ideas.repec.org/a/akh/journl/574.html",
       "description": "Instituto de Investigaciones Económicas, Facultad de Ciencias Económicas, Universidad Nacional de La Plata, vol. 0, pages 145-186, January-D.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper estimates the distributional impact of the universal child allowances in Argentina a few months after their implementation. The study makes a contribution by estimating the potential direct impact of the program on a set of variables, including monetary poverty and inequality. The paper argues that the country has moved in the right direction by implementing a large income transfer program, but stresses the need to improve its structure and ensure its sustainability, and points out some implementation alternatives."
     },
     {
       "title": "Payroll taxes, wages and employment: Identification through policy changes",
@@ -304,7 +335,8 @@ window.siteData = {
       "year": "2010",
       "url": "https://ideas.repec.org/a/eee/labeco/v17y2010i4p743-749.html",
       "description": "Elsevier, vol. 17(4), pages 743-749, August.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper investigates the effect of changes in payroll taxes on wages and employment in Argentina. The analysis, based on administrative data, focuses on the impact of a series of major changes in payroll taxes which varied across geographical areas. This setup offers two main advantages over previous studies. First, using longitudinal data, the variation in tax rates across space and time provides a plausible source of identification of their effects on employment and wages. Second, the use of legal tax rates for each area at each point in time provides a remedy for the measurement error bias raised by the use of empirical rates constructed from observed tax and wage bills. Once this bias is accounted for, the results indicate that changes in payroll tax rates are only partially shifted onto wages, and they point to the absence of any significant effect on employment."
     },
     {
       "title": "E pur si muove? Movilidad, pobreza y desigualdad en América Latina",
@@ -313,7 +345,8 @@ window.siteData = {
       "year": "2008",
       "url": "https://ideas.repec.org/a/akh/journl/562.html",
       "description": "Instituto de Investigaciones Económicas, Facultad de Ciencias Económicas, Universidad Nacional de La Plata, vol. 0(1-2), pages 121-159, January-D.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "The purpose of this paper is to contribute with the research of poverty and income distribution by analyzing an often overloooked dimension, social mobility. Given the data restrictions, we focus on intergenerational mobility. We compute three main indicators of mobility for Latin American countries at the beggining of the 1990s and 2000s: the social mobility index (Andersen, 2001), the intergenerational schooling mobility index (Birdsall y Székely, 1998), and the sibling correlation index (Dahan y Gaviria, 1999). Then, we analize the link between the evolution of mobility and that of inequality. The results indicate that mobility increased during the period under study, but there are differences among countries in the region. Also, we found evidence of a negative relation between mobility and inequality."
     },
     {
       "title": "Fertility and female labor supply in Latin America: New causal evidence",
@@ -322,7 +355,8 @@ window.siteData = {
       "year": "2007",
       "url": "https://ideas.repec.org/a/eee/labeco/v14y2007i3p565-573.html",
       "description": "Elsevier, vol. 14(3), pages 565-573, June.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "We study the effect of fertility on maternal labor supply in Argentina and Mexico exploiting a source of exogenous variability in family size first introduced by Angrist and Evans (1998) for the United States. We find that the estimates for the US can be generalized both qualitatively and quantitatively to the populations of two developing countries where, compared to the US, fertility is known to be higher, female education levels are much lower and there are fewer formal facilities for childcare. (This abstract was borrowed from another version of this item.)"
     },
     {
       "title": "Risk-adjusted poverty in Argentina: measurement and determinants",
@@ -331,7 +365,8 @@ window.siteData = {
       "year": "2007",
       "url": "https://ideas.repec.org/a/taf/jdevst/v43y2007i7p1189-1214.html",
       "description": "Taylor & Francis Journals, vol. 43(7), pages 1189-1214.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper presents a methodology for adjusting measures of income and poverty for the risk faced by a household. The approach draws on the standard economic concept of risk aversion, and it is based on the intuition that households will prefer a steady stream of income to a variable one with the same mean. Relying on a Constant Relative Risk Aversion utility function, we use panel data for Argentina to compute risk-adjusted income and poverty measures. At the aggregate level, we find that taking risk into account substantially increases the poverty headcount. Moreover, a regression analysis suggests that many household characteristics are correlated not only with the average income of the household over time, but also with its variability."
     },
     {
       "title": "Poverty Measurement Under Risk Aversion Using Panel Data",
@@ -340,7 +375,8 @@ window.siteData = {
       "year": "2004",
       "url": "https://ideas.repec.org/a/bpj/bejeap/vcontributions.3y2004i1n13.html",
       "description": "De Gruyter, vol. 3(1), pages 1-18, September.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper shows how to take into account risk aversion when measuring poverty under income variability. An application to British panel data suggests that income and poverty comparisons between the self-employed and other groups of households are sensitive to assumptions on the degree of risk aversion. The results point to the importance of panel data in order to account for risk aversion and income variability in the measurement of poverty."
     },
     {
       "title": "Argentina’s crises and the Poor, 1995-2002",
@@ -349,7 +385,8 @@ window.siteData = {
       "year": "2003",
       "url": "https://ideas.repec.org/a/akh/journl/533.html",
       "description": "Instituto de Investigaciones Económicas, Facultad de Ciencias Económicas, Universidad Nacional de La Plata, vol. 0(1-2), pages 55-96, January-D.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "This paper documents the impact of Argentina’s recent economic crises on different aspects of poverty, with a special focus on the economic collapse of 2002. We discuss the methodology of poverty measurement in Argentina and we use a simple rule to compensate for the lack of regional poverty figures until 2001, providing consistent series of urban poverty estimates at the national and regional levels. We then present series of short term dynamics of poverty, decomposing the changes in every period of time with panel data. Finally, we analyse the determinants of poverty, with a focus on accounting for observed differences in income (and thereby poverty) between October 2001 and May 2002. Among other conclusions, we find in our decomposition analysis that households without the means to diversify their income sources suffered more than others from the crisis of 2002."
     },
     {
       "title": "Transient and chronic poverty in turbulent times: Argentina 1995-2002",
@@ -358,7 +395,8 @@ window.siteData = {
       "year": "2003",
       "url": "https://ideas.repec.org/a/ebl/ecbull/eb-03i30003.html",
       "description": "AccessEcon, vol. 9(3), pages 1-12.",
-      "linkLabel": "View on IDEAS"
+      "linkLabel": "Open paper",
+      "abstract": "Using panel data, poverty in Argentina is decomposed into transient and chronic components. Overall poverty has increased in large part due to higher chronic poverty. While many household characteristics have similar impacts on both chronic and transient poverty, there are differences. Households with self-employed workers and business owners have higher levels of transient but not chronic poverty. The reverse is observed for households with public sector workers."
     }
   ],
   "workingPapers": [
@@ -366,602 +404,683 @@ window.siteData = {
       "title": "Location, Housing and Employment Opportunities - Evidence from a Randomized Controlled Trial with Vulnerable Youth in France",
       "url": "https://ideas.repec.org/p/sad/wpaper/180.html",
       "description": "Vera Chiodi & Bruno Crépon & Guillermo Cruces. Working Papers. 180, Universidad de San Andres, Departamento de Economia, revised Feb 2026.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Housing conditions, residential location, and employment are key determinants of individual welfare, particularly for vulnerable populations facing credit constraints and information frictions. We examine how housing assistance affects employment outcomes using a randomized controlled trial in France that provided vulnerable youth (aged 18–25) with both job search assistance and housing support, including rent guarantees. The program successfully improved housing conditions: beneficiaries experienced better accommodation stability, reduced precarious situations, and increased satisfaction with their housing. However, despite substantial social worker support, the program did not improve employment rates, contract types, or earnings. Strikingly, beneficiaries moved to neighborhoods with objectively worse employment opportunities and lower socioeconomic indicators, yet reported higher satisfaction with their residential areas. This apparent paradox reveals that beneficiaries appear to prioritize housing affordability and conditions over employment access. Our results suggest that successful interventions may need to explicitly balance housing improvements with maintaining access to employment opportunities.",
       "status": "2026"
     },
     {
       "title": "Does Generative AI Narrow Education-Based Productivity Gaps? Evidence from a Randomized Experiment",
       "url": "https://ideas.repec.org/p/nbr/nberwo/34851.html",
       "description": "Guillermo Cruces & Diego Fernández Meijide & Sebastian Galiani & Ramiro H. Gálvez & María Lombardi. NBER Working Papers. 34851, National Bureau of Economic Research, Inc.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Does generative artificial intelligence (AI) reinforce or reduce productivity differences across workers? Existing evidence largely studies AI within firms and occupations, where organizational selection compresses educational heterogeneity, leaving unclear whether AI narrows productivity gaps across individuals with substantially different levels of formal education. We address this question using a randomized online experiment conducted outside firms, in which 1,174 adults aged 25–45 with heterogeneous educational backgrounds complete an incentivized, workplace-style business problem-solving task. The task is a general (not domain-specific) exercise, and participants perform it either with or without access to a generative-AI assistant. Unlike prior work that studies heterogeneity within relatively homogeneous worker samples, our design targets the between–education-group productivity gap as the primary estimand. We find that AI increases productivity for all participants, with substantially larger gains for lower-education individuals. In the absence of AI access, higher-education participants outperform lower-education participants by 0.548 standard deviations; with AI access, this gap falls to 0.139 standard deviations, implying that generative AI closes three-quarters of the initial productivity gap. We interpret this pattern as evidence that generative AI narrows effective productivity differences in task execution by relaxing constraints that are more binding for lower-education individuals, even though underlying skill differences remain, as reflected in persistent education gaps in task performance and in a follow-up exercise without AI assistance.",
       "status": "2026"
     },
     {
       "title": "Exploring the Gender Divide in Real Estate Ownership and Property Tax Compliance",
       "url": "https://ideas.repec.org/p/wbk/wbrwps/11060.html",
       "description": "Flores, Tatiana & Cruces,Guillermo & Bermúdez,Jose Carlo & De Gouvea Scot de Arruda, Thiago & Schiavoni, Juan Luis & Tortarolo, Dario. Policy Research Working Paper Series. 11060, The World Bank.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper investigates gender disparities in residential property ownership and tax compliance in a large Argentine municipality using detailed tax administrative data. While ownership is evenly distributed between women, men, and co-owned properties up to the 40th percentile of the value distribution, higher-value properties exhibit significant gender disparities, with women’s share dropping to less than 20% in the top 1%. Tax compliance increases with property value, with an average evasion rate of 46%, and men and women are equally likely to meet their tax obligations across the distribution. However, women face slightly higher effective tax rates due to owning lower-value properties, which are disproportionately affected by a mildly regressive tax schedule. Gender responses to enforcement measures are also comparable. A soft randomized communication campaign significantly increased timely payments equally for both men and women, with men responding more quickly. Similarly, the findings show no gender-based differences in responses to macroeconomic shocks such as COVID-19. The study underscores the role of property tax in promoting equitable revenue mobilization and highlights the importance of gender-disaggregated data for informing tax policy and enforcement strategies.",
       "status": "2025"
     },
     {
       "title": "Large Firms and the Intensive Margin of Labor Informality Evidence from an Enforcement Intervention in Peru",
       "url": "https://ideas.repec.org/p/sad/wpaper/172.html",
       "description": "Mariano Bosch & Guillermo Cruces & Stephanie González & María Teresa Silva-Porto. Working Papers. 172, Universidad de San Andres, Departamento de Economia, revised Sep 2025.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "In developing countries, informal labor is not only employed by illegal or unregistered firms but also by legal firms that hire workers informally, known as the intensive margin of labor informality. Reducing this type of work may have ambiguous effects on formal employment, depending on factors such as firm size and productivity. In collaboration with Peru’s labor inspection authority, we conducted a randomized mailing experiment targeting large firms with a high propensity for employing workers informally. The authority sent letters with either deterrence messages detailing fines for non-compliance or social norms messages highlighting the positive impacts of formality. We analyzed the impact of this intervention on formal employment levels over the following two years using monthly administrative data. The treated firms (particularly those in the deterrence treatment arm) and larger firms increased their formal employment levels. However, these increases followed a seasonal pattern coinciding with the high labor demand during the tourist season, suggesting that prior to the intervention, firms were employing temporary workers informally. The higher perceived cost of non-compliance led them to formalize some of these workers. The informal hiring of seasonal workers by these firms appears to have been motivated by basic tax evasion, and the absence of a negative effect on firm-level formal employment indicates that the firms were exploiting rents from low enforcement of regulations.",
       "status": "2025"
     },
     {
       "title": "Long-run Effects of Universal Pre-Primary Education Expansion: Evidence from Argentina",
       "url": "https://ideas.repec.org/p/nbr/nberwo/34552.html",
       "description": "Samuel Berlinski & Guillermo Cruces & Sebastian Galiani & Paul Gertler & Fabian Gonzalez. NBER Working Papers. 34552, National Bureau of Economic Research, Inc.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We study the long-run effects of a large public expansion of pre-primary education in Argentina. Between 1993 and 1999 the federal government financed the construction of new preschool classrooms targeted to departments with low base- line enrollment and high poverty, creating roughly 186,000 additional places. We link administrative records on classroom construction to four population censuses and estimate difference-in-differences models that compare treated and untreated cohorts across high- and low-construction departments. An additional preschool seat per child increases post-kindergarten schooling by about 0.5 years, raising the probability of completing secondary school by 11.9 percentage points and of enrolling in post-secondary education by 7.1 percentage points. For women, access to the program also reduces completed fertility: an additional seat lowers the number of live births per woman by 0.18, and we find no evidence that selective migration biases these estimates. We find little impact on labor-market outcomes at the census date, consistent with beneficiaries still being in school or in the early stages of their careers. A benefit-cost analysis based on the estimated schooling gains, standard Mincer returns, and observed construction and operating costs yields a benefit-cost ratio of about 11 and an internal rate of return of 13%. Our findings show that universal at-scale pre-primary expansions in middle-income countries can generate sizable improvements in human capital and demographic outcomes at relatively low fiscal cost.",
       "status": "2025"
     },
     {
       "title": "Unraveling the Paradox of Anticorruption Messaging: Experimental Evidence from a Tax Administration Reform",
       "url": "https://ideas.repec.org/p/idb/brikps/13555.html",
       "description": "Ajzenman, Nicolás & Ardanaz, Martín & Cruces, Guillermo & Feierherd, Germán & Lunghi, Ignacio. IDB Publications (Working Papers). 13555, Inter-American Development Bank.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Recent literature highlights a paradox in corruption prevention messaging: instead of reducing tolerance for corruption, such campaigns can inadvertently intensify it by priming the existence of corruption while failing to diminish citizens beliefs about government misbehavior. Building on Cheeseman and Peiffer (2022), which demonstrates that messages focused on combating corruption often backfire among individuals with preexisting negative perceptions of corruption, we posit that an effective strategy to mitigate backfiring involves shifting those pessimistic perceptions before delivering the corruption eradication messages. To test our hypothesis, we conducted a randomized survey experiment within the context of a major institutional reform to reduce tax agency corruption in Honduras. Results confirm the backfiring findings of previous literature, but also show that our approach effectively mitigates perceived corruption and diminishes the propensity for tax evasion, especially among skeptics.",
       "status": "2024"
     },
     {
       "title": "Effects of Hiring Credits on the Argentine Labor Market",
       "url": "https://ideas.repec.org/p/dls/wpaper/0342.html",
       "description": "Octavio Bertín & Guillermo Cruces & Fabian Enrique Gonzalez & Ignacio Lunghi & Azul Menduiña. CEDLAS, Working Papers. 0342, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This study assesses the impact of a hiring credit policy introduced in Argentina in 2014 on various labor outcomes of firms. The reform established differentiated labor cost reductions in the employers contributions to be paid for their new employees, according to the size that firms had at a date prior to the announcement of the policy. Using a differences-in-differences approach and employer-employee administrative data, we analyze the interventionâ€™s effects. Our results show a significant 4.1 percentage point increase in employment growth rates for small firms compared to medium-sized ones, persisting for several years post-reform. This paper also explores the relationship between the interventionâ€™s effects and sector labor informality; we find a significant 6.2 percentage point increase in employment growth rates for firms in high-informality sector, whereas no significant effect is found for firms in low-informality sectors.",
       "status": "2024"
     },
     {
       "title": "From Flat to Fair? The Effects of a Progressive Tax Reform",
       "url": "https://ideas.repec.org/p/nbr/nberwo/33286.html",
       "description": "Nicolas Ajzenman & Guillermo Cruces & Ricardo Perez-Truglia & Darío Tortarolo & Gonzalo Vazquez-Bare. NBER Working Papers. 33286, National Bureau of Economic Research, Inc.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We study the effects of a progressive tax reform on tax compliance, using a research design that distinguishes between two channels. First, using a quasi-experimental design, we estimate the direct effects of the reform—namely, how changes in a household’s own tax rate affect its own compliance. Second, leveraging a large-scale natural field experiment, we estimate the indirect effects: holding a household’s own tax rate constant, we examine how its compliance is influenced by changes in the tax rates of other, poorer or richer, households. We find substantial direct effects: lowering taxes for poor households increases their compliance, while raising taxes for rich households reduces theirs. We also find sizable indirect effects: when poor households learn about the tax hikes on the rich, their stated perceptions of tax fairness and their actual compliance both increase. Among rich households, learning about tax cuts for the poor also improves perceived fairness, but, if anything, reduces compliance. Using an additional reform and follow-up field experiment conducted a year later, we replicate both the quasi-experimental and experimental results. Together, our findings show that tax compliance responds not only to a household’s own tax burden but also to its perception of fairness of the broader tax system. Our results also underscore the potential disconnect between stated and revealed preferences for redistribution. Finally, we present a counterfactual analysis that illustrates the implications of the direct and indirect effects for designing progressive tax reforms.",
       "status": "2024"
     },
     {
       "title": "Ajustando la Imagen de la Distribución del Ingreso en Argentina: Encuestas y Registros Administrativos",
       "url": "https://ideas.repec.org/p/dls/wpaper/0336.html",
       "description": "Iván Albina & Luis Laguinge & Leonardo Gasparini & Leopoldo Tornarolli & Guillermo Cruces & Santiago Afonso. CEDLAS, Working Papers. 0336, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Este trabajo provee nuevas estimaciones de la distribución del ingreso en Argentina, combinando microdatos de encuestas de hogares con información de registros administrativos. El trabajo hace uso de información públicamente disponible sobre salarios de trabajadores formales, ingresos de monotributistas, autónomos y contribuyentes del impuesto a las ganancias, jubilaciones y pensiones, y beneficios de los programas nacionales de transferencias de ingresos. En conjunto, estos ajustes permiten tener una imagen más cercana a la realidad de la distribución del ingreso en Argentina.",
       "status": "2024"
     },
     {
       "title": "Generative Artificial Intelligence and Its Implications for Labor Markets in Developing Countries: A Review Essay",
       "url": "https://ideas.repec.org/p/dls/wpaper/0343.html",
       "description": "Guillermo Cruces & Verónica Amarante & Estefanía Lotitto. CEDLAS, Working Papers. 0343, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "The unprecedented developments in artificial intelligence technology and its recent widespread availability hold transformative potential to reshape global economic dynamics and labor markets, though opinions on its effects vary greatly. Transformative or not, the irruption of AI has sparked ample public discussion as well as the rapid development of theoretical and empirical approaches to understand it. This review essay discusses recent perspectives, theories, and empirical evidence on the matter, and adds a perspective of the implications of this technology and of the policy discussion it has sparked, from the perspective of developing countriesâ€™ economies. The latter is motivated by the relative scarcity of such perspectives in the current public debate, which seems to have minimized the potential effects on the interaction of labor markets between developing and developed countries, and on the potentially different within-country effects at different levels of development.",
       "status": "2024"
     },
     {
       "title": "Design of Partial Population Experiments with an Application to Spillovers in Tax Compliance",
       "url": "https://ideas.repec.org/p/dls/wpaper/0337.html",
       "description": "Guillermo Cruces & Dario Tortarolo & Gonzalo Vazquez-Bare. CEDLAS, Working Papers. 0337, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We develop a framework to analyze partial population experiments, a generalization of the cluster experimental design where clusters are assigned to different treatment intensities. Our framework allows for heterogeneity in cluster sizes and outcome distributions. We study the large-sample behavior of OLS estimators and cluster-robust variance estimators and show that (i) ignoring cluster heterogeneity may result in severely underpowered experiments and (ii) the cluster-robust variance estimator may be upward-biased when clusters are heterogeneous. We derive formulas for power, minimum detectable effects, and optimal cluster assignment probabilities. All our results apply to cluster experiments, a particular case of our framework. We set up a potential outcomes framework to interpret the OLS estimands as causal effects. We implement our methods in a large-scale experiment to estimate the direct and spillover effects of a communication campaign on property tax compliance. We find an increase in tax compliance among individuals directly targeted with our mailing, as well as compliance spillovers on untreated individuals in clusters with a high proportion of treated taxpayers.",
       "status": "2024"
     },
     {
       "title": "Conditional Cash Transfers, Debit Cards and Financial Inclusion: Experimental Evidence from Argentina",
       "url": "https://ideas.repec.org/p/idb/brikps/13034.html",
       "description": "Cruces, Guillermo. IDB Publications (Working Papers). 13034, Inter-American Development Bank.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Cash transfer and other social protection programs in developing countries have often been accompanied by measures to foster financial inclusion, such as the adoption and use of bank accounts and electronic means of payments. Argentina's social benefits are paid in bank accounts and accessed through debit cards. With the simultaneous objective of fostering formality among beneficiaries and stores, the use of debit cards for purchases has been incentivized by means of additional subsidies. We studied the low take-up of these extra benefits by means of a field experiment involving 400,000 beneficiaries of Argentinas largest conditional cash-transfer program (with 2.2 million beneficiaries who are the parents of four million children, 40% of the countrys 0-17-year olds). By using their debit card to spend the allowance, rather than withdrawing cash from ATMs, they can receive a rebate of 15% of their expenditures. However, they systematically fail to claim this benefit: only about 25% of beneficiaries receive this transfer. Our experiment provided information about the effectiveness of an information campaign conducted via text messages or through on-screen messages at ATM machines. The campaign increased purchases with debit cards and subsequent rebates significantly but not substantially in the short run. However, beneficiaries who increased their use of debit cards do not exhibit a higher probability of having access to credit through the financial system, nor higher levels of formal employment. The results indicate that cultural factors (a preference for cash), administrative hassle and citizen security issues are relevant issues that limit the potential of financial inclusion through increased use of digital means of payment.",
       "status": "2023"
     },
     {
       "title": "Trusting Covid-19 recommendations: The role of experts, markets and governments",
       "url": "https://ideas.repec.org/p/idb/brikps/13055.html",
       "description": "Albornoz, Facundo & Cruces, Guillermo & Lombardi, María. IDB Publications (Working Papers). 13055, Inter-American Development Bank.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Do individuals trust experts' advice? Does the sector represented by these experts matter for trust and compliance? Do individuals prefer the public or the private sector for large-scale responses to events such as the pandemic? We answer these questions by means of a large-scale survey on a representative sample of 9,444 respondents from Argentina, Bolivia, Colombia, Ecuador, Mexico, Peru and Uruguay. We study if opinions on risk-mitigating actions against Covid-19 are shaped by expert recommendations and the sectors they represent. We identify a backlash against experts' recommendations that is robust across expert sectors and countries, and more pronounced for recommendations that require more effort to implement. We also find that, even for individuals with a low level of trust in the public sector, there is widespread agreement that governments should be preferred over the private sector to lead the production and distribution of vaccines. Most respondents, even those expressing distrust in governments, believe that governments should get involved in producing the vaccine for Covid-19, either exclusively or in a partnership with the private sector. This result is stronger for the distribution of the vaccine than for its production.",
       "status": "2023"
     },
     {
       "title": "Dishonesty and Public Employment",
       "url": "https://ideas.repec.org/p/sad/wpaper/168.html",
       "description": "Guillermo Cruces & Martín A. Rossi & Ernesto Schargrodsky. Working Papers. 168, Universidad de San Andres, Departamento de Economia, revised Nov 2023.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We exploit a natural experiment to study the causal link between dishonest behavior and public employment. When military conscription was mandatory in Argentina, eligibility was determined by both a lottery and a medical examination. To avoid conscription, individuals at risk of being drafted had strong incentives to cheat in their medical examination. These incentives varied with the lottery number. Exploiting this exogenous variation, we first present evidence of cheating in medical examinations. We then show that individuals with a higher probability of having cheated in health checks exhibit a higher propensity to occupy non-meritocratic public sector jobs later in life.",
       "status": "2023"
     },
     {
       "title": "Backlash Against Expert Recommendations: Reactions to COVID-19 Advice in Latin America",
       "url": "https://ideas.repec.org/p/cpr/ceprdp/17506.html",
       "description": "Albornoz-Crespo, Facundo & Bottan, Nicolas & Cruces, Guillermo & Hoffmann, Bridget & Lombardi, María. CEPR Discussion Papers. 17506, C.E.P.R. Discussion Papers.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Health recommendations are key to tackling public health crises. We study the effect of attributing health recommendations to experts on agreement using a series of large survey experiments in twelve Latin American countries. We document a robust backlash against experts: agreement with recommendations is lower when these are phrased as originating from an expert. This backlash is only present for the recommendations that are specific to the pandemic and does not depend on the type of expert (academic, public or private sector). For individuals initially reporting low levels of trust in experts, agreement with all recommendations is lower when they are attributed to experts as compared to individuals who trust experts, indicating that anti-intellectualism plays a role in expert backlash but cannot fully explain the differential pattern of expert backlash that we observe across recommendations. We find suggestive evidence that individual traits and perceptions of social pressure could contribute to these backlash effects.",
       "status": "2022"
     },
     {
       "title": "Design of two-stage experiments with an application to spillovers in tax compliance",
       "url": "https://ideas.repec.org/p/ifs/ifsewp/22-32.html",
       "description": "Guillermo Cruces & Dario Tortarolo & Gonzalo Vazquez-Bare. IFS Working Papers. W22/32, Institute for Fiscal Studies.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
       "status": "2022"
     },
     {
       "title": "Information, Price, and Barriers to Adoption and Usage of Mobile Money Evidence from a Field Experiment in The Gambia",
       "url": "https://ideas.repec.org/p/lvl/piercr/2020-17.html",
       "description": "Guillermo Cruces Author-Name: Hamidou Jawara Author-Name: Adama Touray Author-Name: Fatoumata Singhateh. Working Papers PIERI. 2020-17, PEP-PIERI.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Mobile money has been heralded as a way to foster financial inclusion. While it has become popular in developing countries, most notably in African nations, there are still strong barriers to its adoption and usage. The purpose of this study is to examine the extent to which a lack of information and high prices are limiting factors in the adoption of mobile money. We implemented a simple randomized controlled trial among a group of difficult-to- access potential users: mobile phone users in The Gambia who had opened mobile money wallets but had not made a transaction. We offered meaningful price discounts on withdrawal charges, and made these discounts salient by reminding users about them every month for a period of six months. Our analysis measures different dimensions of mobile money use by drawing from administrative mobile phone company records. We also carried out a post- treatment survey to gauge knowledge about, and attitudes towards, mobile money. Our results indicate that treated individuals were substantially more aware than controls about the uses of mobile wallets and about the meaningful discounts of 15% and 30% offered. However, only a small fraction of treated individuals started using mobile wallets, and the difference was not statistically significant. Perceptions of safety, trust in the platform, and service reliability were not significantly different between treated and controls. However, treated individuals were more likely to perceive the service charges to be expensive. We interpret this as evidence that our population of interest was uninformed about the platform at large. While our treatment increased awareness about its capabilities and operation, potentially fostering its adoption, it also increased awareness of the relatively high fees it involves, which in turn limited usage. Both a lack of information and high prices need to be addressed to foster the adoption and usage of mobile money in developing countries.",
       "status": "2020"
     },
     {
       "title": "It takes two to tango: Labour responses to an income tax holiday in Argentina",
       "url": "https://ideas.repec.org/p/not/notnic/2020-07.html",
       "description": "Dario Tortarolo & Guillermo Cruces & Victoria Castillo. Discussion Papers. 2020-07, Nottingham Interdisciplinary Centre for Economic and Political Research (NICEP).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We exploit a large, quasi-randomized, 2.5-year-long income tax holiday to identify intertemporal labor responses of high-wage earners to net wage changes. In August 2013, the Argentine government exempted a group of wage earners from the income tax for 2.5 years while leaving in place the tax on other high-wage earners. Eligibility was based on whether past wage earnings were below a fixed threshold, thus levying sharply different marginal and average tax rates—effectively 0% for workers below the threshold. Using rich population-wide administrative data and a regression discontinuity design, we estimate a precise and very small wage earnings elasticity of 0.017 for this large, salient, and temporary income tax change. Responses are larger for more flexible outcomes (overtime hours) and for more elastic groups (job switchers and managers). We also find avoidance responses from new entrants who faced no tax if their first monthly wage was below the fixed threshold. This strategic entry below the threshold to dodge taxes required coordination with employers. Our findings indicate rigidities in the labor market that require employer-employee cooperation to be overcome for wage earners to be able to respond to tax changes.",
       "status": "2020"
     },
     {
       "title": "Tax Audits as Scarecrows: Evidence from a Large-Scale Field Experiment",
       "url": "https://ideas.repec.org/p/dls/wpaper/0254.html",
       "description": "Marcelo Bergolo & Rodrigo Ceni & Guillermo Cruces & Matias Giaccobasso & Ricardo Perez Truglia. CEDLAS, Working Papers. 0254, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "The canonical model of Allingham and Sandmo (1972) predicts that firms evade taxes by optimally trading off between the costs and benefits of evasion. However, there is no direct evidence that firms react to audits in this way. We conducted a large-scale field experiment in collaboration with Uruguay’s tax authority to address this question. We sent letters to 20,440 small- and medium-sized firms that collectively paid more than 200 million dollars in taxes per year. Our letters provided exogenous yet nondeceptive signals about key inputs for their evasion decisions, such as audit probabilities and penalty rates. We measured the effect of these signals on their subsequent perceptions about the auditing process, based on survey data, as well as on the actual taxes paid, based on administrative data. We find that providing information about audits had a significant effect on tax compliance but in a manner that was inconsistent with Allingham and Sandmo (1972). Our findings are consistent with an alternative model, risk-as-feelings, in which messages about audits generate fear and induce probability neglect. According to this model, audits may deter tax evasion in the same way that scarecrows frighten off birds.",
       "status": "2019"
     },
     {
       "title": "A short episodic history of income distribution in Argentina",
       "url": "https://ideas.repec.org/p/hal/journl/hal-01784299.html",
       "description": "Facundo Alvaredo & Guillermo Cruces & Leonardo Gasparini. Post-Print. hal-01784299, HAL.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "In this paper, we use tax and household survey data to assess the history of income distribution in Argentina since the beginning of the 20th century. Until the 1970s, the country experienced a fall in inequality in spite of lower income growth. Since then, inequality has generally increased possibly as a result of large-scale shocks such as macroeconomic crises and reform attempts, resulting in a convergence towards traditionally more unequal neighboring countries.",
       "status": "2018"
     },
     {
       "title": "Trade Liberalization and Informality in Argentina: Exploring the Adjustment Mechanisms",
       "url": "https://ideas.repec.org/p/dls/wpaper/0229.html",
       "description": "Guillermo Cruces & Guido Porto & Mariana Viollaz. CEDLAS, Working Papers. 0229, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper studies the link between trade reforms and labor informality in Argentina using a long time series spanning the 1980-2001 period. We explore cross-section mechanisms, that operate at the industry level, and time-series mechanisms, that operate at a general equilibrium level. We argue that firms can substitute formal with informal workers to smooth a negative trade shock. In this setting, industries exposed to larger tariffs cuts could experience increases in informality. In general equilibrium, there can be additional aggregate impacts in both manufacturing and non-traded sectors through workers reallocation between sectors, wage adjustments, and firm entry and exit. Using the cross-section variation of the data and an instrumental variable strategy we explore empirically the cross-section mechanisms. We find that reductions in industry tariffs increase labor informality, and the effect is differentially stronger in industries with a larger share of small size firms. Using the time-series variation of the data, we are able to identify some of the general equilibrium effects. We find that the fall in the average national tariff decreased aggregate informality in the manufacturing sector but increased it in the non-traded sector.",
       "status": "2018"
     },
     {
       "title": "Living Up to Expectations: How Job Training Made Women Better Off and Men Worse Off",
       "url": "https://ideas.repec.org/p/nbr/nberwo/23264.html",
       "description": "Paloma Acevedo & Guillermo Cruces & Paul Gertler & Sebastian Martinez. NBER Working Papers. 23264, National Bureau of Economic Research, Inc.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We study the interaction between job and soft skills training on expectations and labor market outcomes in the context of a youth training program in the Dominican Republic. Program applicants were randomly assigned to one of 3 modalities: a full treatment consisting of hard and soft skills training plus an internship, a partial treatment consisting of soft skills training plus an internship, or a control group. We find strong and lasting effects of the program on personal skills acquisition and expectations, but these results are markedly different for young men and young women. Shortly after completing the program, both male and female participants report increased expectations for improved employment and livelihoods. This result is reversed for male participants in the long run, a result that can be attributed to the program’s negative short-run effects on labor market outcomes for males. While these effects seem to dissipate in the long run, employed men are substantially more likely to be searching for another job. On the other hand, women experience improved labor market outcomes in the short run and exhibit substantially higher levels of personal skills in the long run. These results translate into women being more optimistic, having higher self-esteem and lower fertility in the long run. Our results suggest that job-training programs of this type can be transformative – for women, life skills mattered and made a difference, but they can also have a downside if, like in this case for men, training creates expectations that are not met.",
       "status": "2017"
     },
     {
       "title": "Educational Upgrading and Returns to Skills in Latin America: Evidence from a Supply-Demand Framework",
       "url": "https://ideas.repec.org/p/nbr/nberwo/24015.html",
       "description": "Sebastian Galiani & Guillermo Cruces & Pablo Acosta & Leonardo C. Gasparini. NBER Working Papers. 24015, National Bureau of Economic Research, Inc.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper documents the evolution of wage differentials and the supply of workers by educational level for sixteen Latin American countries over the period 1991-2013. We find a pattern of rather constant rise in the relative supply of skilled and semi-skilled workers over the period. Whereas the returns to secondary education fell over time, in contrast, the returns to tertiary education display a remarkable changing pattern common to almost all economies: significant increase in the 1990s, strong fall in the 2000s and a deceleration of that fall in the 2010s. We conclude that supply-side factors seem to have limited explanatory power relative to demand-side factors in accounting for changes in the wage gap between workers with tertiary education and the rest.",
       "status": "2017"
     },
     {
       "title": "Housing Subsidies, Labor Supply and Household Welfare. Experimental Evidence from Argentina",
       "url": "https://ideas.repec.org/p/dbl/dblwop/971.html",
       "description": "Alzúa, María Laura & Amendolaggine, Julián & Cruces, Guillermo & Greppi, Catrihel. Research Department working papers. 971, CAF Development Bank Of Latinamerica.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We study the impact of a social housing policy program implemented in Argentina, exploiting the random assignment rule to identify the policy's causal effect on labor market and other socio-economic outcomes. In particular, this paper evaluates an intervention that combines access to quality housing at a heavily subsidized cost, the granting of property rights, and relocation in a suburb of Rosario, Argentina's third largest city. In a preliminary analysis, based on administrative social security records, we find that the policy generates a reduction in registered employment by more than 7 percentage points, especially for women and beneficiaries over 50 years of age. We went further and conducted a purposely-designed household survey among a sample of beneficiaries in order to understand the underlying mechanisms and welfare implications of these results. All in all, our analysis points to the existence of an income effect and confirms the registered fall in formal employment and labor force participation. We do not find an increase in informalization, although beneficiaries' perceived access to local job opportunities are signicantly reduced.",
       "status": "2016"
     },
     {
       "title": "The Growth-Employment-Poverty Nexus in Latin America in the 2000s: Cross-Country Analysis",
       "url": "https://ideas.repec.org/p/dls/wpaper/0200.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. CEDLAS, Working Papers. 0200, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "In the great majority of Latin American countries in the 2000s, economic growth took place and brought about improvements in almost all labour market indicators and consequent reductions in poverty rates. Across countries, economic growth was not all that mattered; external factors were particularly important for changes in labour market conditions, while reductions in poverty were strongly related to improvements in earnings and employment indicators. Although the 2008 crisis affected some countries differently from others, nearly all labour market indicators were at least as high or higher by 2012 than immediately before the crisis in all countries but one.",
       "status": "2016"
     },
     {
       "title": "Learning from Potentially-Biased Statistics: Household Inflation Perceptions and Expectations in Argentina",
       "url": "https://ideas.repec.org/p/nbr/nberwo/22103.html",
       "description": "Alberto Cavallo & Guillermo Cruces & Ricardo Perez-Truglia. NBER Working Papers. 22103, National Bureau of Economic Research, Inc.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "When forming expectations, households may be influenced by the possibility that the information they receive is biased. In this paper, we study how individuals learn from potentially-biased statistics using data from both a natural and a survey-based experiment obtained during a period of government manipulation of inflation statistics in Argentina (2006-2015). This period is interesting because of the attention to inflation information and the availability of both official and unofficial statistics. Our evidence suggests that rather than ignoring biased statistics or navively taking them at face value, households react in a sophisticated way, as predicted by a Bayesian learning model, effectively de-biasing the official data to extract all its useful content. We also find evidence of an asymmetric reaction to inflation signals, with expectations changing more when the inflation rate rises than when it falls. These results are useful for understanding the formation of inflation expectations in less extreme contexts than Argentina, such as the United States and Europe, where experts may agree that statistics are unbiased but households do not.",
       "status": "2016"
     },
     {
       "title": "Inflation Expectations, Learning and Supermarket Prices: Evidence from Survey Experiments",
       "url": "https://ideas.repec.org/p/feb/artefa/00542.html",
       "description": "Alberto Cavallo & Guillermo Cruces & Ricardo Perez-Truglia. Artefactual Field Experiments. 00542, The Field Experiments Website.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Information frictions play a central role in the formation of household inflation expectations, but there is no consensus about their origins. We address this question with novel evidence from survey experiments. We document two main findings. First, individuals in lower-inflation contexts have significantly weaker priors about the inflation rate. This finding suggests that rational inattention may be an important source of information frictions. Second, cognitive limitations also appear to be a source of information frictions: even when information about inflation statistics is made readily available, individuals still place a significant weight on less accurate sources of information, such as their memories of the price changes of the supermarket products they purchase. We discuss the implications of these findings for macroeconomic models and policy-making.",
       "status": "2016"
     },
     {
       "title": "The Anatomy of Behavioral Responses to Social Assistance when Informal Employment is High",
       "url": "https://ideas.repec.org/p/dls/wpaper/0204.html",
       "description": "Marcelo Bergolo & Guillermo Cruces. CEDLAS, Working Papers. 0204, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "The disincentive effects of social assistance programs on registered (or formal) employment are a first order policy concern in developing and middle income countries. Means tests determine eligibility with respect to some income threshold, and governments can only verify earnings from registered employment. The loss of benefit at some level of formal earnings is an implicit tax – a notch – that results in a strong disincentive for formal employment, and there is extensive evidence on its effects. We study an income-tested program in Uruguay and extend this literature by developing an anatomy of the behavioral responses to this program and by establishing its welfare implications in full. Our identification strategy is based on a sharp discontinuity in the program’s eligibility rule. We rely on information on the universe of applicants to the program for the period 2004-2012 (about 400,000 individuals) from the program’s records, from administrative data on registered employment from the social security administration, and from a complementary follow-up survey with information on informal work. We construct the anatomy of the program’s effects along four dimensions. First, we establish that, as predicted by the theory, beneficiaries respond to the program’s incentives by reducing their levels of registered employment by about 8 percentage points. Second, we find substantial heterogeneity in these effects: the program induces a larger reduction of formal employment for individuals with a medium probability to be a registered employee, suggesting some form of segmentation – those with a low propensity to work formally do not respond to the financial incentives of the program, probably because they have limited opportunities in the labor market to begin with. Third, the follow-up survey allows us to establish that the fall in registered employment is due to a larger extent (about two thirds) to an increase in unregistered employment, and to a lesser extent (about one third) to a shift towards non-employment. Fourth, we find an elasticity of participation in registered employment of about 1.7. These results imply a deadweight loss from the behavioral responses to the program of about 3.2% of total registered labor income.",
       "status": "2016"
     },
     {
       "title": "Chronicle of a Deceleration Foretold: Income inequality in Latin America in the 2010s",
       "url": "https://ideas.repec.org/p/dls/wpaper/0198.html",
       "description": "Leonardo Gasparini & Guillermo Cruces & Leopoldo Tornarolli. CEDLAS, Working Papers. 0198, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "After a decade of strong progress toward the goal of reducing the high levels of income disparities, there are clear signs of a deceleration in the pace of inequality reduction in Latin America. This paper argues that the deceleration is the result of two set of reasons. First, several of the driving factors of the fall in inequality in the 2000s have lost strength, due to “natural” motives; and second, the external conditions faced by the Latin American economies have worsened in the early 2010s, making further reductions in inequality more difficult.",
       "status": "2016"
     },
     {
       "title": "Long Run Effects of Youth Training Programs: Experimental Evidence from Argentina",
       "url": "https://ideas.repec.org/p/iza/izadps/dp9784.html",
       "description": "Alzúa, María Laura & Cruces, Guillermo & Lopez, Carolina. IZA Discussion Papers. 9784, IZA Network @ LISER.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We study the effect of a job training program for low income youth in Cordoba, Argentina. The program included life-skills and vocational training, as well as internships with private sector employers. Participants were allocated by means of a public lottery. We rely on administrative data on formal employment, employment spells and earnings, to establish the effects of the program in the short term (18 months), but also â€“ exceptionally for programs of this type in Latin America and in developing countries in general â€“ in the medium term (33 months) and in the long term (48 months). The results indicate sizable gains of about 8 percentage points in formal employment in the short term (about 32% higher than the control group), although these effects dissipate in the medium and in the long term. Contrary to previous results for similar programs in the region, the effects are substantially larger for men, although they also seem to fade in the long run. Program participants also exhibit earnings about 40% higher than those in the control group, and an analysis of bounds indicates that these gains result from both higher employment levels and higher wages. The detailed administrative records also allow us to shed some light on the possible mechanisms underlying these effects. A dynamic analysis of employment transitions indicates that the program operated through an increase in the persistence of employment rather than from more frequent entries into employment. The earnings effect and the higher persistence of employment suggest that the program was successful in increasing the human capital of participants, although the transient nature of these results may also reflect better matches from a program-induced increase in informal contacts or formal intermediation.",
       "status": "2016"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Ecuador country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-076.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-076, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Ecuador experienced moderate economic growth during the 2000s. The economy suffered a mild recession during the international crisis of 2008, but returned to pre-recession GDP per capita level in 2010. Most labour market indicators improved over the period. The only indicator that worsened was the employment structure by occupational position. Most labour market indicators were affected negatively by the international crisis but recovered their pre-crisis levels by 2012. The only exception was labour earnings for some employment categories.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Paraguay country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-081.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-081, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "During the 2000s Paraguay experienced slow economic growth but improved all labour market indicators. The growth process was erratic. Paraguay underwent a macroeconomic crisis at the beginning of the period, a recession as a consequence of the international crisis of 2008, and a local crisis in 2012. Most labour market indicators improved between 2001 and 2013 following the erratic pattern of GDP. The only labour market indicator that improved almost steadily over the period was the educational level of the employed population.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Peru country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-082.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-082, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "The Peruvian economy performed exceptionally well between 2000 and 2012, with a growth performance that placed the country well above the regional average and an improvement in all labour market indicators. The economy suffered a slowdown as a consequence of the international crisis of 2008, but Peru sustained positive GDP growth rates during that episode and had only a small reduction in GDP per capita.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: El Salvador country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-077.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-077, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "During the 2000s, El Salvador experienced slow economic growth for Latin American standards. The country underwent a recession during the international crisis of 2008, but returned to pre-recession output level in 2011. Changes in labour market conditions were mixed. The unemployment rate fell, and the mix of employment by occupations, economic sector, and education improved slightly. However, the employment mix by occupational position deteriorated, and the share of registered workers and earnings decreased.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Honduras country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-078.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-078, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "During the 2000s Honduras grew less than the average Latin American country and labour market indicators moved, in general, in a worsening direction. The only exceptions were the reduction in the unemployment rate and the improvements in the mix of employment by occupational group and educational level. The country underwent a recession as a consequence of the international crisis of 2008, from which it had not fully recovered by 2012. Most labour market indicators were affected negatively by the crisis, and the majority of them had not recovered their pre-crisis levels by 2012.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Argentina country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-069.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-069, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Argentina experienced a decline in the early years of the 2000s, from 2000 to 2002, in GDP and in most labour market indicators, followed by improvements in nearly all of them, tracing out a U-shaped pattern. The international crisis of 2008 impacted negatively only on the unemployment rate and the share of paid employees, but both returned to their pre-crisis levels by 2010. Notwithstanding Argentina's massive downturn from 2000 to 2002 and the international crisis of 2008, labour market conditions were in a better state in 2012 than they were at the start of the millennium.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Dominican Republic country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-075.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-075, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "During the 2000s, the Dominican Republic experienced above-average economic growth along with mixed results in labour market indicators. GDP per capita stagnated through 2004 and, for the most part, grew rapidly from 2005 through 2012. Comparing 2000 with 2012, many unfavourable developments were seen. Among them: an increase in unemployment; worsening in the employment composition by occupation and position; a substantial fall in labour earnings; and no progress in reducing poverty.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Costa Rica country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-074.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-074, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "In the 2000s, Costa Rica experienced moderate economic growth and a general improvement in labour market conditions. From 2000 to 2012, Costa Rica grew at the Latin American average. Most labour market indicators improved during 2001-09 and 2010-12 (the series with comparable data). However, the unemployment rate increased in both periods, the mix of employment by occupations polarized from 2010 to 2012, and some poverty and inequality indicators increased from 2010 to 2012.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Chile country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-072.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-072, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "During the 2000s Chile achieved rapid economic growth and improved most labour market indicators: the unemployment rate fell; the mix of employment by occupational position and sector improved; the educational level of the employed population, the percentage of registered workers, and labour earnings increased; and all poverty and inequality indicators decreased. The economy suffered a recession during the international crisis of 2008, but recovered quickly. Some labour market indicators were negatively affected by the crisis.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Colombia country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-073.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-073, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Between 2000 and 2013, Colombia experienced rapid economic growth. The country suffered a slowdown at the beginning of the period and during the international crisis of 2008, but during both slowdowns, the growth rate never turned negative. Most labour market indicators improved and followed the pattern of economic growth over the period. The only labour market indicator that did not improve between 2001 and 2013 was the employment structure by occupational position.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Mexico country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-079.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-079, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "During the 2000s Mexico grew less than the average for Latin America. Labour market indicators exhibited mixed changes, with improvements over the period for some of them and deterioration for others. The country was severely hurt by the international crisis of 2008, but Mexico surpassed its pre-crisis output levels by 2012. Most labour market indicators were affected negatively by the crisis, and labour earnings and poverty indicators had not recovered their pre-crisis levels by 2012.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Venezuela country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-084.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-084, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Venezuela experienced slow economic growth during the 2000s. The economy suffered a recession in the early years of the period and during the international crisis of 2008, but most labour market indicators improved and moved along with the business cycle over the period. The only indicators that did not improve were the composition of employment by occupational position and the percentage of workers registered with social security, which remained essentially unchanged.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Bolivia country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-070.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-070, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "During the 2000s Bolivia experienced moderate economic growth and improved all labour market indicators. The economy suffered a slowdown as a consequence of the international crisis of 2008, but Bolivia sustained positive growth rates during that episode. The unemployment rate fell between 2000 and 2012. The composition of employment by occupational groups, occupational positions, economic sectors, and educational levels improved, and the share of registered workers increased. All poverty and inequality indicators decreased substantially between 2000 and 2012.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Panama country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-080.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-080, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Between 2000 and 2012, Panama boasted the strongest economic growth in Latin America. The growth experience was not uniform: the 2000-02 period was marked by slow or negative growth rates, after which growth was exceptionally rapid. Although the international economic crisis of 2008 slowed the growth process down, it rebounded in the years following the crisis. Labour market indicators have clearly improved.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Uruguay country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-083.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-083, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "The Uruguayan story was one of declines in the early years of the 2000s in most indicators, followed by improvements in all of them. Economic growth was negative in the early years due to a severe economic crisis, positive and rapid thereafter except during the international crisis of 2008. Most labour indicators followed the same U-shaped pattern and were in 2012 at a better level than at the beginning of the decade, with the exceptions of labour earnings and some poverty indicators.",
       "status": "2015"
     },
     {
       "title": "Youth Training Programs Beyond Employment. Experimental Evidence from Argentina",
       "url": "https://ideas.repec.org/p/dls/wpaper/0177.html",
       "description": "María Laura Alzúa & Guillermo Cruces & Carolina Lopez. CEDLAS, Working Papers. 0177, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Youth training programs and their evaluations are ubiquitous, yet there is relatively little evidence on the mechanisms through which they operate and their effect on outcomes beyond the labor market. This is the motivation of our study of entra21, a job training program for low income youth in Cordoba, Argentina. The program included life-skills and vocational training, as well as internships with private sector employers. Participants were allocated by means of a public lottery. We rely on detailed monthly administrative records for program participants, from which we construct a panel dataset including formal employment status, employment spells, earnings and welfare participation. These administrative records allow us to establish the effects of the program in the short term (18 months), but also – exceptionally for programs of this type in Latin America – in the medium term (36 months). The results indicate sizable gains of about 8 percentage points in formal employment in the short term (about 32% higher than the control group), although these effects tend to dissipate in the medium term. Contrary to what has been found for similar programs in the region, the effects of entra21 are substantially stronger for men, for whom the effects persist in the medium run. A dynamic analysis of employment transitions indicates that the program operates through an increase in the persistence of formal employment rather than from more frequent entries into employment. Program participants also exhibit earnings up to 50% higher than those in the control group, and an analysis of bounds indicates that these gains result from both higher employment levels and higher wages. The higher persistence and higher earnings suggest that the program was successful in increasing the human capital of participants rather than (or in addition to) providing contacts or formal intermediation. With respect to results beyond employment, women selected for the program exhibit lower levels of welfare dependency – younger participants (aged 18 to 24) are less likely to receive child-related public cash transfers over the whole period of analysis. Finally, we present original evidence on the relationship between formal employment and consumer credit use. Program participants exhibit a higher probability of having requested consumer credit, and a higher probability of holding bank debts in good standing. These results indicate that training and internship programs directed at disadvantaged youth can provide other indirect benefits that are not usually accounted for in existing evaluations.",
       "status": "2015"
     },
     {
       "title": "The growth-employment-poverty nexus in Latin America in the 2000s: Brazil country study",
       "url": "https://ideas.repec.org/p/unu/wpaper/wp-2015-71.html",
       "description": "Guillermo Cruces & Gary S. Fields & David Jaume & Mariana Viollaz. WIDER Working Paper Series. wp-2015-71, World Institute for Development Economic Research (UNU-WIDER).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "During the 2000s, Brazil experienced slow economic growth and a substantial improvement in labour market indicators. From 2001 to 2012, Brazil grew less than the Latin American average. However, the unemployment rate decreased, the employment composition improved, the educational level of workers rose, the share of registered workers increased, and average labour earnings went up. At the same time, poverty and inequality largely diminished.",
       "status": "2015"
     },
     {
       "title": "La Segregación Escolar Público-Privado en América Latina",
       "url": "https://ideas.repec.org/p/dls/wpaper/0167.html",
       "description": "Malena Arcidiácono & Guillermo Cruces & Leonardo Gasparini & David Jaume & Monserrat Serio & Emmanuel Vázquez. CEDLAS, Working Papers. 0167, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "En este trabajo se documenta y analiza la segregación escolar entre alumnos de distintos estratos socioeconómicos que asisten a escuelas públicas y privadas en América Latina. El trabajo contribuye con evidencia empírica a la medición de este fenómeno desde principios de los noventa hasta la actualidad. Los resultados sugieren que en promedio el grado de segregación escolar público-privado en América Latina habría aumentado en las últimas dos décadas.",
       "status": "2014"
     },
     {
       "title": "Inflation Expectations, Learning and Supermarket Prices",
       "url": "https://ideas.repec.org/p/nbr/nberwo/20576.html",
       "description": "Alberto Cavallo & Guillermo Cruces & Ricardo Perez-Truglia. NBER Working Papers. 20576, National Bureau of Economic Research, Inc.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Information frictions play a central role in the formation of household inflation expectations, but there is no consensus about their origins. We address this question with novel evidence from survey experiments. We document two main findings. First, individuals in lower-inflation contexts have significantly weaker priors about the inflation rate. This finding suggests that rational inattention may be an important source of information frictions. Second, cognitive limitations also appear to be a source of information frictions: even when information about inflation statistics is made readily available, individuals still place a significant weight on less accurate sources of information, such as their memories of the price changes of the supermarket products they purchase. We discuss the implications of these findings for macroeconomic models and policy-making.",
       "status": "2014"
     },
     {
       "title": "La segregación escolar público-privada en América Latina",
       "url": "https://ideas.repec.org/p/ecr/col041/36757.html",
       "description": "Arcidiácono, Malena & Cruces, Guillermo Antonio & Gasparini, Leonardo & Jaume, David & Serio, Montserrat & Vázquez, Emmanuel. Políticas Sociales. 36757, Naciones Unidas Comisión Económica para América Latina y el Caribe (CEPAL).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "En este trabajo se documenta y analiza la segregación escolar entre alumnos de distintos estratos socioeconómicos que asisten a escuelas públicas y privadas en América Latina. El trabajo contribuye con evidencia empírica a la medición de este fenómeno desde principios de los noventa hasta la actualidad. Los resultados sugieren que en promedio el grado de segregación escolar público-privado en América Latina habría aumentado en las últimas dos décadas.",
       "status": "2014"
     },
     {
       "title": "Work and tax evasion incentive effects of social insurance programs. Evidence from an employment-based benefit extension",
       "url": "https://ideas.repec.org/p/dls/wpaper/0161.html",
       "description": "Marcelo Bergolo & Guillermo Cruces. CEDLAS, Working Papers. 0161, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This article studies how social insurance programs shape individual’s incentives to take up registered employment and to report earnings to the tax authorities. The analysis is based on a social insurance reform in Uruguay that extended healthcare coverage to the dependent children of registered private-sector workers. The identification strategy relies on a comparison between individuals with and without dependent children before and after the reform. The reform increased benefit-eligible registered employment by 1.6 percentage points (about 5 percent above the prereform level), mainly due to an increase in labor force participation rather than to movement from unregistered to registered employment. The shift was greater for parents with younger children and for cohabiting adults whose partners’ jobs did not provide the couples’ children with access to the benefit. Finally, the reform increased the incidence of underreporting of salaried earnings by about 4 percentage points (25 percent higher than the pre-reform level), mostly for workers employed at small firms. The increase in fiscal revenue from higher levels of registered employment was several orders of magnitude greater than the loss of revenue due to an increase in underreporting.",
       "status": "2014"
     },
     {
       "title": "Políticas Sociales para la Reducción de la Desigualdad y la Pobreza en América Latina y el Caribe. Diagnóstico, Propuesta y Proyecciones en Base a la Experiencia Reciente\"",
       "url": "https://ideas.repec.org/p/dls/wpaper/0142.html",
       "description": "Guillermo Cruces & Leonardo Gasparini. CEDLAS, Working Papers. 0142, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Este trabajo obtuvo el Premio Fundación Vidanta 2012 “Contribuciones a la reducción de la pobreza y la desigualdad en América Latina y el Caribe”. El material utilizado para este documento fue producido en el marco del proyecto de investigación “Mercados de Trabajo para el Crecimiento Inclusivo en América Latina”, desarrollado en el CEDLAS con el apoyo del Centro Internacional de Investigaciones para el Desarrollo (IDRC-Canadá).",
       "status": "2013"
     },
     {
       "title": "Are There Ethnic Inequality Traps in Education in Latin America? Empirical Evidence for Brazil and Chile",
       "url": "https://ideas.repec.org/p/ags/peppbr/164432.html",
       "description": "Cruces, Guillermo & Bérgolo, Marcelo & Conconi, Adriana & Ham, Andrés. PEP Policy Briefs. 164432, Partnership for Economic Policy (PEP).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
       "status": "2012"
     },
     {
       "title": "Are there Etchnic Inequality Traps in Education ? Empirical Evidence for Brazil and Chile",
       "url": "https://ideas.repec.org/p/lvl/pmmacr/2012-05.html",
       "description": "Guillermo Cruces & Marcelo Bérgolo & Andriana Conconi & Andrés Ham. Working Papers PMMA. 2012-05, PEP-PMMA.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This study searches for suggestive evidence of an ethnic inequality trap in educational attainment in Brazil and Chile. The research aims to cover an existing gap in the literature on inequality traps and proposes an empirical approach to assess certain conditions which might imply its existence. The main results indicate that while average education and upward mobility have risen in both countries, ethnic disparities remain significant. In particular, the evidence is suggestive of an educational inequality trap for Afro-Brazilians, while the findings are less conclusive of a trap for indigenous individuals in Chile. These results reflect the need for targeted education policies for ethnic groups in two ways: compensation (or affirmative action) mechanisms to lower current inequality, and increasing demand and supply at higher educational levels to prevent the persistence of low level outcomes and disparities throughout the educational distribution.",
       "status": "2012"
     },
     {
       "title": "Conditional Cash Transfers, Female Bargaining Power and Parental Labour Supply",
       "url": "https://ideas.repec.org/p/idb/brikps/4136.html",
       "description": "Novella, Rafael & Ripani, Laura & Cruces, Guillermo & Alzuá, Maria Laura. IDB Publications (Working Papers). 4136, Inter-American Development Bank.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Recent empirical evidence has indicated that Conditional Cash Transfer (CCT) do not have an aggregate effect on adult labour supply, however little attention has been paid to the role of other intrahousehold dynamics. This paper examines how the bargaining power structure of households affects the parental labour supply response to CCT programmes. We analyse randomized experimental designs from rural areas of Honduras (PRAF), Mexico (PROGRESA), and Nicaragua (RPS), and find that CCT programmes slightly change paternal and maternal labour supply and that this effect depends on the distribution of power in the household.",
       "status": "2012"
     },
     {
       "title": "Educational Upgrading and Returns to Skills in Latin America. Evidence from a Supply-Demand Framework, 1990-2010",
       "url": "https://ideas.repec.org/p/dls/wpaper/0127.html",
       "description": "Leonardo Gasparini & Sebastián Galiani & Guillermo Cruces & Pablo Acosta. CEDLAS, Working Papers. 0127, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "It has been argued that a factor behind the decline in income inequality in Latin America in the 2000s was the educational upgrading of its labor force. Between 1990 and 2010, the proportion of the labor force in the region with at least secondary education increased from 40 to 60 percent. Concurrently, returns to secondary education completion fell throughout the past two decades, while the 2000s saw a reversal in the increase in the returns to tertiary education experienced in the 1990s. This paper studies the evolution of wage differentials and the trends in the supply of workers by educational level for 16 Latin American countries between 1990 and 2000. The analysis estimates the relative contribution of supply and demand factors behind recent trends in skill premia for tertiary and secondary educated workers. Supplyside factors seem to have limited explanatory power relative to demandside factors, and are only relevant to explain part of the fall in wage premia for highschool graduates. Although there is significant heterogeneity in individual country experiences, on average the trend reversal in labor demand in the 2000s can be partially attributed to the recent boom in commodity prices that could favor the unskilled (nontertiary educated) workforce, although employment patterns by sector suggest that other withinsector forces are also at play, such as technological diffusion or skill mismatches that may reduce the labor productivity of highlyeducated workers.",
       "status": "2012"
     },
     {
       "title": "Biased Perceptions of Income Distribution and Preferences for Redistribution: Evidence from a Survey Experiment",
       "url": "https://ideas.repec.org/p/dls/wpaper/0138.html",
       "description": "Guillermo Cruces & Ricardo Pérez Truglia & Martín Tetaz. CEDLAS, Working Papers. 0138, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Individual perceptions of income distribution play a vital role in political economy and public finance models, yet there is little evidence regarding their origins or accuracy. This study examines how individuals form these perceptions and explores their potential impact on preferences for redistribution. A tailored household survey provides original evidence on systematic biases in individuals’ evaluations of their own relative position in the income distribution. The study discusses one of the mechanisms that may generate such biases, based on the extrapolation of information from endogenous reference groups, and presents some suggestive evidence that this mechanism has significant explanatory power. The impact of these biased perceptions on attitudes toward redistributive policies is studied by means of an experimental design that was incorporated into the survey, which provided consistent information on the own-ranking within the income distribution to a randomly selected group of respondents. The evidence suggests that those who had overestimated their relative position and thought that they were relatively richer than they were tend to demand higher levels of redistribution when informed of their true ranking.",
       "status": "2012"
     },
     {
       "title": "Inequality in Education: Evidence for Latin America",
       "url": "https://ideas.repec.org/p/dls/wpaper/0135.html",
       "description": "Guillermo Cruces & Carolina García Domench & Leonardo Gasparini. CEDLAS, Working Papers. 0135, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper provides original empirical evidence on the evolution of education inequality for all Latin American countries over the decades of 1990 and 2000. The analysis covers a wide range of issues on differences in educational outcomes and opportunities across the population, including inequality in years of education, gaps in school enrollment, wage skill differentials and public social expenditure. The evidence indicates a significant difference between the 1990s and the 2000s in terms of both the assessment of the equity of the education expansion and its impact on the income distribution. In particular, the changes in the 2000s seem to have had a full equalizing impact on earnings given the more pro-poor pattern of the education upgrading and a more stable or even increasing relative demand for low skill labor.",
       "status": "2012"
     },
     {
       "title": "Comment",
       "url": "https://ideas.repec.org/p/ehl/lserod/123393.html",
       "description": "Cruces, Guillermo. LSE Research Online Documents on Economics. 123393, London School of Economics and Political Science, LSE Library.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
       "status": "2011"
     },
     {
       "title": "Comment",
       "url": "https://ideas.repec.org/p/ehl/lserod/123191.html",
       "description": "Cruces, Guillermo. LSE Research Online Documents on Economics. 123191, London School of Economics and Political Science, LSE Library.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
       "status": "2011"
     },
     {
       "title": "Down and Out or Up and In? Polarization-Based Measures of the Middle Class for Latin America",
       "url": "https://ideas.repec.org/p/dls/wpaper/0113.html",
       "description": "Guillermo Cruces & Luis Felipe López Calva & Diego Battistón. CEDLAS, Working Papers. 0113, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This document presents a systematic review of empirical approaches to the identification and measurement of the middle class as the concept is used in the applied literature. It then presents an arguably less arbitrary definition of the middle class which is based on sound principles of distributional analysis and derived from income polarization measures. The document illustrates the differences between the existing approaches and the proposed methodology with a comparative analysis of the extent and evolution of the middle classes since the early 1990s in six Latin American countries. The polarization-based measurements of the middle class are shown to exhibit a greater degree of homogeneity in terms of some key socioeconomic characteristics than other measures employed in the literature.",
       "status": "2011"
     },
     {
       "title": "Labor Informality and the Incentive Effects of Social Security: Evidence from a Health Reform in Uruguay",
       "url": "https://ideas.repec.org/p/idb/brikps/3829.html",
       "description": "Bérgolo, Marcelo & Cruces, Guillermo. IDB Publications (Working Papers). 3829, Inter-American Development Bank.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper studies the incentive effects of social security benefits on labor market informality following a policy reform in Uruguay. The reform extended health benefits to dependent children of private sector salaried workers, and thus altered the incentive structure of holding formal jobs within the household. The identification strategy of the reform¿s effects relies on a comparison between workers with children (affected by the reform) and those without children (unaffected by the reform). Difference in differences estimates indicate a substantial effect of this expansion of coverage on informality rates, which fell significantly by about 1.3 percentage points (a 5 percent change) among workers in the treatment group with respect to those in the control group. The evidence also indicates that individuals within households jointly optimized their allocation of labor to the formal and informal sector. Workers responded to the increased incentives for only one member of the household to work in the formal sector. These findings provide evidence of the relevant and substantial incentive effects of social security benefits on the allocation of employment.",
       "status": "2011"
     },
     {
       "title": "Recent trends in income inequality in Latin America",
       "url": "https://ideas.repec.org/p/ehl/lserod/123059.html",
       "description": "Gasparini, Leonardo & Cruces, Guillermo & Tornarolli, Leopoldo. LSE Research Online Documents on Economics. 123059, London School of Economics and Political Science, LSE Library.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper documents patterns and recent developments on income inequality in Latin America (LA). New comparative international evidence confirms that LA is a region of high inequality, although maybe not the highest in the world. Income inequality has fallen in the 2000s, suggesting a turning point from the substantial increases of the 1980s and 1990s. The fall in inequality is significant and widespread, but it does not seem to be based on strong fundamentals. (This abstract was borrowed from another version of this item.)",
       "status": "2011"
     },
     {
       "title": "Economic Crises, Maternal and Infant Mortality, Low Birth Weight and Enrollment Rates: Evidence from Argentina’s Downturns",
       "url": "https://ideas.repec.org/p/dls/wpaper/0121.html",
       "description": "Guillermo Cruces & Pablo Glüzman & Luis Felipe López Calva. CEDLAS, Working Papers. 0121, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Este estudio investiga el impacto de las recientes crisis en Argentina (incluyendo la grave recesión de 2001-2002) en la salud y la educación. La estrategia de identificación se basa en la covarianza entre los cambios en el PIB regional y los resultados por provincia en términos intertemporales e interprovinciales. Estos resultados indican efectos significativos e importantes de las fluctuaciones agregadas en la mortalidad materna e infantil y en el bajo peso al nacer, así como un patrón contracíclico aunque no significativo para las tasas de matrícula. Finalmente, el gasto público provincial en salud y educación se correlacionan con la incidencia del bajo peso al nacer y la matriculación escolar de los adolescentes, con peores resultados ante una disminución del PIB.",
       "status": "2011"
     },
     {
       "title": "Intra-generational mobility and repeated cross-sections : a three-country validation exercise",
       "url": "https://ideas.repec.org/p/wbk/wbrwps/5916.html",
       "description": "Cruces, Guillermo & Lanjouw, Peter & Lucchetti, Leonardo & Perova, Elizaveta & Vakis, Renos & Viollaz, Mariana. Policy Research Working Paper Series. 5916, The World Bank.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper validates a recently proposed method to estimate intra-generational mobility through repeated cross-sectional surveys. The technique allows the creation of a\"synthetic panel\"-- done by predicting future or past household income using a set of simple modeling and error structure assumptions -- and thus permits the estimation of lower and upper bounds on directional mobility measures. The authors validate the approach in three different settings where good panel data also exist (Chile, Nicaragua, and Peru). In doing so, they also carry out a number of refinements to the validation procedure. The results are broadly encouraging: the methodology performs well in all three settings, especially in cases where richer model specifications can be estimated. The technique does equally well in predicting short and long-term mobility patterns and is robust to a broad set of additional\"stress\"and sensitivity tests. Overall, the paper lends support to the application of this approach to settings where panel data are absent.",
       "status": "2011"
     },
     {
       "title": "Welfare Programs and Labor Supply in Developing Countries. Experimental Evidence from Latin America",
       "url": "https://ideas.repec.org/p/dls/wpaper/0095.html",
       "description": "María Laura Alzúa & Guillermo Cruces & Laura Ripani. CEDLAS, Working Papers. 0095, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper studies the effect of welfare programs on work incentives and the labor supply of adults in developing countries. The document builds on the experimental evaluations of three programs implemented in rural areas: Mexico’s PROGRESA, Nicaragua’s Red de Protección Social (RPS) and Honduras’ Programa de Asignación Familiar (PRAF). The impact of welfare on labor supply has been widely studied in developed countries, where most recent initiatives attempt to mitigate negative effects on work incentives. The programs under study are conditional cash transfers (CCT), which combine monetary benefits with incentives for curbing child labor and fostering the accumulation of human capital. Unlike their counterparts in developed economies, however, they do not account for potential impacts on the labor supply of adults, and there is little systematic evidence on this aspect despite a wealth of empirical studies on their intended outcomes. Comparable results for the three countries indicate mostly negative but small and non-significant effects of the programs on the employment of adults, no reallocation of labor between agricultural and other sectors, and a reduction in hours worked by adults in eligible households in RPS. Moreover, PROGRESA had a positive effect on beneficiaries’ wages. The programs did not imply major disincentives to work, despite substantial transfers, but they had some effects on local labor markets. This mechanism is related to recent findings on the indirect impact of CCTs on ineligible households, and implies that future evaluation studies and designs should account for the equilibrium effects of the interventions.",
       "status": "2010"
     },
     {
       "title": "Instituciones de la política social: objetivos, principios y atributos",
       "url": "https://ideas.repec.org/p/ecr/col022/4276.html",
       "description": "Cruces, Guillermo Antonio & Machinea, José Luis. Documentos de Proyectos. 4276, Naciones Unidas Comisión Económica para América Latina y el Caribe (CEPAL).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Los persistentes niveles de pobreza de América Latina y el Caribe, vinculados a la desigual distribución de los ingresos y las bajas y volátiles tasas de crecimiento de las economías, imponen limitaciones al ejercicio de los derechos económicos y sociales de amplias franjas de la población. El crecimiento mediante el desarrollo productivo es una condición necesaria pero no suficiente para resolver esta compleja situación, y aunque el nivel del gasto social (que presenta una evolución positiva en el pasado reciente) es relevante, importa también su calidad. Para que sea posible garantizar dichos derechos, en este documento se identifican una serie de principios (universalidad, solidaridad y eficiencia, entre otros) y atributos o requisitos para guiar la intervención pública y fortalecer las instituciones que sirven de marco a la política social. (This abstract was borrowed from another version of this item.)",
       "status": "2010"
     },
     {
       "title": "Permanent Effects of Economic Crises on Household Welfare: Evidence and Projections from Argentina’s Downturns",
       "url": "https://ideas.repec.org/p/pra/mprapa/42949.html",
       "description": "Cruces, Guillermo & Gluzmann, Pablo & Lopez-Calva, Luis Felipe. MPRA Paper. 42949, University Library of Munich, Germany.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "The quantification of the impact of crises on household welfare and socioeconomic outcomes is a fundamental input for the design of ex ante safety nets and ex post alleviation programs. Economic downturns have direct effects through employment and household income, but whether these and other impacts are permanent rather than transitory is harder to establish. This study of Argentina estimates the relationship between GDP growth and severe crises on poverty, youth unemployment, and a series of human capital related outcomes, such as infant and maternal health, and school enrollment and progression. The identification strategy relies on provincial variation in GDP, and on a difference in differences estimation from the severe 1999-2002 crisis. The objective is twofold. On the one hand, the study documents the effects of past episodes. On the other hand, it extrapolates past results to provide bounds for the impact of the 2007-2009 financial crisis in Argentina. Besides the expected and well-documented relationship between crises and poverty levels, the main finding of this study is a strong effect on infant mortality and low weight at birth. Moreover, there is an asymmetry in these effects: the negative impact of downturns is greater than the positive evolution during recoveries. The results for education variables are more ambiguous, and even counter-cyclical in some cases. The document discusses the implications of these estimates for the current episode. Overall, these results provide evidence of permanent effects of economic crises through lower levels of human capital, worsening health outcomes and increased mortality.",
       "status": "2010"
     },
     {
       "title": "Payroll Taxes, Wages and Employment: Identification through Policy Changes",
       "url": "https://ideas.repec.org/p/dls/wpaper/0093.html",
       "description": "Guillermo Cruces & Sebastian Galiani & Susana Kidyba. CEDLAS, Working Papers. 0093, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper investigates the effect of changes in payroll taxes on wages and employment in Argentina. The analysis, based on administrative data, focuses on the impact of a series of major changes in payroll taxes which varied across geographical areas. This setup offers two main advantages over previous studies. First, using longitudinal data, the variation in tax rates across space and time provides a plausible source of identification of their effects on employment and wages. Second, the use of legal tax rates for each area at each point in time provides a remedy for the measurement error bias raised by the use of empirical rates constructed from observed tax and wage bills. Once this bias is accounted for, the results indicate that changes in payroll tax rates are only partially shifted onto wages, and they point to the absence of any significant effect on employment.",
       "status": "2010"
     },
     {
       "title": "La flexibilidad laboral en América Latina: las reformas pasadas y las perspectivas futuras",
       "url": "https://ideas.repec.org/p/ecr/col022/3771.html",
       "description": "Cruces, Guillermo Antonio & Ham, Andrés. Documentos de Proyectos. 3771, Naciones Unidas Comisión Económica para América Latina y el Caribe (CEPAL).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Este documento discute las implicaciones de la flexibilidad de los mercados laborales en el contexto de América Latina. El documento discute la necesidad de contar con mercados laborales que puedan adaptarse a una estructura moderna, pero discute cómo ciertas reformas en las últimas dos décadas en la región se implementaron primordialmente en términos del deterioro de las condiciones laborales y de la calidad del empleo. El documento presenta un análisis de la situación de los mercados laborales en América Latina, y discute el potencial y los límites para la región de los desarrollos recientes de propuestas de combinación de flexibilidad con seguridad en el empleo.",
       "status": "2010"
     },
     {
       "title": "Las Asignaciones Universales Por Hijo. Impacto, Discusión y Alternativas",
       "url": "https://ideas.repec.org/p/dls/wpaper/0102.html",
       "description": "Leonardo Gasparini & Guillermo Cruces. CEDLAS, Working Papers. 0102, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Este documento estudia el impacto distributivo del programa de asignaciones familiares universales a pocos meses de su implementación. El trabajo contribuye con estimaciones de su potencial impacto directo sobre un conjunto de variables, incluyendo la pobreza y la desigualdad monetarias, y con la discusión de algunas opciones alternativas a la efectivamente implementada. El documento sostiene que el país ha avanzado en la dirección correcta en términos de basar su política social en un masivo programa de transferencias de ingreso, pero alerta sobre la necesidad de mejorar su estructura y asegurar su sustentabilidad, y señala algunas alternativas de implementación.",
       "status": "2010"
     },
     {
       "title": "Quality of Life in Buenos Aires Neighborhoods: Hedonic Price Regressions and the Life Satisfaction Approach",
       "url": "https://ideas.repec.org/p/idb/brikps/3321.html",
       "description": "Cruces, Guillermo & Ham, Andrés & Tetaz, Martín. IDB Publications (Working Papers). 3321, Inter-American Development Bank.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper studies quality of life for urban neighborhoods and their determinants in the Buenos Aires Metropolitan Area (AMBA). First, hedonic price regressions for residential prices are augmented with neighborhood characteristics, based on a real estate database with indicators on each property's distance to public facilities and amenities, and on a smaller survey with greater detail. Second, following recent developments in the field of happiness research, the document assesses the importance of different neighborhood characteristics on quality of life by interacting objective and subjective indicators. The results indicate a strong but not perfect correlation between real estate prices, income levels and neighborhood characteristics, suggesting scope for welfare-improving policy interventions.",
       "status": "2009"
     },
     {
       "title": "Programas sociales y transferencias de ingresos en Uruguay: los beneficios no contributivos y las alternativas para su extensión",
       "url": "https://ideas.repec.org/p/ecr/col041/6152.html",
       "description": "Vigorito, Andrea & Cruces, Guillermo Antonio & Arim, Rodrigo. Políticas Sociales. 6152, Naciones Unidas Comisión Económica para América Latina y el Caribe (CEPAL).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Desde una perspectiva regional, Uruguay muestra hacia fines de 2008 un cumplimiento adecuado de las metas del Milenio fijadas a nivel internacional. Sin embargo, se presentan dificultades para alcanzar los objetivos fijados a nivel nacional en relación con la reducción de la pobreza y la mejora en los niveles educativos de la población. La expansión de la red de protección social realizada a mediados de la década de 2000 podría reforzarse para lograr un mayor bienestar de la población y avanzar en el cumplimiento de los objetivos trazados. Con este fin, este documento presenta un análisis de los programas sociales y de transferencia de ingresos implementados en Uruguay desde inicios de la década de 2000. En principio, se buscó identificar a los grupos de población no cubiertos por las nuevas iniciativas comprendidas en el Plan de Equidad Social que comenzó a implementarse a inicios de 2008. A partir de la identificación de estos grupos y la descripción de sus características, se procuró formular propuestas de política para ampliar la cobertura de los programas. En particular, se estudió el impacto de la ampliación de la Tarjeta Alimentaria, un mecanismo de transferencias monetarias que surgió con el Plan de Atención Nacional a la Emergencia Social (PANES) y que hacia fines de 2008 permanece básicamente circunscripto a los antiguos beneficiarios de dicho plan. La Tarjeta Alimentaria podría utilizarse como herramienta para brindar flexibilidad al sistema de protección social, permitiendo ajustar tanto la cobertura como los montos transferidos en plazos reducidos. Las conclusiones de este documento discuten la experiencia uruguaya en el contexto nacional, y resaltan la experiencia de transición de un programa de emergencia hacia un sistema de protección permanente, así como la extensión del sistema de seguridad social tradicional mediante la incorporación de beneficios no contributivos.",
       "status": "2009"
     },
     {
       "title": "A Turning Point? Recent Developments on Inequality in Latin America and the Caribbean",
       "url": "https://ideas.repec.org/p/dls/wpaper/0081.html",
       "description": "Leonardo Gasparini & Guillermo Cruces & Leopoldo Tornarolli & Mariana Marchionni. CEDLAS, Working Papers. 0081, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper documents patterns and recent developments on different dimensions of inequality in Latin America and the Caribbean (LAC). New comparative international evidence confirms that LAC is a region of high inequality, although maybe not the highest in the world. Income inequality has fallen in the 2000s, suggesting a turning point from the significant increases of the 1980s and 1990s. There have been some significant improvements toward the reduction in inequalities in the access to primary and secondary education, and to some services (water, sanitation, electricity, cell phones). However, there is an increasing gap between the rich and the poor in the access to tertiary education, and important differences in the access to new technologies.",
       "status": "2009"
     },
     {
       "title": "Income and Beyond: Multidimensional Poverty in six Latin American countries",
       "url": "https://ideas.repec.org/p/dls/wpaper/0090.html",
       "description": "Diego Battiston & Guillermo Cruces & Luis Felipe Lopez Calva & Maria Ana Lugo & Maria Emma Santos. CEDLAS, Working Papers. 0090, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper presents empirical results of a wide range of multidimensional poverty measures for: Argentina, Brazil, Chile, El Salvador, Mexico and Uruguay, for the period 1992–2006. Six dimensions are analysed: income, child attendance at school, education of the household head, sanitation, water and shelter. Over the study period, El Salvador, Brazil, Mexico and Chile experienced significant reductions of multidimensional poverty. In contrast, in urban Uruguay there was a small reduction in multidimensional poverty, while in urban Argentina the estimates did not change significantly. El Salvador, Brazil and Mexico together with rural areas of Chile display significantly higher and more simultaneous deprivations than urban areas of Argentina, Chile and Uruguay. In all countries, access to proper sanitation and education of the household head are the highest contributors to overall multidimensional poverty.",
       "status": "2009"
     },
     {
       "title": "Los programas sociales y los objetivos de desarrollo del milenio en Argentina",
       "url": "https://ideas.repec.org/p/ecr/col041/6148.html",
       "description": "Cruces, Guillermo Antonio & Epele, Nicolás & Guardia, Laura. Políticas Sociales. 6148, Naciones Unidas Comisión Económica para América Latina y el Caribe (CEPAL).",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Este documento estudia los programas sociales existentes en Argentina en 2007 en el contexto de los objetivos de desarrollo del Milenio (ODM), con un doble propósito. Por un lado, presenta una breve revisión de los principales programas de transferencias monetarias en ejecución en Argentina, discutiendo su cobertura parcial y su potencial impacto en los ODM para el país. Por otro lado, se desarrolla una serie de microsimulaciones para obtener un orden de magnitud del impacto potencial que una expansión de los programas de transferencia de ingreso existentes podría tener en la consecución de algunas de estas metas. La simulación de un programa de transferencias condicionadas de amplia cobertura en Argentina demostró que este tipo de iniciativas podría tener un impacto fuerte y directo sobre el ODM1, que plantea metas de reducción de la indigencia y la pobreza. Asimismo, los requisitos de asistencia escolar podrían contribuir significativamente a alcanzar el ODM2. Por último, la asignación prioritaria de la asistencia monetaria a las mujeres en los hogares beneficiarios incrementaría su participación en los ingresos del hogar, contribuyendo así al ODM3, que plantea promover la igualdad de género y la autonomía de la mujer. La evidencia presentada en este documento señala que los programas focalizados de transferencias condicionadas pueden contribuir a alcanzar algunos de los ODM, pero constituyen solo un elemento que no puede remplazar al conjunto de la política social. Con respecto a estos programas, Argentina se encuentra ante una oportunidad histórica de consolidar una red de protección social permanente a partir de las iniciativas existentes, lo que tendría un impacto significativo en la reducción de la exclusión social y acercaría al país a las metas planteadas en la declaración del Milenio.",
       "status": "2008"
     },
     {
       "title": "A Distribution in Motion: The Case of Argentina",
       "url": "https://ideas.repec.org/p/dls/wpaper/0078.html",
       "description": "Guillermo Cruces & Leonardo Gasparini. CEDLAS, Working Papers. 0078, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper documents the changes in the income distribution in Argentina from the mid-1970s to the mid-2000s. Over the period inequality increased substantially. Two types of episodes have shaped this upward trend: deep macroeconomic crises and periods of sudden and intense economic liberalization. The sizeable rise in inequality in the 1990s seems to be associated to reallocations against unskilled-labor intensive sectors, and skilled-biased technological change within most sectors, both factors stimulated by the process of economic integration. The depth and speed of the reforms and the scarcity of public policies to ease the transition contributed to the particular severity of the income distribution changes. The macro crises and the subsequent recoveries contributed to the volatility of inequality along this upward trend. The large macroeconomic crisis of 2001/02 triggered a large jump in inequality, although income disparities returned to pre-crisis levels as the economy recovered fast, and large cash transfer programs were implemented.",
       "status": "2008"
     },
     {
       "title": "Programas Sociales en Argentina: Alternativas para la Ampliación de la Cobertura",
       "url": "https://ideas.repec.org/p/dls/wpaper/0077.html",
       "description": "Guillermo Cruces & Leonardo Gasparini. CEDLAS, Working Papers. 0077, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
       "status": "2008"
     },
     {
       "title": "E pur si muove? Movilidad, Pobreza y Desigualdad en América Latina",
       "url": "https://ideas.repec.org/p/dls/wpaper/0062.html",
       "description": "Adriana Conconi & Guillermo Cruces & Sergio Olivieri & Raúl Sánchez. CEDLAS, Working Papers. 0062, CEDLAS, Universidad Nacional de La Plata.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "The purpose of this paper is to contribute with the research of poverty and income distribution by analyzing an often overloooked dimension, social mobility. Given the data restrictions, we focus on intergenerational mobility. We compute three main indicators of mobility for Latin American countries at the beggining of the 1990s and 2000s: the social mobility index (Andersen, 2001), the intergenerational schooling mobility index (Birdsall y Székely, 1998), and the sibling correlation index (Dahan y Gaviria, 1999). Then, we analize the link between the evolution of mobility and that of inequality. The results indicate that mobility increased during the period under study, but there are differences among countries in the region. Also, we found evidence of a negative relation between mobility and inequality. (This abstract was borrowed from another version of this item.)",
       "status": "2007"
     },
     {
       "title": "Fertility and Female Labor Supply in Latin America: New Causal Evidence",
       "url": "https://ideas.repec.org/p/sad/wpaper/84.html",
       "description": "Sebastian Galiani & Guillermo Cruces. Working Papers. 84, Universidad de San Andres, Departamento de Economia, revised Jun 2007.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "We study the effect of fertility on maternal labor supply in Argentina and Mexico exploiting a source of exogenous variability in family size first introduced by Angrist and Evans (1998) for the United States. We find that the estimates for the US can be generalized both qualitatively and quantitatively to the populations of two developing countries where, compared to the US, fertility is known to be higher, female education levels are much lower and there are fewer formal facilities for childcare. (This abstract was borrowed from another version of this item.) (This abstract was borrowed from another version of this item.)",
       "status": "2005"
     },
     {
       "title": "Income Fluctuation, Poverty and Well-Being Over Time: Theory and Application to Argentina",
       "url": "https://ideas.repec.org/p/cep/stidar/76.html",
       "description": "Guillermo Cruces. STICERD - Distributional Analysis Research Programme Papers. 76, Suntory and Toyota International Centres for Economics and Related Disciplines, LSE.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper studies poverty as a dynamic phenomenon, motivated by the recurringeconomic crises that affect developing countries and the incidence of income fluctuationson household welfare. While the increasing availability of household panel data has beenexploited in theoretical analysis and empirical applications, the methodological andapplied literatures still lack a unified framework. Echoing Atkinson (1987), this paperaddresses the question of how poverty should be measured over time - or, in moregeneral terms, how to measure well-being based on repeated observations of householdincome. The paper develops and illustrates a set of tools for empirical work based ontheoretically sound extensions of the existing methodology for static distributionalanalysis. Moreover, this framework encompasses some of the existing approaches asspecial cases. These tools are illustrated with longitudinal data for Argentina in the 1995-2002 period, which is well suited for this type of analysis given the large fluctuations inhousehold income due to the repeated economic crises in the country.",
       "status": "2005"
     },
     {
       "title": "Perceptions of Risk: an Experimental Approach using Internet Questionnaires",
       "url": "https://ideas.repec.org/p/cep/stidar/70.html",
       "description": "Frank A Cowell & Guillermo Cruces. STICERD - Distributional Analysis Research Programme Papers. 70, Suntory and Toyota International Centres for Economics and Related Disciplines, LSE.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Building on previous studies on perceptions of inequality, welfare and risk we investigate the structure of individuals' rankings of uncertain prospects in terms of risk and their relationship to individual preferences. We examine three interlinked propositions that are fundamental to the standard economic approach to risk: (i) that rankings by risk are simply the reverse of ranking by preference over distributions with a given mean; (ii) that risk-rankings respect the principle of mean-preserving spreads; (iii) that risk-rankings are independent of whether the individual is personally involved in the gains/losses associated with the uncertain prospects. To do this we use a set of questionnaires implemented through the Virtual Laboratory, a novel experimental setting for the study of normative issues in experimental economics. The results from the questionnaires provide an evaluation of the similitude between individual perceptions of risk and theoretical axioms. They also help identify the individual characteristics that might affect such perceptions.",
       "status": "2003"
     },
     {
       "title": "Argentinas Crises and the Poor, 1995-2002",
       "url": "https://ideas.repec.org/p/cep/stidar/71.html",
       "description": "Guillermo Cruces & Quentin Wodon. STICERD - Distributional Analysis Research Programme Papers. 71, Suntory and Toyota International Centres for Economics and Related Disciplines, LSE.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper documents the impact of Argentina's recent economic crises on different aspects of poverty, with a special focus on the economic collapse of 2002. We discuss the methodology of poverty measurement in Argentina and we use a simple rule to compensate for the lack of regional poverty figures until 2001, providing consistent series of urban poverty estimates at the national and regional levels. We then present series of short term dynamics of poverty, decomposing the changes in every period of time with panel data. Finally, we analyse the determinants of poverty, with a focus on accounting for observed differences in income (and thereby poverty) between October 2001 and May 2002. Among other conclusions, we find in our decomposition analysis that households without the means to diversify their income sources suffered more than others from the crisis of 2002.",
       "status": "2003"
     },
     {
       "title": "Risk-adjusted poverty in Argentina: measurement and determinants",
       "url": "https://ideas.repec.org/p/ehl/lserod/6550.html",
       "description": "Cruces, Guillermo & Wodon, Quentin. LSE Research Online Documents on Economics. 6550, London School of Economics and Political Science, LSE Library.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "Relying on a Constant Relative Risk Aversion utility function, we use panel data for Argentina to compute risk-adjusted income and poverty measures and to analyze their determinants. Taking risk into account increases poverty. The regression analysis suggests that many household characteristics are correlated not only with the average income of the household over time, but also with income variability.",
       "status": "2003"
     },
     {
       "title": "Poverty Measurement Under Risk Aversion Using Panel Data",
       "url": "https://ideas.repec.org/p/shr/wpaper/03-06.html",
       "description": "Paul MAKDISSI & Quentin WODON & Guillermo Cruces. Cahiers de recherche. 03-06, Departement d'Ã©conomique de l'Ã‰cole de gestion Ã l'UniversitÃ© de Sherbrooke.",
-      "linkLabel": "View on IDEAS",
+      "linkLabel": "Open paper",
+      "abstract": "This paper shows how to take into account risk aversion when measuring poverty under income variability. An application to British panel data suggests that income and poverty comparisons between the self-employed and other groups of households are sensitive to assumptions on the degree of risk aversion. The results point to the importance of panel data in order to account for risk aversion and income variability in the measurement of poverty.",
       "status": "2003"
     },
     {
       "title": "Generalizing the Causal Effect of Fertility on Female Labor Supply",
       "url": "https://ideas.repec.org/p/wdi/papers/2003-625.html",
-      "description": "Guillermo Cruces & Sebastian Galiani. William Davidson Institute Working Papers Series. 2003-625, William Davidson Institute at the University of Michigan. repec:ecr:col035:5158 is not listed on IDEAS repec:ecr:col035:5159 is not listed on IDEAS repec:aep:anales:4401 is not listed on IDEAS repec:qeh:ophiwp:ophiwp017 is not listed on IDEAS",
-      "linkLabel": "View on IDEAS",
+      "description": "Guillermo Cruces & Sebastian Galiani. William Davidson Institute Working Papers Series. 2003-625, William Davidson Institute at the University of Michigan.",
+      "linkLabel": "Open paper",
+      "abstract": "We study the effect of fertility on labor supply in Argentina and Mexico exploiting a source of exogenous variability in family size first introduced by Angrist and Evans (1998) for the United States. Our results constitute the first external validation of the estimates obtained for the US. External validation of empirical results is central to the making of rigorous science, but there are very few attempts to establish it. We find that the estimates for the US can be generalized both qualitatively and quantitatively to the populations of two developing countries where, compared to the US, fertility is known to be higher, female education levels are much lower and there are fewer facilities for childcare.",
       "status": "2003"
     }
   ],

@@ -10,14 +10,11 @@ const {
 const paperGrid = document.querySelector("#paper-grid");
 const searchInput = document.querySelector("#paper-search");
 const paperCount = document.querySelector("#paper-count");
-const profileGrid = document.querySelector("#profile-grid");
+const heroLinks = document.querySelector("#hero-links");
 const workingList = document.querySelector("#working-list");
 const ongoingList = document.querySelector("#ongoing-list");
 const policyGrid = document.querySelector("#policy-grid");
 const resourceGrid = document.querySelector("#resource-grid");
-const researchTotal = document.querySelector("#research-total");
-const articleTotal = document.querySelector("#article-total");
-const workingTotal = document.querySelector("#working-total");
 const documentBasePath = "./assets/documents";
 
 function escapeHtml(value = "") {
@@ -37,8 +34,48 @@ function itemHref(item) {
   return encodeURI(`${documentBasePath}/${item.file}`);
 }
 
+function itemLinkAttributes(item) {
+  if (item.url && item.url.startsWith("mailto:")) {
+    return "";
+  }
+
+  return ' target="_blank" rel="noreferrer"';
+}
+
 function makeLink(label, item) {
-  return `<a class="text-link" href="${itemHref(item)}" target="_blank" rel="noreferrer">${escapeHtml(label)}</a>`;
+  return `<a class="text-link" href="${itemHref(item)}"${itemLinkAttributes(item)}>${escapeHtml(label)}</a>`;
+}
+
+function formatAbstract(abstract) {
+  return abstract
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .join("");
+}
+
+function makeAbstractToggle(panelId, item) {
+  if (!item.abstract) {
+    return "";
+  }
+
+  return `
+    <div class="abstract-block">
+      <button
+        class="button button-inline abstract-toggle"
+        type="button"
+        data-abstract-toggle
+        aria-expanded="false"
+        aria-controls="${panelId}"
+      >
+        Show abstract
+      </button>
+      <div class="abstract-panel" id="${panelId}" hidden>
+        ${formatAbstract(item.abstract)}
+      </div>
+    </div>
+  `;
 }
 
 function matchesQuery(values, query) {
@@ -53,32 +90,27 @@ function getSearchQuery() {
   return searchInput.value.trim().toLowerCase();
 }
 
-function renderProfiles() {
-  profileGrid.innerHTML = profileLinks
+function renderHeroLinks() {
+  heroLinks.innerHTML = profileLinks
     .map(
       (item) => `
-        <article class="resource-card">
-          <p class="card-kicker">Profile</p>
-          <h3>${escapeHtml(item.title)}</h3>
-          <p>${escapeHtml(item.description)}</p>
-          <div class="card-links">
-            ${makeLink(item.linkLabel || "Open link", item)}
-          </div>
-        </article>
+        <a class="mini-link" href="${itemHref(item)}"${itemLinkAttributes(item)}>
+          <span class="mini-link-copy">
+            <strong>${escapeHtml(item.title)}</strong>
+            <span>${escapeHtml(item.description)}</span>
+          </span>
+        </a>
       `
     )
     .join("");
 }
 
-function renderHighlights() {
-  researchTotal.textContent = String(selectedPapers.length + workingPapers.length);
-  articleTotal.textContent = String(selectedPapers.length);
-  workingTotal.textContent = String(workingPapers.length);
-}
-
 function renderPapers(query) {
   const filtered = selectedPapers.filter((paper) =>
-    matchesQuery([paper.title, paper.authors, paper.venue, paper.description, paper.year], query)
+    matchesQuery(
+      [paper.title, paper.authors, paper.venue, paper.description, paper.year, paper.abstract || ""],
+      query
+    )
   );
 
   if (!filtered.length) {
@@ -94,8 +126,10 @@ function renderPapers(query) {
   }
 
   paperGrid.innerHTML = filtered
-    .map(
-      (paper) => `
+    .map((paper, index) => {
+      const abstractId = `paper-abstract-${index}`;
+
+      return `
         <article class="paper-card">
           <div class="paper-card-header">
             <div>
@@ -107,12 +141,13 @@ function renderPapers(query) {
           </div>
           <p class="paper-venue">${escapeHtml(paper.venue)}</p>
           <p class="paper-description">${escapeHtml(paper.description)}</p>
+          ${makeAbstractToggle(abstractId, paper)}
           <div class="card-links">
-            ${makeLink(paper.linkLabel || "View on IDEAS", paper)}
+            ${makeLink(paper.linkLabel || "Open paper", paper)}
           </div>
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 
   return filtered.length;
@@ -120,13 +155,14 @@ function renderPapers(query) {
 
 function renderWorkingPapers(query) {
   const filtered = workingPapers.filter((item) =>
-    matchesQuery([item.title, item.description, item.status], query)
+    matchesQuery([item.title, item.description, item.status, item.abstract || ""], query)
   );
 
   renderStack(workingList, filtered, {
     itemType: "Working paper",
+    idPrefix: "working-paper",
     emptyTitle: "No working papers match this search",
-    emptyDescription: "Try another term to search the full IDEAS/RePEc working paper list."
+    emptyDescription: "Try another term to search the full working paper archive."
   });
 
   return filtered.length;
@@ -135,6 +171,7 @@ function renderWorkingPapers(query) {
 function renderStack(listElement, items, options = {}) {
   const {
     itemType = null,
+    idPrefix = "stack-item",
     emptyTitle = "No items to display",
     emptyDescription = "There are no items available in this section."
   } = options;
@@ -151,8 +188,10 @@ function renderStack(listElement, items, options = {}) {
   }
 
   listElement.innerHTML = items
-    .map(
-      (item) => `
+    .map((item, index) => {
+      const abstractId = `${idPrefix}-abstract-${index}`;
+
+      return `
         <article class="stack-item">
           <div class="stack-item-header">
             <div>
@@ -162,10 +201,11 @@ function renderStack(listElement, items, options = {}) {
             ${item.status ? `<span class="status-pill">${escapeHtml(item.status)}</span>` : ""}
           </div>
           <p>${escapeHtml(item.description)}</p>
+          ${makeAbstractToggle(abstractId, item)}
           ${item.url || item.file ? `<div class="card-links">${makeLink(item.linkLabel || "Open link", item)}</div>` : ""}
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 }
 
@@ -210,7 +250,7 @@ function renderResources() {
 
 function renderSearchSummary(query, articleCount, workingCount) {
   if (!query) {
-    paperCount.textContent = `${selectedPapers.length} published articles and ${workingPapers.length} working papers pulled from IDEAS/RePEc. Search updates both sections below.`;
+    paperCount.textContent = `${selectedPapers.length} published articles and ${workingPapers.length} working papers currently listed here. Each record can expand to show its abstract.`;
     return;
   }
 
@@ -225,9 +265,24 @@ function renderSearchResults() {
 }
 
 searchInput.addEventListener("input", renderSearchResults);
+document.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-abstract-toggle]");
+  if (!button) {
+    return;
+  }
 
-renderProfiles();
-renderHighlights();
+  const panel = document.getElementById(button.getAttribute("aria-controls"));
+  if (!panel) {
+    return;
+  }
+
+  const isExpanded = button.getAttribute("aria-expanded") === "true";
+  button.setAttribute("aria-expanded", String(!isExpanded));
+  button.textContent = isExpanded ? "Show abstract" : "Hide abstract";
+  panel.hidden = isExpanded;
+});
+
+renderHeroLinks();
 renderSearchResults();
 renderStack(ongoingList, ongoingProjects, { itemType: "Current project" });
 renderPolicies();

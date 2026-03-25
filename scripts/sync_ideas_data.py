@@ -2,21 +2,35 @@
 
 import json
 import re
+import sys
 import textwrap
 import urllib.parse
 import urllib.request
+from pathlib import Path
 from bs4 import BeautifulSoup
 
 IDEAS_AUTHOR_URL = "https://ideas.repec.org/e/pcr20.html"
 IDEAS_BASE_URL = "https://ideas.repec.org"
 OUTPUT_PATH = "site/data.js"
+REQUEST_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0 Safari/537.36"
+    )
+}
 
 PROFILE_LINKS = [
     {
         "title": "Current CV",
-        "description": "PDF linked from Guillermo Cruces's current site.",
+        "description": "Current curriculum vitae.",
         "url": "https://www.dropbox.com/s/u88tuj8n3hh9asl/CV_CRUCES_2023_EN_Web.pdf?dl=0",
         "linkLabel": "Open PDF",
+    },
+    {
+        "title": "Email",
+        "description": "Primary contact email.",
+        "url": "mailto:gcruces@cedlas.org",
+        "linkLabel": "Write email",
     },
     {
         "title": "Google Scholar",
@@ -25,10 +39,10 @@ PROFILE_LINKS = [
         "linkLabel": "Open profile",
     },
     {
-        "title": "IDEAS/RePEc",
-        "description": "Author page used as the source for published and working paper links.",
+        "title": "Publications page",
+        "description": "Full publication archive and paper records.",
         "url": "https://ideas.repec.org/e/pcr20.html",
-        "linkLabel": "Open author page",
+        "linkLabel": "Open page",
     },
     {
         "title": "SSRN",
@@ -44,13 +58,13 @@ PROFILE_LINKS = [
     },
     {
         "title": "Nottingham School of Economics",
-        "description": "Department page linked from Guillermo Cruces's current site.",
+        "description": "Department page.",
         "url": "https://www.nottingham.ac.uk/economics/",
         "linkLabel": "Open site",
     },
     {
         "title": "IZA",
-        "description": "IZA profile linked from the current site.",
+        "description": "IZA profile.",
         "url": "http://www.iza.org/en/webcontent/personnel/photos/index_html?key=2723",
         "linkLabel": "Open profile",
     },
@@ -164,9 +178,110 @@ def normalize_text(value):
             return value
 
         if repaired.count("Ã") + repaired.count("â") < value.count("Ã") + value.count("â"):
-            return repaired
+            value = repaired
+
+    value = re.sub(
+        r"(?:repec:[^\s]+\s+is not listed on IDEAS\s*)+",
+        "",
+        value,
+        flags=re.IGNORECASE,
+    )
+    value = re.sub(r"\bis not listed on IDEAS\b", "", value, flags=re.IGNORECASE)
+    value = re.sub(r"\s+", " ", value).strip()
 
     return value
+
+
+def fetch_html(url):
+    request = urllib.request.Request(url, headers=REQUEST_HEADERS)
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return response.read().decode("utf-8", errors="ignore")
+
+
+def extract_abstract(url):
+    soup = BeautifulSoup(fetch_html(url), "lxml")
+    heading = soup.find(
+        lambda tag: tag.name in {"h2", "h3"}
+        and normalize_text(tag.get_text(" ", strip=True)) == "Abstract"
+    )
+    if not heading:
+        return ""
+
+    parts = []
+    for sibling in heading.next_siblings:
+        if getattr(sibling, "name", None) in {"h2", "h3"}:
+            break
+
+        if hasattr(sibling, "get_text"):
+            text = sibling.get_text(" ", strip=True)
+        else:
+            text = str(sibling).strip()
+
+        text = normalize_text(text)
+        if text:
+            parts.append(text)
+
+    abstract = "\n\n".join(parts)
+    if abstract.lower().startswith("no abstract is available"):
+        return ""
+
+    return abstract
+
+
+def load_cached_abstracts():
+    path = Path(OUTPUT_PATH)
+    if not path.exists():
+        return {}
+
+    text = path.read_text(encoding="utf-8")
+    match = re.search(r"window\.siteData = (.*);\s*$", text, re.S)
+    if not match:
+        return {}
+
+    try:
+        data = json.loads(match.group(1))
+    except json.JSONDecodeError:
+        return {}
+
+    cached = {}
+    for section in ("selectedPapers", "workingPapers"):
+        for item in data.get(section, []):
+            url = item.get("url")
+            abstract = normalize_text(item.get("abstract", "")) if item.get("abstract") else ""
+            if url and abstract:
+                cached[url] = abstract
+
+    return cached
+
+
+def attach_abstracts(items, cached_abstracts, label, refresh=False):
+    total = len(items)
+    missing_count = 0
+
+    for index, item in enumerate(items, start=1):
+        url = item.get("url")
+        if not url:
+            continue
+
+        abstract = ""
+        if not refresh:
+            abstract = cached_abstracts.get(url, "")
+
+        if not abstract:
+            abstract = extract_abstract(url)
+            if abstract:
+                cached_abstracts[url] = abstract
+            else:
+                missing_count += 1
+
+        if abstract:
+            item["abstract"] = abstract
+
+        if index % 10 == 0 or index == total:
+            print(f"{label}: {index}/{total}")
+
+    if missing_count:
+        print(f"{label}: {missing_count} items without abstract")
 
 
 def extract_section_items(soup, anchor_name):
@@ -214,22 +329,24 @@ def extract_section_items(soup, anchor_name):
                 "venue": venue,
                 "year": year,
                 "url": url,
-                "description": tail or "IDEAS/RePEc record.",
-                "linkLabel": "View on IDEAS",
+                "description": tail or "Paper record.",
+                "linkLabel": "Open paper",
             }
         )
 
     return items
 
 
-def build_data():
-    with urllib.request.urlopen(IDEAS_AUTHOR_URL) as response:
-        html = response.read().decode("utf-8", errors="ignore")
+def build_data(refresh_abstracts=False):
+    html = fetch_html(IDEAS_AUTHOR_URL)
 
     soup = BeautifulSoup(html, "lxml")
+    cached_abstracts = load_cached_abstracts()
 
     articles = extract_section_items(soup, "articles")
     working_papers = extract_section_items(soup, "papers")
+    attach_abstracts(articles, cached_abstracts, "Articles", refresh=refresh_abstracts)
+    attach_abstracts(working_papers, cached_abstracts, "Working papers", refresh=refresh_abstracts)
 
     for item in working_papers:
         item["status"] = item["year"]
@@ -251,7 +368,8 @@ def build_data():
 
 
 def main():
-    data = build_data()
+    refresh_abstracts = "--refresh-abstracts" in sys.argv
+    data = build_data(refresh_abstracts=refresh_abstracts)
 
     output = "// Generated from IDEAS/RePEc author page pcr20.\n"
     output += "window.siteData = "
@@ -267,6 +385,7 @@ def main():
             Wrote {OUTPUT_PATH}
             Articles: {len(data['selectedPapers'])}
             Working papers: {len(data['workingPapers'])}
+            Refresh abstracts: {'yes' if refresh_abstracts else 'no'}
             """
         ).strip()
     )
