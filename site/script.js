@@ -3,8 +3,7 @@ const {
   selectedPapers,
   workingPapers,
   ongoingProjects,
-  policyPublications,
-  resources
+  policyPublications
 } = window.siteData;
 
 const paperGrid = document.querySelector("#paper-grid");
@@ -14,7 +13,6 @@ const heroLinks = document.querySelector("#hero-links");
 const workingList = document.querySelector("#working-list");
 const ongoingList = document.querySelector("#ongoing-list");
 const policyGrid = document.querySelector("#policy-grid");
-const resourceGrid = document.querySelector("#resource-grid");
 const documentBasePath = "./assets/documents";
 
 function escapeHtml(value = "") {
@@ -231,30 +229,16 @@ function renderPolicies() {
     .join("");
 }
 
-function renderResources() {
-  resourceGrid.innerHTML = resources
-    .map(
-      (item) => `
-        <article class="resource-card">
-          <p class="card-kicker">Archive file</p>
-          <h3>${escapeHtml(item.title)}</h3>
-          <p>${escapeHtml(item.description)}</p>
-          <div class="card-links">
-            ${makeLink(item.linkLabel || "Open file", item)}
-          </div>
-        </article>
-      `
-    )
-    .join("");
-}
-
 function renderSearchSummary(query, articleCount, workingCount) {
-  if (!query) {
-    paperCount.textContent = `${selectedPapers.length} published articles and ${workingPapers.length} working papers currently listed here. Each record can expand to show its abstract.`;
+  if (!paperCount) {
     return;
   }
 
-  paperCount.textContent = `${articleCount} article${articleCount === 1 ? "" : "s"} and ${workingCount} working paper${workingCount === 1 ? "" : "s"} match "${searchInput.value.trim()}".`;
+  if (!query) {
+    paperCount.textContent = `${selectedPapers.length} published articles and ${workingPapers.length} working papers currently listed here. Each record can expand to show its abstract.`;
+  } else {
+    paperCount.textContent = `${articleCount} article${articleCount === 1 ? "" : "s"} and ${workingCount} working paper${workingCount === 1 ? "" : "s"} match "${searchInput.value.trim()}".`;
+  }
 }
 
 function renderSearchResults() {
@@ -286,4 +270,3 @@ renderHeroLinks();
 renderSearchResults();
 renderStack(ongoingList, ongoingProjects, { itemType: "Current project" });
 renderPolicies();
-renderResources();

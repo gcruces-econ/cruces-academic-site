@@ -124,15 +124,34 @@ img {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.72fr);
-  gap: 24px;
-  align-items: start;
+  margin-top: 12px;
 }
 
-.hero-copy,
-.hero-panel,
-.intro-card,
+.hero-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(300px, 0.78fr);
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(77, 68, 77, 0.12);
+  border-radius: 46px;
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.72), transparent 34%),
+    linear-gradient(135deg, rgba(252, 249, 246, 0.96), rgba(243, 235, 227, 0.88));
+  box-shadow: 0 34px 90px rgba(46, 40, 48, 0.12);
+  animation: rise 460ms ease both;
+}
+
+.hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, transparent 0 59%, rgba(77, 68, 77, 0.06) 59.2%, transparent 60%),
+    radial-gradient(circle at 84% 18%, rgba(170, 158, 147, 0.18), transparent 22%);
+  pointer-events: none;
+}
+
 .paper-card,
 .policy-card,
 .resource-card,
@@ -144,24 +163,26 @@ img {
 }
 
 .hero-copy {
+  z-index: 1;
   position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-xl);
-  padding: 48px;
-  background:
-    linear-gradient(145deg, rgba(252, 249, 246, 0.92), rgba(245, 237, 229, 0.84)),
-    var(--surface-strong);
+  display: grid;
+  align-content: start;
+  min-height: 0;
+  padding: 64px 58px 56px;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
 }
 
 .hero-copy::after {
   content: "";
   position: absolute;
-  right: -120px;
-  bottom: -120px;
-  width: 340px;
-  height: 340px;
+  left: -80px;
+  bottom: -90px;
+  width: 280px;
+  height: 280px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(170, 158, 147, 0.26), transparent 68%);
+  background: radial-gradient(circle, rgba(170, 158, 147, 0.2), transparent 68%);
 }
 
 .eyebrow,
@@ -186,8 +207,8 @@ h3 {
 }
 
 h1 {
-  max-width: 10ch;
-  font-size: clamp(3.1rem, 5vw, 5.7rem);
+  max-width: 8.6ch;
+  font-size: clamp(3.6rem, 6vw, 6.4rem);
 }
 
 h2 {
@@ -215,9 +236,37 @@ h3 {
 }
 
 .hero-summary {
-  max-width: 62ch;
-  margin: 22px 0 0;
-  font-size: 1.08rem;
+  max-width: 34rem;
+  margin: 24px 0 0;
+  font-size: 1.14rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(77, 68, 77, 0.12);
+  color: var(--accent-strong);
+  font-size: 0.95rem;
+}
+
+.hero-meta span {
+  position: relative;
+  padding-right: 18px;
+}
+
+.hero-meta span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(77, 68, 77, 0.25);
+  transform: translateY(-50%);
 }
 
 .button {
@@ -251,16 +300,6 @@ h3 {
   background: rgba(255, 255, 255, 0.48);
 }
 
-.research-areas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 28px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.research-areas li,
 .paper-year,
 .status-pill {
   display: inline-flex;
@@ -274,63 +313,67 @@ h3 {
 }
 
 .portrait-panel {
+  z-index: 1;
   display: grid;
-  gap: 20px;
   align-content: start;
-  padding: 24px;
-  max-width: 360px;
-  border-radius: 32px;
+  gap: 24px;
+  min-height: 100%;
+  align-content: start;
+  padding: 30px 28px 28px;
   color: #f4efea;
   background:
-    linear-gradient(180deg, rgba(46, 40, 48, 0.96), rgba(77, 68, 77, 0.92)),
+    linear-gradient(180deg, rgba(44, 38, 47, 0.97), rgba(71, 63, 72, 0.94)),
     var(--accent-strong);
-  border-color: rgba(226, 224, 222, 0.16);
-  box-shadow: 0 30px 70px rgba(46, 40, 48, 0.22);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .portrait-frame {
   margin: 0;
   overflow: hidden;
-  border-radius: 26px;
-  aspect-ratio: 0.88;
-  max-height: 340px;
+  border-radius: 32px;
+  aspect-ratio: 0.82;
+  max-height: 420px;
   background: linear-gradient(180deg, rgba(226, 224, 222, 0.25), rgba(170, 158, 147, 0.18));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
 }
 
 .portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 12%;
 }
 
 .panel-label {
-  color: rgba(238, 232, 226, 0.74);
-}
-
-.panel-summary {
-  margin: 0;
-  color: rgba(242, 237, 233, 0.86);
+  margin-bottom: 10px;
+  color: rgba(238, 232, 226, 0.62);
 }
 
 .mini-link-list {
   display: grid;
-  gap: 12px;
+  gap: 0;
 }
 
 .mini-link {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
-  padding: 13px 15px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   transition:
     transform 180ms ease,
-    background-color 180ms ease,
+    color 180ms ease,
     border-color 180ms ease;
+}
+
+.mini-link:first-child {
+  padding-top: 0;
+  border-top: 0;
 }
 
 .mini-link-copy {
@@ -340,7 +383,7 @@ h3 {
 
 .mini-link-copy strong {
   color: #f4efea;
-  font-size: 1rem;
+  font-size: 1.02rem;
   line-height: 1.3;
 }
 
@@ -352,15 +395,14 @@ h3 {
 
 .mini-link::after {
   content: "->";
-  color: rgba(238, 232, 226, 0.76);
+  color: rgba(238, 232, 226, 0.52);
   align-self: center;
 }
 
 .mini-link:hover,
 .mini-link:focus-visible {
-  transform: translateX(2px);
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateX(3px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .work-section {
@@ -587,12 +629,13 @@ h3 {
 }
 
 @media (max-width: 1080px) {
-  .hero {
+  .hero-stage {
     grid-template-columns: 1fr;
   }
 
-  .portrait-panel {
-    max-width: none;
+  .hero-copy {
+    min-height: auto;
+    padding: 48px 34px 28px;
   }
 
   .section-heading {
@@ -634,8 +677,9 @@ h3 {
     padding: 22px;
   }
 
-  .hero-copy {
-    border-radius: 32px;
+  .portrait-panel {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   h1 {
