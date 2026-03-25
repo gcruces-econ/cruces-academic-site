@@ -125,9 +125,9 @@ img {
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.72fr);
   gap: 24px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .hero-copy,
@@ -278,6 +278,7 @@ h3 {
   gap: 20px;
   align-content: start;
   padding: 24px;
+  max-width: 360px;
   border-radius: 32px;
   color: #f4efea;
   background:
@@ -291,7 +292,8 @@ h3 {
   margin: 0;
   overflow: hidden;
   border-radius: 26px;
-  aspect-ratio: 0.86;
+  aspect-ratio: 0.88;
+  max-height: 340px;
   background: linear-gradient(180deg, rgba(226, 224, 222, 0.25), rgba(170, 158, 147, 0.18));
 }
 
@@ -344,8 +346,8 @@ h3 {
 
 .mini-link-copy span {
   color: rgba(242, 237, 233, 0.82);
-  font-size: 0.94rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .mini-link::after {
@@ -585,6 +587,14 @@ h3 {
 }
 
 @media (max-width: 1080px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-panel {
+    max-width: none;
+  }
+
   .section-heading {
     align-items: start;
     flex-direction: column;
