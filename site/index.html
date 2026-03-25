@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guillermo A. Cruces | Research and Publications</title>
+    <title>Guillermo A. Cruces | IDEAS/RePEc Research Archive</title>
     <meta
       name="description"
-      content="Academic homepage for Guillermo A. Cruces with selected research, working papers, policy publications, and downloadable materials."
+      content="Academic homepage prototype for Guillermo A. Cruces with current-site links, all IDEAS/RePEc articles, all IDEAS/RePEc working papers, and Google Sites-ready content blocks."
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +23,7 @@
         <a class="brand" href="#top">GC</a>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#about">About</a>
+          <a href="#links">Links</a>
           <a href="#research">Research</a>
           <a href="#work">Working Papers</a>
           <a href="#policy">Policy</a>
@@ -33,7 +34,7 @@
       <main id="top">
         <section class="hero section">
           <div class="hero-copy">
-            <p class="eyebrow">gcruces.github.io</p>
+            <p class="eyebrow">Current Site + IDEAS/RePEc</p>
             <h1>Guillermo A. Cruces</h1>
             <p class="hero-summary">
               Professor of Economics at Universidad de San Andres and the University
@@ -41,8 +42,15 @@
               taxation, social protection, poverty, and inequality.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="./assets/documents/CV_CRUCES_2026_EN.doc">Download CV</a>
-              <a class="button button-secondary" href="mailto:gcruces@gmail.com">Contact</a>
+              <a
+                class="button button-primary"
+                href="https://www.dropbox.com/s/u88tuj8n3hh9asl/CV_CRUCES_2023_EN_Web.pdf?dl=0"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Current CV
+              </a>
+              <a class="button button-secondary" href="mailto:gcruces@cedlas.org">Contact</a>
             </div>
             <ul class="research-areas" aria-label="Research areas">
               <li>Public Economics</li>
@@ -53,28 +61,49 @@
             </ul>
           </div>
 
-          <aside class="hero-panel">
-            <div class="monogram" aria-hidden="true">
-              <span>GC</span>
+          <aside class="hero-panel portrait-panel">
+            <figure class="portrait-frame">
+              <img
+                src="./assets/images/guillermo-cruces.jpg"
+                alt="Portrait of Guillermo Cruces"
+              />
+            </figure>
+            <div class="panel-block">
+              <p class="panel-label">Current Site Sync</p>
+              <p class="panel-summary">
+                Photo, CV link, and external profile links are taken from
+                gcruces.cedlas.org. Published articles and working papers below open
+                on IDEAS/RePEc records.
+              </p>
             </div>
             <div class="panel-block">
-              <p class="panel-label">Current appointments</p>
-              <ul class="panel-list">
-                <li>Professor of Economics, Universidad de San Andres</li>
-                <li>Professor of Economics, University of Nottingham</li>
-                <li>Senior researcher, CEDLAS</li>
-                <li>Senior researcher, CONICET</li>
-              </ul>
-            </div>
-            <div class="panel-block">
-              <p class="panel-label">Affiliations</p>
-              <ul class="mini-tags">
-                <li>IFS</li>
-                <li>CEPR</li>
-                <li>IZA</li>
-                <li>J-PAL</li>
-                <li>PEP</li>
-              </ul>
+              <p class="panel-label">Quick Links</p>
+              <div class="mini-link-list">
+                <a
+                  class="mini-link"
+                  href="https://scholar.google.com/citations?user=CylXqSUAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Google Scholar
+                </a>
+                <a
+                  class="mini-link"
+                  href="https://ideas.repec.org/e/pcr20.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  IDEAS/RePEc
+                </a>
+                <a
+                  class="mini-link"
+                  href="https://www.nottingham.ac.uk/economics/people/guillermo.cruces"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Nottingham
+                </a>
+              </div>
             </div>
           </aside>
         </section>
@@ -90,9 +119,9 @@
               across Latin America and beyond.
             </p>
             <p>
-              This page highlights a compact selection of articles, work in progress,
-              and policy-facing publications assembled from the local CV and archive
-              available in this project.
+              This prototype now combines the current site links from
+              gcruces.cedlas.org with a full publication and working paper archive
+              that opens on IDEAS/RePEc.
             </p>
           </article>
 
@@ -100,41 +129,53 @@
             <p class="section-kicker">Highlights</p>
             <div class="stats-grid">
               <div>
-                <strong>25+</strong>
-                <span>years in research and policy work</span>
+                <strong id="research-total">0</strong>
+                <span>Total IDEAS/RePEc items currently surfaced on this page</span>
               </div>
               <div>
-                <strong>Field</strong>
-                <span>Experiments, administrative data, public economics</span>
+                <strong id="article-total">0</strong>
+                <span>Published articles linked directly to IDEAS/RePEc records</span>
               </div>
               <div>
-                <strong>Region</strong>
-                <span>Latin America, with comparative work across countries</span>
+                <strong id="working-total">0</strong>
+                <span>Working papers pulled from the same author page</span>
               </div>
               <div>
-                <strong>Focus</strong>
-                <span>Behavior, inequality, labor regulation, and social policy</span>
+                <strong>Method</strong>
+                <span>Designed as simple sections for an easier Google Sites migration</span>
               </div>
             </div>
           </article>
         </section>
 
+        <section id="links" class="section">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Elsewhere on the web</p>
+              <h2>Links taken from the current site</h2>
+            </div>
+          </div>
+          <div id="profile-grid" class="resource-grid"></div>
+        </section>
+
         <section id="research" class="section">
           <div class="section-heading">
             <div>
-              <p class="section-kicker">Selected research</p>
-              <h2>Articles with tags and expandable abstracts</h2>
+              <p class="section-kicker">Research output</p>
+              <h2>All papers linked from IDEAS/RePEc</h2>
             </div>
             <p class="section-note" id="paper-count"></p>
           </div>
 
           <div class="paper-toolbar">
-            <div class="filter-group" id="tag-filters" aria-label="Research filters"></div>
             <label class="search-field">
               <span class="sr-only">Search papers</span>
-              <input id="paper-search" type="search" placeholder="Search title, venue, coauthors, or tags" />
+              <input
+                id="paper-search"
+                type="search"
+                placeholder="Search articles and working papers by title, authors, venue, or year"
+              />
             </label>
-            <button class="button button-ghost" id="toggle-abstracts" type="button">Open all abstracts</button>
           </div>
 
           <div id="paper-grid" class="paper-grid" aria-live="polite"></div>
@@ -143,7 +184,7 @@
         <section id="work" class="section split-section">
           <div>
             <p class="section-kicker">Working papers</p>
-            <h2>Current work under review</h2>
+            <h2>Complete working paper list from IDEAS/RePEc</h2>
             <div id="working-list" class="stack-list"></div>
           </div>
           <div>
@@ -166,8 +207,8 @@
         <section id="resources" class="section resources-section">
           <div class="section-heading">
             <div>
-              <p class="section-kicker">Resources</p>
-              <h2>Downloadable materials from the archive</h2>
+              <p class="section-kicker">Archive resources</p>
+              <h2>Local files kept for reference and migration work</h2>
             </div>
           </div>
           <div id="resource-grid" class="resource-grid"></div>
@@ -175,7 +216,7 @@
       </main>
 
       <footer class="site-footer">
-        <p>Static prototype and content inventory used to plan Guillermo Cruces's Google Site.</p>
+        <p>Prototype for Guillermo Cruces's Google Site using current-site links and IDEAS/RePEc records.</p>
       </footer>
     </div>
 

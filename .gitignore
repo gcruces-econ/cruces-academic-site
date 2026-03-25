@@ -1,4 +1,6 @@
 .DS_Store
 tmp/
 output/
+test-results/
+playwright-report/
 .vscode/

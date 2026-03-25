@@ -1,104 +1,68 @@
-const { paperTags, selectedPapers, workingPapers, ongoingProjects, policyPublications, resources } =
-  window.siteData;
+const {
+  profileLinks,
+  selectedPapers,
+  workingPapers,
+  ongoingProjects,
+  policyPublications,
+  resources
+} = window.siteData;
 
 const paperGrid = document.querySelector("#paper-grid");
-const tagFilters = document.querySelector("#tag-filters");
 const searchInput = document.querySelector("#paper-search");
 const paperCount = document.querySelector("#paper-count");
+const profileGrid = document.querySelector("#profile-grid");
 const workingList = document.querySelector("#working-list");
 const ongoingList = document.querySelector("#ongoing-list");
 const policyGrid = document.querySelector("#policy-grid");
 const resourceGrid = document.querySelector("#resource-grid");
-const toggleAbstractsButton = document.querySelector("#toggle-abstracts");
+const researchTotal = document.querySelector("#research-total");
+const articleTotal = document.querySelector("#article-total");
+const workingTotal = document.querySelector("#working-total");
 const documentBasePath = "./assets/documents";
 
-let activeTag = "All";
-let allAbstractsOpen = false;
-
-function fileHref(file) {
-  return encodeURI(`${documentBasePath}/${file}`);
+function escapeHtml(value = "") {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
-function makeLink(label, file) {
-  return `<a class="text-link" href="${fileHref(file)}" target="_blank" rel="noreferrer">${label}</a>`;
+function itemHref(item) {
+  if (item.url) {
+    return item.url;
+  }
+
+  return encodeURI(`${documentBasePath}/${item.file}`);
 }
 
-function renderTagFilters() {
-  tagFilters.innerHTML = paperTags
-    .map(
-      (tag) => `
-        <button
-          type="button"
-          class="filter-chip ${tag === activeTag ? "active" : ""}"
-          data-tag="${tag}"
-        >
-          ${tag}
-        </button>
-      `
-    )
-    .join("");
-
-  tagFilters.querySelectorAll(".filter-chip").forEach((button) => {
-    button.addEventListener("click", () => {
-      activeTag = button.dataset.tag;
-      renderTagFilters();
-      renderPapers();
-    });
-  });
+function makeLink(label, item) {
+  return `<a class="text-link" href="${itemHref(item)}" target="_blank" rel="noreferrer">${escapeHtml(label)}</a>`;
 }
 
-function paperMatchesSearch(paper, query) {
+function matchesQuery(values, query) {
   if (!query) {
     return true;
   }
 
-  const haystack = [paper.title, paper.authors, paper.venue, paper.description, paper.abstract, ...paper.tags]
-    .join(" ")
-    .toLowerCase();
-
-  return haystack.includes(query);
+  return values.join(" ").toLowerCase().includes(query);
 }
 
-function renderPapers() {
-  const query = searchInput.value.trim().toLowerCase();
-  const filtered = selectedPapers.filter((paper) => {
-    const tagMatch = activeTag === "All" || paper.tags.includes(activeTag);
-    return tagMatch && paperMatchesSearch(paper, query);
-  });
+function getSearchQuery() {
+  return searchInput.value.trim().toLowerCase();
+}
 
-  paperCount.textContent = `${filtered.length} paper${filtered.length === 1 ? "" : "s"} shown`;
-
-  if (!filtered.length) {
-    paperGrid.innerHTML = `
-      <article class="paper-card">
-        <h3>No papers match the current filter</h3>
-        <p class="paper-description">Try another tag or broaden the search terms.</p>
-      </article>
-    `;
-    return;
-  }
-
-  paperGrid.innerHTML = filtered
+function renderProfiles() {
+  profileGrid.innerHTML = profileLinks
     .map(
-      (paper, index) => `
-        <article class="paper-card" style="animation-delay:${index * 35}ms">
-          <div class="paper-card-header">
-            <div>
-              <h3>${paper.title}</h3>
-              <p class="paper-meta">${paper.authors}<br />${paper.venue}</p>
-            </div>
-            <span class="paper-year">${paper.year}</span>
-          </div>
-          <ul class="paper-tags">
-            ${paper.tags.map((tag) => `<li>${tag}</li>`).join("")}
-          </ul>
-          <p class="paper-description">${paper.description}</p>
-          <details ${allAbstractsOpen ? "open" : ""}>
-            <summary>Abstract</summary>
-            <p>${paper.abstract}</p>
-          </details>
+      (item) => `
+        <article class="resource-card">
+          <p class="card-kicker">Profile</p>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
           <div class="card-links">
-            ${makeLink("Open paper", paper.file)}
+            ${makeLink(item.linkLabel || "Open link", item)}
           </div>
         </article>
       `
@@ -106,16 +70,99 @@ function renderPapers() {
     .join("");
 }
 
-function renderStack(listElement, items) {
+function renderHighlights() {
+  researchTotal.textContent = String(selectedPapers.length + workingPapers.length);
+  articleTotal.textContent = String(selectedPapers.length);
+  workingTotal.textContent = String(workingPapers.length);
+}
+
+function renderPapers(query) {
+  const filtered = selectedPapers.filter((paper) =>
+    matchesQuery([paper.title, paper.authors, paper.venue, paper.description, paper.year], query)
+  );
+
+  if (!filtered.length) {
+    paperGrid.innerHTML = `
+      <article class="paper-card empty-state">
+        <p class="card-kicker">No matches</p>
+        <h3>No published articles match this search</h3>
+        <p class="paper-description">Try a broader term such as tax, labor, poverty, or Argentina.</p>
+      </article>
+    `;
+
+    return 0;
+  }
+
+  paperGrid.innerHTML = filtered
+    .map(
+      (paper) => `
+        <article class="paper-card">
+          <div class="paper-card-header">
+            <div>
+              <p class="card-kicker">Published article</p>
+              <h3>${escapeHtml(paper.title)}</h3>
+              <p class="paper-meta">${escapeHtml(paper.authors)}</p>
+            </div>
+            <span class="paper-year">${escapeHtml(paper.year)}</span>
+          </div>
+          <p class="paper-venue">${escapeHtml(paper.venue)}</p>
+          <p class="paper-description">${escapeHtml(paper.description)}</p>
+          <div class="card-links">
+            ${makeLink(paper.linkLabel || "View on IDEAS", paper)}
+          </div>
+        </article>
+      `
+    )
+    .join("");
+
+  return filtered.length;
+}
+
+function renderWorkingPapers(query) {
+  const filtered = workingPapers.filter((item) =>
+    matchesQuery([item.title, item.description, item.status], query)
+  );
+
+  renderStack(workingList, filtered, {
+    itemType: "Working paper",
+    emptyTitle: "No working papers match this search",
+    emptyDescription: "Try another term to search the full IDEAS/RePEc working paper list."
+  });
+
+  return filtered.length;
+}
+
+function renderStack(listElement, items, options = {}) {
+  const {
+    itemType = null,
+    emptyTitle = "No items to display",
+    emptyDescription = "There are no items available in this section."
+  } = options;
+
+  if (!items.length) {
+    listElement.innerHTML = `
+      <article class="stack-item empty-state">
+        ${itemType ? `<p class="card-kicker">${escapeHtml(itemType)}</p>` : ""}
+        <h3>${escapeHtml(emptyTitle)}</h3>
+        <p>${escapeHtml(emptyDescription)}</p>
+      </article>
+    `;
+    return;
+  }
+
   listElement.innerHTML = items
     .map(
       (item) => `
         <article class="stack-item">
           <div class="stack-item-header">
-            <h3>${item.title}</h3>
-            <span class="status-pill">${item.status}</span>
+            <div>
+              ${itemType ? `<p class="card-kicker">${escapeHtml(itemType)}</p>` : ""}
+              <h3>${escapeHtml(item.title)}</h3>
+            </div>
+            ${item.status ? `<span class="status-pill">${escapeHtml(item.status)}</span>` : ""}
           </div>
-          <p>${item.description}</p>
+          <p>${escapeHtml(item.description)}</p>
+          ${item.url || item.file ? `<div class="card-links">${makeLink(item.linkLabel || "Open link", item)}</div>` : ""}
         </article>
       `
     )
@@ -128,12 +175,15 @@ function renderPolicies() {
       (item) => `
         <article class="policy-card">
           <div class="paper-card-header">
-            <h3>${item.title}</h3>
-            <span class="paper-year">${item.year}</span>
+            <div>
+              <p class="card-kicker">Policy or book</p>
+              <h3>${escapeHtml(item.title)}</h3>
+            </div>
+            <span class="paper-year">${escapeHtml(item.year)}</span>
           </div>
-          <p>${item.description}</p>
+          <p>${escapeHtml(item.description)}</p>
           <div class="card-links">
-            ${makeLink("Open publication", item.file)}
+            ${makeLink(item.linkLabel || "Open publication", item)}
           </div>
         </article>
       `
@@ -146,10 +196,11 @@ function renderResources() {
     .map(
       (item) => `
         <article class="resource-card">
-          <h3>${item.title}</h3>
-          <p>${item.description}</p>
+          <p class="card-kicker">Archive file</p>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
           <div class="card-links">
-            ${makeLink("Download", item.file)}
+            ${makeLink(item.linkLabel || "Open file", item)}
           </div>
         </article>
       `
@@ -157,17 +208,27 @@ function renderResources() {
     .join("");
 }
 
-searchInput.addEventListener("input", renderPapers);
+function renderSearchSummary(query, articleCount, workingCount) {
+  if (!query) {
+    paperCount.textContent = `${selectedPapers.length} published articles and ${workingPapers.length} working papers pulled from IDEAS/RePEc. Search updates both sections below.`;
+    return;
+  }
 
-toggleAbstractsButton.addEventListener("click", () => {
-  allAbstractsOpen = !allAbstractsOpen;
-  toggleAbstractsButton.textContent = allAbstractsOpen ? "Close all abstracts" : "Open all abstracts";
-  renderPapers();
-});
+  paperCount.textContent = `${articleCount} article${articleCount === 1 ? "" : "s"} and ${workingCount} working paper${workingCount === 1 ? "" : "s"} match "${searchInput.value.trim()}".`;
+}
 
-renderTagFilters();
-renderPapers();
-renderStack(workingList, workingPapers);
-renderStack(ongoingList, ongoingProjects);
+function renderSearchResults() {
+  const query = getSearchQuery();
+  const articleCount = renderPapers(query);
+  const workingCount = renderWorkingPapers(query);
+  renderSearchSummary(query, articleCount, workingCount);
+}
+
+searchInput.addEventListener("input", renderSearchResults);
+
+renderProfiles();
+renderHighlights();
+renderSearchResults();
+renderStack(ongoingList, ongoingProjects, { itemType: "Current project" });
 renderPolicies();
 renderResources();
