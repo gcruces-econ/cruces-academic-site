@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guillermo A. Cruces | Research and Publications</title>
+    <meta
+      name="description"
+      content="Academic homepage for Guillermo A. Cruces with selected research, working papers, policy publications, and downloadable materials."
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">GC</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#work">Working Papers</a>
+          <a href="#policy">Policy</a>
+          <a href="#resources">Resources</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero section">
+          <div class="hero-copy">
+            <p class="eyebrow">gcruces.github.io</p>
+            <h1>Guillermo A. Cruces</h1>
+            <p class="hero-summary">
+              Professor of Economics at Universidad de San Andres and the University
+              of Nottingham, with research spanning public economics, labor markets,
+              taxation, social protection, poverty, and inequality.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="./assets/documents/CV_CRUCES_2026_EN.doc">Download CV</a>
+              <a class="button button-secondary" href="mailto:gcruces@gmail.com">Contact</a>
+            </div>
+            <ul class="research-areas" aria-label="Research areas">
+              <li>Public Economics</li>
+              <li>Taxation and Behavior</li>
+              <li>Labor Markets</li>
+              <li>Social Protection</li>
+              <li>Poverty and Inequality</li>
+            </ul>
+          </div>
+
+          <aside class="hero-panel">
+            <div class="monogram" aria-hidden="true">
+              <span>GC</span>
+            </div>
+            <div class="panel-block">
+              <p class="panel-label">Current appointments</p>
+              <ul class="panel-list">
+                <li>Professor of Economics, Universidad de San Andres</li>
+                <li>Professor of Economics, University of Nottingham</li>
+                <li>Senior researcher, CEDLAS</li>
+                <li>Senior researcher, CONICET</li>
+              </ul>
+            </div>
+            <div class="panel-block">
+              <p class="panel-label">Affiliations</p>
+              <ul class="mini-tags">
+                <li>IFS</li>
+                <li>CEPR</li>
+                <li>IZA</li>
+                <li>J-PAL</li>
+                <li>PEP</li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+
+        <section id="about" class="section intro-grid">
+          <article class="intro-card">
+            <p class="section-kicker">Profile</p>
+            <h2>Applied microeconomics with a strong policy edge</h2>
+            <p>
+              Guillermo Cruces works on taxation, labor informality, redistribution,
+              social assistance, education, and public beliefs. His recent work
+              combines field experiments, administrative data, and policy evaluation
+              across Latin America and beyond.
+            </p>
+            <p>
+              This page highlights a compact selection of articles, work in progress,
+              and policy-facing publications assembled from the local CV and archive
+              available in this project.
+            </p>
+          </article>
+
+          <article class="intro-card">
+            <p class="section-kicker">Highlights</p>
+            <div class="stats-grid">
+              <div>
+                <strong>25+</strong>
+                <span>years in research and policy work</span>
+              </div>
+              <div>
+                <strong>Field</strong>
+                <span>Experiments, administrative data, public economics</span>
+              </div>
+              <div>
+                <strong>Region</strong>
+                <span>Latin America, with comparative work across countries</span>
+              </div>
+              <div>
+                <strong>Focus</strong>
+                <span>Behavior, inequality, labor regulation, and social policy</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="research" class="section">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Selected research</p>
+              <h2>Articles with tags and expandable abstracts</h2>
+            </div>
+            <p class="section-note" id="paper-count"></p>
+          </div>
+
+          <div class="paper-toolbar">
+            <div class="filter-group" id="tag-filters" aria-label="Research filters"></div>
+            <label class="search-field">
+              <span class="sr-only">Search papers</span>
+              <input id="paper-search" type="search" placeholder="Search title, venue, coauthors, or tags" />
+            </label>
+            <button class="button button-ghost" id="toggle-abstracts" type="button">Open all abstracts</button>
+          </div>
+
+          <div id="paper-grid" class="paper-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="work" class="section split-section">
+          <div>
+            <p class="section-kicker">Working papers</p>
+            <h2>Current work under review</h2>
+            <div id="working-list" class="stack-list"></div>
+          </div>
+          <div>
+            <p class="section-kicker">Ongoing projects</p>
+            <h2>Active lines of work</h2>
+            <div id="ongoing-list" class="stack-list"></div>
+          </div>
+        </section>
+
+        <section id="policy" class="section">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Policy and books</p>
+              <h2>Policy-facing publications, reports, and chapters</h2>
+            </div>
+          </div>
+          <div id="policy-grid" class="policy-grid"></div>
+        </section>
+
+        <section id="resources" class="section resources-section">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Resources</p>
+              <h2>Downloadable materials from the archive</h2>
+            </div>
+          </div>
+          <div id="resource-grid" class="resource-grid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Static prototype and content inventory used to plan Guillermo Cruces's Google Site.</p>
+      </footer>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
