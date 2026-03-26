@@ -217,3 +217,4 @@ python3 scripts/sync_ideas_data.py --refresh-abstracts
 ## Current Project Intent
 
 This repo is being used to shape and maintain Guillermo Cruces's web presence with a structure that is easy to edit, version, and reuse in future iterations.
+
