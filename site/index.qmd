@@ -4,6 +4,7 @@ description: "Academic homepage for Guillermo A. Cruces with research papers, wo
 title-block-style: none
 ---
 
+```{=html}
 <div class="page-shell">
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary navigation">
@@ -93,3 +94,4 @@ title-block-style: none
 </div>
 
 <script src="./script.js"></script>
+```
