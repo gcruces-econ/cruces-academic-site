@@ -59,8 +59,8 @@ Files that are generated and normally should not be edited by hand:
 - `site/data/site-data.json`
   Generated runtime data consumed by the frontend.
 
-- `site/includes/generated/profile-hero.html`
-- `site/includes/generated/footer-email.html`
+- `site/includes/generated/profile-hero.qmd`
+- `site/includes/generated/footer-email.qmd`
   Generated includes built from `site/content/profile.yml`.
 
 ## Website Files

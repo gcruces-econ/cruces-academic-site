@@ -1,3 +1,4 @@
+```{=html}
 <div class="hero-stage">
   <figure class="portrait-frame">
     <img src="./assets/images/guillermo-cruces.jpg" alt="Portrait of Guillermo Cruces" />
@@ -13,3 +14,4 @@
     </div>
   </div>
 </div>
+```

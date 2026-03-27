@@ -19,7 +19,7 @@ title-block-style: none
     <section class="hero section">
 ```
 
-{{< include includes/generated/profile-hero.html >}}
+{{< include includes/generated/profile-hero.qmd >}}
 
 ```{=html}
       <div class="hero-links-bar">
@@ -76,7 +76,7 @@ title-block-style: none
   <footer class="site-footer">
 ```
 
-{{< include includes/generated/footer-email.html >}}
+{{< include includes/generated/footer-email.qmd >}}
 
 ```{=html}
   </footer>

@@ -51,6 +51,7 @@ def render_profile_hero(profile):
     )
 
     return (
+        "```{=html}\n"
         '<div class="hero-stage">\n'
         '  <figure class="portrait-frame">\n'
         f'    <img src="{portrait_src}" alt="{portrait_alt}" />\n'
@@ -65,12 +66,13 @@ def render_profile_hero(profile):
         "    </div>\n"
         "  </div>\n"
         "</div>\n"
+        "```\n"
     )
 
 
 def render_footer(profile):
     email = html.escape(profile["email"])
-    return f'<p><a href="mailto:{email}">{email}</a></p>\n'
+    return f"```{{=html}}\n<p><a href=\"mailto:{email}\">{email}</a></p>\n```\n"
 
 
 def build_site_data():
@@ -122,11 +124,11 @@ def write_outputs(profile, site_data):
         json.dumps(site_data, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    (GENERATED_INCLUDE_ROOT / "profile-hero.html").write_text(
+    (GENERATED_INCLUDE_ROOT / "profile-hero.qmd").write_text(
         render_profile_hero(profile),
         encoding="utf-8",
     )
-    (GENERATED_INCLUDE_ROOT / "footer-email.html").write_text(
+    (GENERATED_INCLUDE_ROOT / "footer-email.qmd").write_text(
         render_footer(profile),
         encoding="utf-8",
     )
