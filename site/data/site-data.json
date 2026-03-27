@@ -1,5 +1,4 @@
-// Generated from IDEAS/RePEc author page pcr20.
-window.siteData = {
+{
   "profileLinks": [
     {
       "title": "Current CV",
@@ -1175,4 +1174,4 @@ window.siteData = {
       "linkLabel": "Open file"
     }
   ]
-};
+}

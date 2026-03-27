@@ -5,3 +5,5 @@ output/
 test-results/
 playwright-report/
 .vscode/
+site/.quarto/
+site/_site/

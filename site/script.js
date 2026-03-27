@@ -1,22 +1,8 @@
-const {
-  profileLinks,
-  selectedPapers,
-  workingPapers,
-  ongoingProjects,
-  policyPublications
-} = window.siteData;
-
-const paperGrid = document.querySelector("#paper-grid");
-const searchInput = document.querySelector("#paper-search");
-const paperCount = document.querySelector("#paper-count");
-const heroLinks = document.querySelector("#hero-links");
-const workingList = document.querySelector("#working-list");
-const ongoingList = document.querySelector("#ongoing-list");
-const policyGrid = document.querySelector("#policy-grid");
-const documentBasePath = "./assets/documents";
+const DATA_PATH = "./data/site-data.json";
+const DOCUMENT_BASE_PATH = "./assets/documents";
 
 function escapeHtml(value = "") {
-  return value
+  return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -29,7 +15,7 @@ function itemHref(item) {
     return item.url;
   }
 
-  return encodeURI(`${documentBasePath}/${item.file}`);
+  return encodeURI(`${DOCUMENT_BASE_PATH}/${item.file}`);
 }
 
 function itemLinkAttributes(item) {
@@ -81,14 +67,18 @@ function matchesQuery(values, query) {
     return true;
   }
 
-  return values.join(" ").toLowerCase().includes(query);
+  return values
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase()
+    .includes(query);
 }
 
-function getSearchQuery() {
-  return searchInput.value.trim().toLowerCase();
-}
+function renderHeroLinks(heroLinks, profileLinks) {
+  if (!heroLinks) {
+    return;
+  }
 
-function renderHeroLinks() {
   heroLinks.innerHTML = profileLinks
     .map(
       (item) => `
@@ -103,7 +93,11 @@ function renderHeroLinks() {
     .join("");
 }
 
-function renderPapers(query) {
+function renderPapers(paperGrid, selectedPapers, query) {
+  if (!paperGrid) {
+    return 0;
+  }
+
   const filtered = selectedPapers.filter((paper) =>
     matchesQuery(
       [paper.title, paper.authors, paper.venue, paper.description, paper.year, paper.abstract || ""],
@@ -151,22 +145,11 @@ function renderPapers(query) {
   return filtered.length;
 }
 
-function renderWorkingPapers(query) {
-  const filtered = workingPapers.filter((item) =>
-    matchesQuery([item.title, item.description, item.status, item.abstract || ""], query)
-  );
-
-  renderStack(workingList, filtered, {
-    itemType: "Working paper",
-    idPrefix: "working-paper",
-    emptyTitle: "No working papers match this search",
-    emptyDescription: "Try another term to search the full working paper archive."
-  });
-
-  return filtered.length;
-}
-
 function renderStack(listElement, items, options = {}) {
+  if (!listElement) {
+    return;
+  }
+
   const {
     itemType = null,
     idPrefix = "stack-item",
@@ -207,7 +190,26 @@ function renderStack(listElement, items, options = {}) {
     .join("");
 }
 
-function renderPolicies() {
+function renderWorkingPapers(workingList, workingPapers, query) {
+  const filtered = workingPapers.filter((item) =>
+    matchesQuery([item.title, item.description, item.status, item.abstract || ""], query)
+  );
+
+  renderStack(workingList, filtered, {
+    itemType: "Working paper",
+    idPrefix: "working-paper",
+    emptyTitle: "No working papers match this search",
+    emptyDescription: "Try another term to search the full working paper archive."
+  });
+
+  return filtered.length;
+}
+
+function renderPolicies(policyGrid, policyPublications) {
+  if (!policyGrid) {
+    return;
+  }
+
   policyGrid.innerHTML = policyPublications
     .map(
       (item) => `
@@ -229,8 +231,8 @@ function renderPolicies() {
     .join("");
 }
 
-function renderSearchSummary(query, articleCount, workingCount) {
-  if (!paperCount) {
+function renderSearchSummary(paperCount, searchInput, selectedPapers, workingPapers, query, articleCount, workingCount) {
+  if (!paperCount || !searchInput) {
     return;
   }
 
@@ -241,32 +243,120 @@ function renderSearchSummary(query, articleCount, workingCount) {
   }
 }
 
-function renderSearchResults() {
-  const query = getSearchQuery();
-  const articleCount = renderPapers(query);
-  const workingCount = renderWorkingPapers(query);
-  renderSearchSummary(query, articleCount, workingCount);
+function bindAbstractToggles() {
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-abstract-toggle]");
+    if (!button) {
+      return;
+    }
+
+    const panel = document.getElementById(button.getAttribute("aria-controls"));
+    if (!panel) {
+      return;
+    }
+
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!isExpanded));
+    button.textContent = isExpanded ? "Show abstract" : "Hide abstract";
+    panel.hidden = isExpanded;
+  });
 }
 
-searchInput.addEventListener("input", renderSearchResults);
-document.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-abstract-toggle]");
-  if (!button) {
-    return;
+async function loadSiteData() {
+  const response = await fetch(DATA_PATH);
+
+  if (!response.ok) {
+    throw new Error(`Unable to load site data (${response.status})`);
   }
 
-  const panel = document.getElementById(button.getAttribute("aria-controls"));
-  if (!panel) {
-    return;
+  return response.json();
+}
+
+function renderSite(data) {
+  const {
+    profileLinks = [],
+    selectedPapers = [],
+    workingPapers = [],
+    ongoingProjects = [],
+    policyPublications = []
+  } = data;
+
+  const paperGrid = document.querySelector("#paper-grid");
+  const searchInput = document.querySelector("#paper-search");
+  const paperCount = document.querySelector("#paper-count");
+  const heroLinks = document.querySelector("#hero-links");
+  const workingList = document.querySelector("#working-list");
+  const ongoingList = document.querySelector("#ongoing-list");
+  const policyGrid = document.querySelector("#policy-grid");
+
+  renderHeroLinks(heroLinks, profileLinks);
+
+  const renderSearchResults = () => {
+    const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+    const articleCount = renderPapers(paperGrid, selectedPapers, query);
+    const workingCount = renderWorkingPapers(workingList, workingPapers, query);
+
+    renderSearchSummary(
+      paperCount,
+      searchInput,
+      selectedPapers,
+      workingPapers,
+      query,
+      articleCount,
+      workingCount
+    );
+  };
+
+  renderSearchResults();
+  renderStack(ongoingList, ongoingProjects, { itemType: "Current project" });
+  renderPolicies(policyGrid, policyPublications);
+
+  if (searchInput) {
+    searchInput.addEventListener("input", renderSearchResults);
+  }
+}
+
+function renderDataError(error) {
+  console.error(error);
+
+  const paperGrid = document.querySelector("#paper-grid");
+  const workingList = document.querySelector("#working-list");
+  const policyGrid = document.querySelector("#policy-grid");
+
+  const message = `
+    <article class="paper-card empty-state">
+      <p class="card-kicker">Content unavailable</p>
+      <h3>Site data could not be loaded</h3>
+      <p class="paper-description">Check that <code>data/site-data.json</code> is present in the rendered site.</p>
+    </article>
+  `;
+
+  if (paperGrid) {
+    paperGrid.innerHTML = message;
   }
 
-  const isExpanded = button.getAttribute("aria-expanded") === "true";
-  button.setAttribute("aria-expanded", String(!isExpanded));
-  button.textContent = isExpanded ? "Show abstract" : "Hide abstract";
-  panel.hidden = isExpanded;
-});
+  if (workingList) {
+    workingList.innerHTML = message;
+  }
 
-renderHeroLinks();
-renderSearchResults();
-renderStack(ongoingList, ongoingProjects, { itemType: "Current project" });
-renderPolicies();
+  if (policyGrid) {
+    policyGrid.innerHTML = message;
+  }
+}
+
+async function initSite() {
+  bindAbstractToggles();
+
+  try {
+    const data = await loadSiteData();
+    renderSite(data);
+  } catch (error) {
+    renderDataError(error);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSite, { once: true });
+} else {
+  initSite();
+}

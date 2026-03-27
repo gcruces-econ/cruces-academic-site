@@ -1,0 +1,19 @@
+project:
+  type: website
+  resources:
+    - assets/
+    - data/
+    - favicon.svg
+
+format:
+  html:
+    theme: none
+    css: styles.css
+    toc: false
+    page-layout: full
+    link-external-newwindow: true
+    include-in-header:
+      - includes/head.html
+
+execute:
+  freeze: auto

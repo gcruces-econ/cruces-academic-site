@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 IDEAS_AUTHOR_URL = "https://ideas.repec.org/e/pcr20.html"
 IDEAS_BASE_URL = "https://ideas.repec.org"
-OUTPUT_PATH = "site/data.js"
+OUTPUT_PATH = "site/data/site-data.json"
 REQUEST_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -233,13 +233,8 @@ def load_cached_abstracts():
     if not path.exists():
         return {}
 
-    text = path.read_text(encoding="utf-8")
-    match = re.search(r"window\.siteData = (.*);\s*$", text, re.S)
-    if not match:
-        return {}
-
     try:
-        data = json.loads(match.group(1))
+        data = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return {}
 
@@ -370,14 +365,12 @@ def build_data(refresh_abstracts=False):
 def main():
     refresh_abstracts = "--refresh-abstracts" in sys.argv
     data = build_data(refresh_abstracts=refresh_abstracts)
+    output_path = Path(OUTPUT_PATH)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    output = "// Generated from IDEAS/RePEc author page pcr20.\n"
-    output += "window.siteData = "
-    output += json.dumps(data, ensure_ascii=False, indent=2)
-    output += ";\n"
-
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
-        handle.write(output)
+    with open(output_path, "w", encoding="utf-8") as handle:
+        json.dump(data, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
 
     print(
         textwrap.dedent(

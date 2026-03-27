@@ -1,0 +1,95 @@
+---
+title: "Guillermo A. Cruces | Research and Publications"
+description: "Academic homepage for Guillermo A. Cruces with research papers, working papers, contact information, and publication links."
+title-block-style: none
+---
+
+<div class="page-shell">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#top">Home</a>
+      <a href="#research">Research</a>
+      <a href="#work">Working Papers</a>
+      <a href="#policy">Policy</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-stage">
+        <figure class="portrait-frame">
+          <img
+            src="./assets/images/guillermo-cruces.jpg"
+            alt="Portrait of Guillermo Cruces"
+          />
+        </figure>
+        <div class="hero-copy">
+          <h1>Guillermo A. Cruces</h1>
+          <p class="hero-summary">
+            Professor of Economics at Universidad de San Andres and the University
+            of Nottingham, with research spanning public economics, labor markets,
+            taxation, social protection, poverty, and inequality. Hola.
+          </p>
+          <div class="hero-meta" aria-label="Affiliations">
+            <span>Universidad de San Andres</span>
+            <span>University of Nottingham</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-links-bar">
+        <div id="hero-links" class="mini-link-list"></div>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Research output</p>
+          <h2>Published papers</h2>
+        </div>
+      </div>
+
+      <div class="paper-toolbar">
+        <label class="search-field">
+          <span class="sr-only">Search papers</span>
+          <input
+            id="paper-search"
+            type="search"
+            placeholder="Search articles and working papers by title, authors, venue, or year"
+          />
+        </label>
+      </div>
+
+      <div id="paper-grid" class="paper-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="work" class="section work-section">
+      <div class="work-block">
+        <p class="section-kicker">Working papers</p>
+        <h2>Working paper archive</h2>
+        <div id="working-list" class="stack-list"></div>
+      </div>
+      <div class="work-block">
+        <p class="section-kicker">Ongoing projects</p>
+        <h2>Active lines of work</h2>
+        <div id="ongoing-list" class="stack-list"></div>
+      </div>
+    </section>
+
+    <section id="policy" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Policy and books</p>
+          <h2>Policy-facing publications, reports, and chapters</h2>
+        </div>
+      </div>
+      <div id="policy-grid" class="policy-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="mailto:gcruces@cedlas.org">gcruces@cedlas.org</a></p>
+  </footer>
+</div>
+
+<script src="./script.js"></script>

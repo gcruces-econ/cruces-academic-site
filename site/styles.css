@@ -63,6 +63,22 @@ img {
   scroll-margin-top: 110px;
 }
 
+/* ── Quarto shell reset ─────────────────────── */
+
+body main.content,
+body #quarto-document-content,
+body .quarto-container,
+body .quarto-container .content {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+body #title-block-header,
+body .quarto-title-banner {
+  display: none;
+}
+
 /* ── Page shell ─────────────────────────────── */
 
 .page-shell {
