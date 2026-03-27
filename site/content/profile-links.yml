@@ -1,0 +1,32 @@
+- title: Current CV
+  description: Current curriculum vitae.
+  url: https://www.dropbox.com/s/u88tuj8n3hh9asl/CV_CRUCES_2023_EN_Web.pdf?dl=0
+  linkLabel: Open PDF
+- title: Email
+  description: Primary contact email.
+  url: mailto:gcruces@cedlas.org
+  linkLabel: Write email
+- title: Google Scholar
+  description: Citation profile and indexed publications.
+  url: https://scholar.google.com/citations?user=CylXqSUAAAAJ&hl=en
+  linkLabel: Open profile
+- title: Publications page
+  description: Full publication archive and paper records.
+  url: https://ideas.repec.org/e/pcr20.html
+  linkLabel: Open page
+- title: SSRN
+  description: Social Science Research Network author page.
+  url: http://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=651651
+  linkLabel: Open profile
+- title: Nottingham profile
+  description: University of Nottingham School of Economics faculty page.
+  url: https://www.nottingham.ac.uk/economics/people/guillermo.cruces
+  linkLabel: Open page
+- title: Nottingham School of Economics
+  description: Department page.
+  url: https://www.nottingham.ac.uk/economics/
+  linkLabel: Open site
+- title: IZA
+  description: IZA profile.
+  url: http://www.iza.org/en/webcontent/personnel/photos/index_html?key=2723
+  linkLabel: Open profile

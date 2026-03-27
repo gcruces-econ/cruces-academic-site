@@ -2,16 +2,20 @@
 
 import json
 import re
+import subprocess
 import sys
 import textwrap
 import urllib.parse
 import urllib.request
 from pathlib import Path
 from bs4 import BeautifulSoup
+import yaml
 
 IDEAS_AUTHOR_URL = "https://ideas.repec.org/e/pcr20.html"
 IDEAS_BASE_URL = "https://ideas.repec.org"
 OUTPUT_PATH = "site/data/site-data.json"
+CONTENT_DIR = Path("site/content")
+BUILD_SCRIPT = Path("scripts/build_site_content.py")
 REQUEST_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -367,15 +371,35 @@ def main():
     data = build_data(refresh_abstracts=refresh_abstracts)
     output_path = Path(OUTPUT_PATH)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    CONTENT_DIR.mkdir(parents=True, exist_ok=True)
 
-    with open(output_path, "w", encoding="utf-8") as handle:
-        json.dump(data, handle, ensure_ascii=False, indent=2)
-        handle.write("\n")
+    section_files = {
+        "profileLinks": CONTENT_DIR / "profile-links.yml",
+        "selectedPapers": CONTENT_DIR / "published-papers.yml",
+        "workingPapers": CONTENT_DIR / "working-papers.yml",
+        "ongoingProjects": CONTENT_DIR / "ongoing-projects.yml",
+        "policyPublications": CONTENT_DIR / "policy-publications.yml",
+        "resources": CONTENT_DIR / "resources.yml",
+    }
+
+    for key, path in section_files.items():
+        with path.open("w", encoding="utf-8") as handle:
+            yaml.safe_dump(
+                data[key],
+                handle,
+                sort_keys=False,
+                allow_unicode=True,
+                width=1000,
+            )
+
+    subprocess.run([sys.executable, str(BUILD_SCRIPT)], check=True)
 
     print(
         textwrap.dedent(
             f"""
-            Wrote {OUTPUT_PATH}
+            Wrote {CONTENT_DIR / 'published-papers.yml'}
+            Wrote {CONTENT_DIR / 'working-papers.yml'}
+            Rebuilt {OUTPUT_PATH}
             Articles: {len(data['selectedPapers'])}
             Working papers: {len(data['workingPapers'])}
             Refresh abstracts: {'yes' if refresh_abstracts else 'no'}

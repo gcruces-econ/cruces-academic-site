@@ -1,4 +1,17 @@
 {
+  "profile": {
+    "name": "Guillermo A. Cruces",
+    "bio": "Professor of Economics at Universidad de San Andres and the University of Nottingham, with research spanning public economics, labor markets, taxation, social protection, poverty, and inequality.",
+    "affiliations": [
+      "Universidad de San Andres",
+      "University of Nottingham"
+    ],
+    "email": "gcruces@cedlas.org",
+    "portrait": {
+      "src": "./assets/images/guillermo-cruces.jpg",
+      "alt": "Portrait of Guillermo Cruces"
+    }
+  },
   "profileLinks": [
     {
       "title": "Current CV",

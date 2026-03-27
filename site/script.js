@@ -327,7 +327,7 @@ function renderDataError(error) {
     <article class="paper-card empty-state">
       <p class="card-kicker">Content unavailable</p>
       <h3>Site data could not be loaded</h3>
-      <p class="paper-description">Check that <code>data/site-data.json</code> is present in the rendered site.</p>
+      <p class="paper-description">Run the Quarto pre-render step or <code>python3 scripts/build_site_content.py</code> to regenerate <code>data/site-data.json</code>.</p>
     </article>
   `;
 

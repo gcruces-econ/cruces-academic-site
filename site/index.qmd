@@ -17,26 +17,11 @@ title-block-style: none
 
   <main id="top">
     <section class="hero section">
-      <div class="hero-stage">
-        <figure class="portrait-frame">
-          <img
-            src="./assets/images/guillermo-cruces.jpg"
-            alt="Portrait of Guillermo Cruces"
-          />
-        </figure>
-        <div class="hero-copy">
-          <h1>Guillermo A. Cruces</h1>
-          <p class="hero-summary">
-            Professor of Economics at Universidad de San Andres and the University
-            of Nottingham, with research spanning public economics, labor markets,
-            taxation, social protection, poverty, and inequality.
-          </p>
-          <div class="hero-meta" aria-label="Affiliations">
-            <span>Universidad de San Andres</span>
-            <span>University of Nottingham</span>
-          </div>
-        </div>
-      </div>
+```
+
+{{< include includes/generated/profile-hero.html >}}
+
+```{=html}
       <div class="hero-links-bar">
         <div id="hero-links" class="mini-link-list"></div>
       </div>
@@ -89,7 +74,11 @@ title-block-style: none
   </main>
 
   <footer class="site-footer">
-    <p><a href="mailto:gcruces@cedlas.org">gcruces@cedlas.org</a></p>
+```
+
+{{< include includes/generated/footer-email.html >}}
+
+```{=html}
   </footer>
 </div>
 

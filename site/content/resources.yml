@@ -1,0 +1,16 @@
+- title: Local CV document
+  description: The repo's local CV working file used during the Google Site migration.
+  file: CV_CRUCES_2026_EN.doc
+  linkLabel: Open file
+- title: Selected publications PDF
+  description: Legacy compiled publication list from the local archive.
+  file: publicaciones.pdf
+  linkLabel: Open file
+- title: CONICET publications list
+  description: Additional archive PDF with a broader compiled list of publications.
+  file: CONICET publicaciones.pdf
+  linkLabel: Open file
+- title: Historic archive bundle
+  description: ZIP archive containing earlier publication materials and related files.
+  file: publicaciones.zip
+  linkLabel: Open file

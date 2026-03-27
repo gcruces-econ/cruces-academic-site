@@ -2,15 +2,23 @@
 
 This repository maintains Guillermo Cruces's academic website and its supporting source material.
 
-The website now lives in `site/` as a Quarto project, so the content is easier to edit by hand while keeping the existing custom visual design.
+The site is built with Quarto, but the editing workflow is intentionally simpler than “edit the page HTML”:
+
+- profile details live in a small YAML file
+- links and section content live in separate YAML files
+- a build script regenerates the runtime JSON automatically
+- GitHub Actions renders and deploys the site on every push to `main`
 
 ## Repository Structure
 
 - `site/`
   The active Quarto website project.
 
+- `site/content/`
+  The main hand-editable content files. This is where most edits should happen.
+
 - `scripts/`
-  Utilities that refresh structured site data.
+  Utilities that rebuild site data or refresh publication data from IDEAS/RePEc.
 
 - `archive/`
   Long-term storage for papers, reports, drafts, and legacy source material that is useful for curation but is not necessarily linked on the public page.
@@ -21,40 +29,98 @@ The website now lives in `site/` as a Quarto project, so the content is easier t
 - `.github/workflows/publish.yml`
   GitHub Pages workflow that renders the Quarto project in `site/` and deploys it automatically from `main`.
 
+## What To Edit
+
+For almost all manual edits, use files in `site/content/`:
+
+- `site/content/profile.yml`
+  Name, bio, affiliations, portrait, and footer email.
+
+- `site/content/profile-links.yml`
+  Hero links such as CV, email, Google Scholar, and external profiles.
+
+- `site/content/published-papers.yml`
+  Published papers.
+
+- `site/content/working-papers.yml`
+  Working paper archive.
+
+- `site/content/ongoing-projects.yml`
+  Current projects.
+
+- `site/content/policy-publications.yml`
+  Policy, report, and book items.
+
+- `site/content/README.md`
+  Short in-folder editing guide with examples.
+
+Files that are generated and normally should not be edited by hand:
+
+- `site/data/site-data.json`
+  Generated runtime data consumed by the frontend.
+
+- `site/includes/generated/profile-hero.html`
+- `site/includes/generated/footer-email.html`
+  Generated includes built from `site/content/profile.yml`.
+
 ## Website Files
 
-Important files in `site/`:
-
 - `site/_quarto.yml`
-  Quarto project configuration. It enables website output, registers static resources, loads the shared stylesheet, and includes the custom head partial.
+  Quarto project configuration. It registers assets, adds the pre-render build step, and loads the shared stylesheet and head include.
 
 - `site/index.qmd`
-  Main page source. This is the best place to edit page structure, headings, hero copy, and section order.
+  Main page shell. It is now mostly layout, not content entry.
 
 - `site/styles.css`
   Custom stylesheet preserving the current visual identity.
 
 - `site/script.js`
-  Frontend behavior for search, abstract toggles, and dynamic rendering of lists from JSON data.
+  Frontend behavior for search and abstract toggles using generated site data.
 
-- `site/data/site-data.json`
-  Structured content payload for profile links, papers, working papers, ongoing projects, and policy publications. This is the main hand-editable data file.
+- `scripts/build_site_content.py`
+  Rebuilds generated site files from the content YAML files.
 
-- `site/includes/head.html`
-  Shared head include for the favicon and font loading.
+- `scripts/sync_ideas_data.py`
+  Refreshes published and working paper data from IDEAS/RePEc, writes the hand-editable YAML section files, then rebuilds generated site files.
 
-- `site/assets/`
-  Static assets used by the website.
+## Simplest Editing Flow
 
-## Publishing Flow
+### Change the bio
 
-The recommended flow is:
+Edit:
 
-1. edit `site/index.qmd` for layout and copy
-2. edit `site/data/site-data.json` for papers, links, and structured records
-3. edit `site/styles.css` when the visual system needs changes
-4. preview locally with Quarto
-5. push to `main` to let GitHub Actions render and publish the site
+- `site/content/profile.yml`
+
+### Add a published paper
+
+Edit:
+
+- `site/content/published-papers.yml`
+
+Add another list item using the same shape as the entries already in the file.
+
+### Add a working paper
+
+Edit:
+
+- `site/content/working-papers.yml`
+
+### Change hero links
+
+Edit:
+
+- `site/content/profile-links.yml`
+
+## Edit Directly On GitHub
+
+For quick edits in the browser:
+
+1. open the repository on GitHub
+2. edit a file under `site/content/`
+3. commit the change to `main`
+4. GitHub Actions will rebuild and publish the site automatically
+
+That means most routine edits do not require touching `index.qmd`, `script.js`, or `site-data.json`.
 
 ## Local Preview
 
@@ -63,6 +129,18 @@ From the repository root:
 ```bash
 cd site
 quarto preview
+```
+
+The Quarto project runs a pre-render step automatically:
+
+```bash
+python3 ../scripts/build_site_content.py
+```
+
+If you want to rebuild generated files manually without previewing:
+
+```bash
+python3 scripts/build_site_content.py
 ```
 
 Quarto is not bundled in this repository, so it must be installed locally for preview and render commands to work.
@@ -79,7 +157,9 @@ This script:
 
 - fetches publication and working paper entries from IDEAS/RePEc
 - refreshes cached abstracts where available
-- rewrites `site/data/site-data.json`
+- rewrites `site/content/published-papers.yml`
+- rewrites `site/content/working-papers.yml`
+- rebuilds generated site files
 
 To force a fresh abstract pass:
 
@@ -89,8 +169,9 @@ python3 scripts/sync_ideas_data.py --refresh-abstracts
 
 ## Editing Guidance
 
-- Prefer `site/index.qmd` for visible page structure and copy changes.
-- Prefer `site/data/site-data.json` for repeatable content lists and link metadata.
+- Prefer `site/content/` for content changes.
+- Use `site/index.qmd` only for layout or section-order changes.
+- Use `site/styles.css` for visual changes.
 - Keep `site/assets/documents/` for files that the public site should link directly.
 - Keep broader backups and research material in `archive/`.
 - Keep screenshots and external references in `reference/`.
@@ -105,4 +186,4 @@ The repo includes a Quarto GitHub Pages workflow in `.github/workflows/publish.y
 
 ## Current Intent
 
-The current goal is to maintain a visually polished academic website with a lightweight authoring workflow: Quarto for structure, JSON for hand-editable data, custom CSS for the existing look, and GitHub Pages for deployment.
+The current goal is to maintain a visually polished academic website with a lightweight authoring workflow: small editable content files in `site/content/`, generated site data, custom CSS for the existing look, and GitHub Pages for deployment.
