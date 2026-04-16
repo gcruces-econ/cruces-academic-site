@@ -30,6 +30,67 @@ function makeLink(label, item) {
   return `<a class="text-link" href="${itemHref(item)}"${itemLinkAttributes(item)}>${escapeHtml(label)}</a>`;
 }
 
+function citationKey(item) {
+  return item.url || item.file || item.title || "";
+}
+
+function makeCitationButtons(item) {
+  const key = citationKey(item);
+  if (!key) {
+    return "";
+  }
+
+  const buttons = [];
+  if (item.citationApa) {
+    buttons.push(`
+      <button
+        class="button button-inline citation-button"
+        type="button"
+        data-citation-copy="apa"
+        data-citation-key="${escapeHtml(key)}"
+        data-default-label="Copy APA"
+      >
+        Copy APA
+      </button>
+    `);
+  }
+
+  if (item.citationBibtex) {
+    buttons.push(`
+      <button
+        class="button button-inline citation-button"
+        type="button"
+        data-citation-copy="bibtex"
+        data-citation-key="${escapeHtml(key)}"
+        data-default-label="Copy BibTeX"
+      >
+        Copy BibTeX
+      </button>
+    `);
+  }
+
+  return buttons.join("");
+}
+
+function makeCardActions(item, primaryLabel) {
+  const actions = [];
+
+  if (item.url || item.file) {
+    actions.push(makeLink(primaryLabel, item));
+  }
+
+  const citationButtons = makeCitationButtons(item);
+  if (citationButtons) {
+    actions.push(citationButtons);
+  }
+
+  if (!actions.length) {
+    return "";
+  }
+
+  return `<div class="card-links">${actions.join("")}</div>`;
+}
+
 function formatAbstract(abstract) {
   return abstract
     .split(/\n{2,}/)
@@ -133,9 +194,7 @@ function renderPapers(paperGrid, selectedPapers, query) {
           </div>
           <p class="paper-venue">${escapeHtml(paper.venue)}</p>
           ${makeAbstractToggle(abstractId, paper)}
-          <div class="card-links">
-            ${makeLink(paper.linkLabel || "Open paper", paper)}
-          </div>
+          ${makeCardActions(paper, paper.linkLabel || "Open paper")}
         </article>
       `;
     })
@@ -182,7 +241,7 @@ function renderStack(listElement, items, options = {}) {
           </div>
           <p>${escapeHtml(item.description)}</p>
           ${makeAbstractToggle(abstractId, item)}
-          ${item.url || item.file ? `<div class="card-links">${makeLink(item.linkLabel || "Open link", item)}</div>` : ""}
+          ${makeCardActions(item, item.linkLabel || "Open link")}
         </article>
       `;
     })
@@ -242,21 +301,89 @@ function renderSearchSummary(paperCount, searchInput, selectedPapers, workingPap
   }
 }
 
-function bindAbstractToggles() {
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-abstract-toggle]");
-    if (!button) {
+function buildCitationStore(data) {
+  const store = new Map();
+
+  for (const collection of [data.selectedPapers || [], data.workingPapers || []]) {
+    for (const item of collection) {
+      const key = citationKey(item);
+      if (!key || (!item.citationApa && !item.citationBibtex)) {
+        continue;
+      }
+
+      store.set(key, {
+        apa: item.citationApa || "",
+        bibtex: item.citationBibtex || ""
+      });
+    }
+  }
+
+  return store;
+}
+
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "absolute";
+  textarea.style.left = "-9999px";
+  document.body.append(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+}
+
+function updateButtonLabel(button, label) {
+  const defaultLabel = button.dataset.defaultLabel || button.textContent;
+  clearTimeout(button._labelResetTimer);
+  button.textContent = label;
+  button._labelResetTimer = setTimeout(() => {
+    button.textContent = defaultLabel;
+  }, 1800);
+}
+
+function bindCardInteractions(citationStore) {
+  document.addEventListener("click", async (event) => {
+    const citationButton = event.target.closest("[data-citation-copy]");
+    if (citationButton) {
+      const kind = citationButton.getAttribute("data-citation-copy");
+      const key = citationButton.getAttribute("data-citation-key");
+      const citation = citationStore.get(key)?.[kind];
+
+      if (!citation) {
+        updateButtonLabel(citationButton, "Unavailable");
+        return;
+      }
+
+      try {
+        await copyTextToClipboard(citation);
+        updateButtonLabel(citationButton, kind === "apa" ? "APA copied" : "BibTeX copied");
+      } catch (error) {
+        console.error(error);
+        updateButtonLabel(citationButton, "Copy failed");
+      }
+
       return;
     }
 
-    const panel = document.getElementById(button.getAttribute("aria-controls"));
+    const abstractButton = event.target.closest("[data-abstract-toggle]");
+    if (!abstractButton) {
+      return;
+    }
+
+    const panel = document.getElementById(abstractButton.getAttribute("aria-controls"));
     if (!panel) {
       return;
     }
 
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!isExpanded));
-    button.textContent = isExpanded ? "Show abstract" : "Hide abstract";
+    const isExpanded = abstractButton.getAttribute("aria-expanded") === "true";
+    abstractButton.setAttribute("aria-expanded", String(!isExpanded));
+    abstractButton.textContent = isExpanded ? "Show abstract" : "Hide abstract";
     panel.hidden = isExpanded;
   });
 }
@@ -344,10 +471,9 @@ function renderDataError(error) {
 }
 
 async function initSite() {
-  bindAbstractToggles();
-
   try {
     const data = await loadSiteData();
+    bindCardInteractions(buildCitationStore(data));
     renderSite(data);
   } catch (error) {
     renderDataError(error);

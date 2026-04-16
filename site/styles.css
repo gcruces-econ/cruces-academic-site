@@ -596,6 +596,10 @@ h3 {
   border-color: rgba(44, 82, 130, 0.15);
 }
 
+.citation-button {
+  white-space: nowrap;
+}
+
 .abstract-toggle[aria-expanded="true"] {
   background: rgba(44, 82, 130, 0.12);
   border-color: rgba(44, 82, 130, 0.18);

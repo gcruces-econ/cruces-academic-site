@@ -10,6 +10,7 @@ import urllib.request
 from pathlib import Path
 from bs4 import BeautifulSoup
 import yaml
+from repec_citations import attach_citations, load_cached_citations
 
 IDEAS_AUTHOR_URL = "https://ideas.repec.org/e/pcr20.html"
 IDEAS_BASE_URL = "https://ideas.repec.org"
@@ -341,11 +342,14 @@ def build_data(refresh_abstracts=False):
 
     soup = BeautifulSoup(html, "lxml")
     cached_abstracts = load_cached_abstracts()
+    cached_citations = load_cached_citations(OUTPUT_PATH)
 
     articles = extract_section_items(soup, "articles")
     working_papers = extract_section_items(soup, "papers")
     attach_abstracts(articles, cached_abstracts, "Articles", refresh=refresh_abstracts)
     attach_abstracts(working_papers, cached_abstracts, "Working papers", refresh=refresh_abstracts)
+    attach_citations(articles, cached_citations, "Article citations")
+    attach_citations(working_papers, cached_citations, "Working paper citations")
 
     for item in working_papers:
         item["status"] = item["year"]
