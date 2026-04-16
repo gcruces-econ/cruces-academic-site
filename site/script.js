@@ -62,10 +62,6 @@ function makeAbstractToggle(panelId, item) {
   `;
 }
 
-function formatPublishedCitation(description = "") {
-  return description.replace(/^.*?,\s*(?=vol\.)/i, "").trim();
-}
-
 function matchesQuery(values, query) {
   if (!query) {
     return true;
@@ -124,7 +120,6 @@ function renderPapers(paperGrid, selectedPapers, query) {
   paperGrid.innerHTML = filtered
     .map((paper, index) => {
       const abstractId = `paper-abstract-${index}`;
-      const citation = formatPublishedCitation(paper.description);
 
       return `
         <article class="paper-card">
@@ -137,7 +132,6 @@ function renderPapers(paperGrid, selectedPapers, query) {
             <span class="paper-year">${escapeHtml(paper.year)}</span>
           </div>
           <p class="paper-venue">${escapeHtml(paper.venue)}</p>
-          ${citation ? `<p class="paper-description">${escapeHtml(citation)}</p>` : ""}
           ${makeAbstractToggle(abstractId, paper)}
           <div class="card-links">
             ${makeLink(paper.linkLabel || "Open paper", paper)}
