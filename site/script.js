@@ -1,5 +1,47 @@
 const DATA_PATH = "./data/site-data.json";
 const DOCUMENT_BASE_PATH = "./assets/documents";
+const TOPIC_DEFINITIONS = [
+  {
+    label: "Labor Markets",
+    patterns: [/\blabor\b/, /\blabour\b/, /\bemployment\b/, /\bwage(s)?\b/, /\binformality\b/, /\bjob(s)?\b/]
+  },
+  {
+    label: "Taxation",
+    patterns: [/\btax(es|ation)?\b/, /\baudit(s)?\b/, /\bcompliance\b/, /\bfiscal\b/, /\bproperty tax\b/, /\bpayroll tax(es)?\b/]
+  },
+  {
+    label: "Poverty & Inequality",
+    patterns: [/\bpoverty\b/, /\binequality\b/, /income distribution/, /\bmobility\b/, /\bmultidimensional\b/]
+  },
+  {
+    label: "Social Protection",
+    patterns: [/social protection/, /social assistance/, /cash transfer/, /\bwelfare\b/, /\bbenefit(s)?\b/, /conditional cash transfer/]
+  },
+  {
+    label: "Education",
+    patterns: [/\beducation\b/, /\bschool(ing)?\b/, /\bskill(s)?\b/, /pre-primary/, /preschool/, /\bvocational\b/, /\btraining\b/]
+  },
+  {
+    label: "Health",
+    patterns: [/\bhealth\b/, /\bcovid\b/, /\bpandemic\b/, /\bvaccine(s)?\b/, /\btobacco\b/, /\bsmoking\b/, /e-cigarette/]
+  },
+  {
+    label: "Political Economy",
+    patterns: [/\bpolitical\b/, /\bpartisan\b/, /\bcorruption\b/, /public employment/, /expert recommendations/, /\btrust\b/, /\bgovernment(s)?\b/]
+  },
+  {
+    label: "Housing & Urban",
+    patterns: [/\bhousing\b/, /\burban\b/, /residential/, /neighbo(u)?rhood/, /property ownership/, /real estate/]
+  },
+  {
+    label: "Trade & Development",
+    patterns: [/\btrade\b/, /\btariff(s)?\b/, /\bdevelopment\b/, /developing countr/, /\bgrowth\b/]
+  },
+  {
+    label: "AI & Technology",
+    patterns: [/artificial intelligence/, /generative ai/, /\bai\b/, /\btechnology\b/]
+  }
+];
 
 function escapeHtml(value = "") {
   return String(value)
@@ -141,6 +183,99 @@ function matchesQuery(values, query) {
     .includes(query);
 }
 
+function buildThemeText(item) {
+  return [
+    item.title,
+    item.authors,
+    item.venue,
+    item.description,
+    item.abstract || ""
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
+function detectThemes(item) {
+  const text = buildThemeText(item);
+
+  return TOPIC_DEFINITIONS
+    .filter((theme) => theme.patterns.some((pattern) => pattern.test(text)))
+    .map((theme) => theme.label);
+}
+
+function buildThemeStore(data) {
+  const itemThemes = new Map();
+  const counts = new Map();
+
+  for (const collection of [data.selectedPapers || [], data.workingPapers || []]) {
+    for (const item of collection) {
+      const key = citationKey(item);
+      if (!key) {
+        continue;
+      }
+
+      const themes = detectThemes(item);
+      itemThemes.set(key, themes);
+
+      for (const theme of themes) {
+        counts.set(theme, (counts.get(theme) || 0) + 1);
+      }
+    }
+  }
+
+  const tags = TOPIC_DEFINITIONS
+    .map((theme) => ({
+      label: theme.label,
+      count: counts.get(theme.label) || 0
+    }))
+    .filter((theme) => theme.count > 0);
+
+  return { itemThemes, tags };
+}
+
+function matchesTheme(item, activeTheme, themeStore) {
+  if (!activeTheme || activeTheme === "all") {
+    return true;
+  }
+
+  return themeStore.itemThemes.get(citationKey(item))?.includes(activeTheme) || false;
+}
+
+function renderThemeFilters(filterBar, themeStore, activeTheme) {
+  if (!filterBar) {
+    return;
+  }
+
+  const allButton = `
+    <button
+      class="button topic-chip${activeTheme === "all" ? " is-active" : ""}"
+      type="button"
+      data-theme-filter="all"
+      aria-pressed="${activeTheme === "all"}"
+    >
+      All themes
+    </button>
+  `;
+
+  const themeButtons = themeStore.tags
+    .map(
+      (theme) => `
+        <button
+          class="button topic-chip${activeTheme === theme.label ? " is-active" : ""}"
+          type="button"
+          data-theme-filter="${escapeHtml(theme.label)}"
+          aria-pressed="${activeTheme === theme.label}"
+        >
+          ${escapeHtml(theme.label)}
+        </button>
+      `
+    )
+    .join("");
+
+  filterBar.innerHTML = allButton + themeButtons;
+}
+
 function renderHeroLinks(heroLinks, profileLinks) {
   if (!heroLinks) {
     return;
@@ -160,12 +295,13 @@ function renderHeroLinks(heroLinks, profileLinks) {
     .join("");
 }
 
-function renderPapers(paperGrid, selectedPapers, query) {
+function renderPapers(paperGrid, selectedPapers, query, activeTheme, themeStore) {
   if (!paperGrid) {
     return 0;
   }
 
   const filtered = selectedPapers.filter((paper) =>
+    matchesTheme(paper, activeTheme, themeStore) &&
     matchesQuery(
       [paper.title, paper.authors, paper.venue, paper.description, paper.year, paper.abstract || ""],
       query
@@ -254,8 +390,9 @@ function renderStack(listElement, items, options = {}) {
     .join("");
 }
 
-function renderWorkingPapers(workingList, workingPapers, query) {
+function renderWorkingPapers(workingList, workingPapers, query, activeTheme, themeStore) {
   const filtered = workingPapers.filter((item) =>
+    matchesTheme(item, activeTheme, themeStore) &&
     matchesQuery([item.title, item.description, item.status, item.abstract || ""], query)
   );
 
@@ -295,15 +432,27 @@ function renderPolicies(policyGrid, policyPublications) {
     .join("");
 }
 
-function renderSearchSummary(paperCount, searchInput, selectedPapers, workingPapers, query, articleCount, workingCount) {
+function renderSearchSummary(
+  paperCount,
+  searchInput,
+  selectedPapers,
+  workingPapers,
+  query,
+  articleCount,
+  workingCount,
+  activeTheme
+) {
   if (!paperCount || !searchInput) {
     return;
   }
 
-  if (!query) {
+  const activeThemeLabel = activeTheme && activeTheme !== "all" ? ` for ${activeTheme}` : "";
+
+  if (!query && (!activeTheme || activeTheme === "all")) {
     paperCount.textContent = `${selectedPapers.length} published articles and ${workingPapers.length} working papers currently listed here. Each record can expand to show its abstract.`;
   } else {
-    paperCount.textContent = `${articleCount} article${articleCount === 1 ? "" : "s"} and ${workingCount} working paper${workingCount === 1 ? "" : "s"} match "${searchInput.value.trim()}".`;
+    const queryLabel = query ? ` matching "${searchInput.value.trim()}"` : "";
+    paperCount.textContent = `${articleCount} article${articleCount === 1 ? "" : "s"} and ${workingCount} working paper${workingCount === 1 ? "" : "s"}${activeThemeLabel}${queryLabel}.`;
   }
 }
 
@@ -428,17 +577,21 @@ function renderSite(data) {
   const paperGrid = document.querySelector("#paper-grid");
   const searchInput = document.querySelector("#paper-search");
   const paperCount = document.querySelector("#paper-count");
+  const paperTags = document.querySelector("#paper-tags");
   const heroLinks = document.querySelector("#hero-links");
   const workingList = document.querySelector("#working-list");
   const ongoingList = document.querySelector("#ongoing-list");
   const policyGrid = document.querySelector("#policy-grid");
+  const themeStore = buildThemeStore(data);
+  let activeTheme = "all";
 
   renderHeroLinks(heroLinks, profileLinks);
 
   const renderSearchResults = () => {
     const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
-    const articleCount = renderPapers(paperGrid, selectedPapers, query);
-    const workingCount = renderWorkingPapers(workingList, workingPapers, query);
+    const articleCount = renderPapers(paperGrid, selectedPapers, query, activeTheme, themeStore);
+    const workingCount = renderWorkingPapers(workingList, workingPapers, query, activeTheme, themeStore);
+    renderThemeFilters(paperTags, themeStore, activeTheme);
 
     renderSearchSummary(
       paperCount,
@@ -447,7 +600,8 @@ function renderSite(data) {
       workingPapers,
       query,
       articleCount,
-      workingCount
+      workingCount,
+      activeTheme
     );
   };
 
@@ -457,6 +611,19 @@ function renderSite(data) {
 
   if (searchInput) {
     searchInput.addEventListener("input", renderSearchResults);
+  }
+
+  if (paperTags) {
+    paperTags.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-theme-filter]");
+      if (!button) {
+        return;
+      }
+
+      const nextTheme = button.getAttribute("data-theme-filter") || "all";
+      activeTheme = nextTheme === activeTheme ? "all" : nextTheme;
+      renderSearchResults();
+    });
   }
 }
 

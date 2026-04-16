@@ -36,6 +36,7 @@ title-block-style: none
       </div>
 
       <div class="paper-toolbar">
+        <div id="paper-tags" class="topic-filter-bar" aria-label="Filter papers by theme"></div>
         <label class="search-field">
           <span class="sr-only">Search papers</span>
           <input
