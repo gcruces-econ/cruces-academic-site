@@ -581,6 +581,13 @@ h3 {
   margin-top: 14px;
 }
 
+.abstract-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
 .button-inline {
   min-height: 36px;
   padding: 0 14px;

@@ -48,9 +48,9 @@ function makeCitationButtons(item) {
         type="button"
         data-citation-copy="apa"
         data-citation-key="${escapeHtml(key)}"
-        data-default-label="Copy APA"
+        data-default-label="APA Citation"
       >
-        Copy APA
+        APA Citation
       </button>
     `);
   }
@@ -62,9 +62,9 @@ function makeCitationButtons(item) {
         type="button"
         data-citation-copy="bibtex"
         data-citation-key="${escapeHtml(key)}"
-        data-default-label="Copy BibTeX"
+        data-default-label="BibTeX Citation"
       >
-        Copy BibTeX
+        BibTeX Citation
       </button>
     `);
   }
@@ -73,22 +73,11 @@ function makeCitationButtons(item) {
 }
 
 function makeCardActions(item, primaryLabel) {
-  const actions = [];
-
-  if (item.url || item.file) {
-    actions.push(makeLink(primaryLabel, item));
-  }
-
-  const citationButtons = makeCitationButtons(item);
-  if (citationButtons) {
-    actions.push(citationButtons);
-  }
-
-  if (!actions.length) {
+  if (!(item.url || item.file)) {
     return "";
   }
 
-  return `<div class="card-links">${actions.join("")}</div>`;
+  return `<div class="card-links">${makeLink(primaryLabel, item)}</div>`;
 }
 
 function formatAbstract(abstract) {
@@ -101,12 +90,10 @@ function formatAbstract(abstract) {
 }
 
 function makeAbstractToggle(panelId, item) {
-  if (!item.abstract) {
-    return "";
-  }
+  const actions = [];
 
-  return `
-    <div class="abstract-block">
+  if (item.abstract) {
+    actions.push(`
       <button
         class="button button-inline abstract-toggle"
         type="button"
@@ -116,9 +103,28 @@ function makeAbstractToggle(panelId, item) {
       >
         Show abstract
       </button>
-      <div class="abstract-panel" id="${panelId}" hidden>
-        ${formatAbstract(item.abstract)}
+    `);
+  }
+
+  const citationButtons = makeCitationButtons(item);
+  if (citationButtons) {
+    actions.push(citationButtons);
+  }
+
+  if (!actions.length) {
+    return "";
+  }
+
+  return `
+    <div class="abstract-block">
+      <div class="abstract-actions">
+        ${actions.join("")}
       </div>
+      ${item.abstract ? `
+        <div class="abstract-panel" id="${panelId}" hidden>
+          ${formatAbstract(item.abstract)}
+        </div>
+      ` : ""}
     </div>
   `;
 }
@@ -323,19 +329,31 @@ function buildCitationStore(data) {
 
 async function copyTextToClipboard(text) {
   if (navigator.clipboard?.writeText) {
-    await navigator.clipboard.writeText(text);
-    return;
+    try {
+      await navigator.clipboard.writeText(text);
+      return;
+    } catch (error) {
+      console.warn("Clipboard API failed, falling back to execCommand.", error);
+    }
   }
 
   const textarea = document.createElement("textarea");
   textarea.value = text;
   textarea.setAttribute("readonly", "");
-  textarea.style.position = "absolute";
+  textarea.style.position = "fixed";
+  textarea.style.top = "0";
   textarea.style.left = "-9999px";
+  textarea.style.opacity = "0";
   document.body.append(textarea);
+  textarea.focus();
   textarea.select();
-  document.execCommand("copy");
+  textarea.setSelectionRange(0, textarea.value.length);
+  const copied = document.execCommand("copy");
   textarea.remove();
+
+  if (!copied) {
+    throw new Error("Copy command failed");
+  }
 }
 
 function updateButtonLabel(button, label) {
